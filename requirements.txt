@@ -1,0 +1,10 @@
+# versions seen in the Kaggle runs: torch 2.11.0+cu128, segmentation-models-pytorch 0.6.0
+torch
+segmentation-models-pytorch==0.6.0
+rasterio
+earthengine-api
+numpy
+pandas
+scipy
+google-auth
+matplotlib

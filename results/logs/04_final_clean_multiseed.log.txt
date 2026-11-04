@@ -1,0 +1,1713 @@
+6.4s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.4s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.4s 3 0.00s - to python to disable frozen modules.
+6.4s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.0s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.0s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.0s 7 0.00s - to python to disable frozen modules.
+7.0s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+26.2s 9 device: cuda | torch 2.11.0+cu130 | smp 0.6.0
+26.4s 10 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/splits/flood_handlabeled /kaggle/working/s1f11/
+29.2s 11 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/data/flood_events/HandLabeled/S1Hand /kaggle/working/s1f11/
+45.1s 12 
+45.1s 13 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/data/flood_events/HandLabeled/LabelHand /kaggle/working/s1f11/
+55.2s 14 
+55.2s 15 {'train': 252, 'valid': 89, 'test': 90, 'bol': 15} | events: [np.str_('Bolivia'), np.str_('Ghana'), np.str_('India'), np.str_('Mekong'), np.str_('Nigeria'), np.str_('Pakistan'), np.str_('Paraguay'), np.str_('Somalia'), np.str_('Spain'), np.str_('Sri-Lanka'), np.str_('USA')]
+65.7s 16 first chip Ghana_103272 | ref shape (8, 512, 512) | median n_recent / n_year: 14.0 34.0 | ref VV median (dB): -10.4609375
+87.3s 17 fetched 50/445 | 22s | failures 0
+112.9s 18 fetched 100/445 | 47s | failures 0
+126.9s 19 fetched 150/445 | 61s | failures 0
+151.6s 20 fetched 200/445 | 86s | failures 0
+166.1s 21 fetched 250/445 | 100s | failures 0
+188.6s 22 fetched 300/445 | 123s | failures 0
+215.9s 23 fetched 350/445 | 150s | failures 0
+239.4s 24 fetched 400/445 | 174s | failures 0
+252.7s 25 EE fetch done in 187s, failures: 0 []
+256.6s 26 event  chips  with_ref  median_n_recent  median_n_year  frac_year_ref_pixels
+256.6s 27 Bolivia     15        15             10.0           29.0                 0.958
+256.6s 28 Ghana     53        53             14.0           34.0                 0.994
+256.6s 29 India     68        68              4.0           12.0                 0.987
+256.6s 30 Mekong     30        30             13.0           33.0                 1.000
+256.6s 31 Nigeria     18        18              8.0           28.0                 0.972
+256.6s 32 Pakistan     28        28             10.0           10.0                 1.000
+256.6s 33 Paraguay     67        67             10.0           30.0                 1.000
+256.6s 34 Somalia     26        26             10.0           27.0                 1.000
+256.6s 35 Spain     30        30             19.0           78.0                 1.000
+256.6s 36 Sri-Lanka     42        42              8.0           13.0                 1.000
+256.6s 37 USA     69        69              5.0           24.0                 1.000
+259.0s 38 first chip Ghana_103272 shape (4, 512, 512) | per-layer min/max: [('jrc', 0.0, 9.0), ('dem', 125.0, 185.0), ('slope', 0.0, 16.3125), ('hand', 0.0, 23.0)]
+265.0s 39 fetched 50/445 | 6s | failures 0
+269.4s 40 fetched 100/445 | 10s | failures 0
+274.2s 41 fetched 150/445 | 15s | failures 0
+279.1s 42 fetched 200/445 | 20s | failures 0
+283.3s 43 fetched 250/445 | 24s | failures 0
+288.1s 44 fetched 300/445 | 29s | failures 0
+292.5s 45 fetched 350/445 | 34s | failures 0
+297.6s 46 fetched 400/445 | 39s | failures 0
+302.6s 47 EE fetch done in 44s, failures: 0 []
+304.3s 48 terrain chips loaded: 446 | missing: 0
+322.5s 49 first chip Ghana_103272 | dw mean per class: [0.045 0.099 0.077 0.033 0.208 0.262 0.078 0.147 0.05 ] | weather: {'p1': np.float32(0.674), 'p7': np.float32(43.303), 'p30': np.float32(361.581), 'p90': np.float32(750.874), 'sm0': np.float32(0.476), 'sm30': np.float32(0.474)}
+361.7s 50 fetched 50/445 | 39s | failures 0
+398.3s 51 fetched 100/445 | 76s | failures 0
+454.2s 52 fetched 150/445 | 132s | failures 0
+491.5s 53 fetched 200/445 | 169s | failures 0
+556.4s 54 fetched 250/445 | 234s | failures 0
+584.0s 55 fetched 300/445 | 262s | failures 0
+636.9s 56 fetched 350/445 | 314s | failures 0
+683.8s 57 fetched 400/445 | 361s | failures 0
+719.5s 58 DW/ERA5 fetch done in 397s, failures: 0 []
+719.5s 59 dw files: 446 | wx files: 446 of 446
+812.2s 60 cache: 446 chips x 20 channels | X.npy 4.7 GB | water share 0.1060136033959036
+812.2s 61 weather scalars per event (median over chips):
+812.2s 62 p1       p7      p30       p90    sm0   sm30
+812.2s 63 event
+812.2s 64 Bolivia    13.879   77.458  289.704   926.326  0.475  0.468
+812.2s 65 Ghana       0.574   43.303  336.366   747.327  0.408  0.424
+812.2s 66 India       4.185   78.767  430.510  1351.091  0.474  0.478
+812.2s 67 Mekong      7.246   50.941  291.053   705.439  0.416  0.413
+812.2s 68 Nigeria     2.913   20.829  228.856   628.820  0.405  0.414
+812.2s 69 Pakistan    8.950   23.346   40.079    66.297  0.276  0.142
+812.2s 70 Paraguay    0.232   59.814  234.403   472.583  0.365  0.396
+812.2s 71 Somalia     3.251   47.235  198.671   218.394  0.360  0.319
+812.2s 72 Spain       1.240  155.493  174.330   178.397  0.364  0.222
+812.2s 73 Sri-Lanka   0.448    6.125   52.434   214.457  0.177  0.211
+812.2s 74 USA        38.347   83.445  262.692   423.019  0.414  0.363
+812.2s 75 job results available at start: 0
+812.2s 76 GPUs visible: 2 (Kaggle: choose 'GPU T4 x2' to use both)
+812.3s 77 132 LOEO jobs ( 3 seeds x 4 variants x 11 events )
+825.7s 78 weights ready
+825.7s 79 --- phase loeo: attempt 1, 132 jobs left, 2 worker(s)
+845.7s 80 [gpu0] worker on GPU 0 | jobs 132
+845.7s 81 [gpu0] /kaggle/working/worker.py:107: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+845.7s 82 [gpu0]   scaler = torch.cuda.amp.GradScaler()
+845.7s 83 [gpu1] worker on GPU 1 | jobs 132
+845.7s 84 [gpu1] /kaggle/working/worker.py:107: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+845.7s 85 [gpu1]   scaler = torch.cuda.amp.GradScaler()
+885.7s 86 [gpu0] [loeo__S1__Bolivia__s0] step 250/1500 loss 1.3315 (49s)
+885.7s 87 [gpu1] [loeo__S1__Ghana__s0] step 250/1500 loss 1.3375 (49s)
+945.7s 88 [gpu0] [loeo__S1__Bolivia__s0] step 500/1500 loss 0.8996 (97s)
+945.7s 89 [gpu1] [loeo__S1__Ghana__s0] step 500/1500 loss 0.8980 (96s)
+985.7s 90 [gpu0] [loeo__S1__Bolivia__s0] step 750/1500 loss 0.8090 (147s)
+985.7s 91 [gpu1] [loeo__S1__Ghana__s0] step 750/1500 loss 0.7976 (146s)
+1025.7s 92 [gpu1] [loeo__S1__Ghana__s0] step 1000/1500 loss 0.7562 (195s)
+1045.7s 93 [gpu0] [loeo__S1__Bolivia__s0] step 1000/1500 loss 0.7617 (196s)
+1085.8s 94 [gpu0] [loeo__S1__Bolivia__s0] step 1250/1500 loss 0.7278 (246s)
+1085.8s 95 [gpu1] [loeo__S1__Ghana__s0] step 1250/1500 loss 0.7256 (244s)
+1125.8s 96 [gpu1] [loeo__S1__Ghana__s0] step 1500/1500 loss 0.7030 (294s)
+1125.8s 97 [gpu1] ==> done loeo__S1__Ghana__s0 in 296s
+1145.7s 98 [gpu0] [loeo__S1__Bolivia__s0] step 1500/1500 loss 0.6956 (296s)
+1145.7s 99 [gpu0] ==> done loeo__S1__Bolivia__s0 in 297s
+1185.8s 100 [gpu0] [loeo__S1__Mekong__s0] step 250/1500 loss 1.3341 (50s)
+1185.8s 101 [gpu1] [loeo__S1__India__s0] step 250/1500 loss 1.3301 (50s)
+1225.8s 102 [gpu1] [loeo__S1__India__s0] step 500/1500 loss 0.9005 (99s)
+1245.7s 103 [gpu0] [loeo__S1__Mekong__s0] step 500/1500 loss 0.9119 (99s)
+1285.8s 104 [gpu0] [loeo__S1__Mekong__s0] step 750/1500 loss 0.8080 (149s)
+1285.8s 105 [gpu1] [loeo__S1__India__s0] step 750/1500 loss 0.7933 (149s)
+1325.8s 106 [gpu0] [loeo__S1__Mekong__s0] step 1000/1500 loss 0.7661 (198s)
+1325.8s 107 [gpu1] [loeo__S1__India__s0] step 1000/1500 loss 0.7340 (198s)
+1385.8s 108 [gpu0] [loeo__S1__Mekong__s0] step 1250/1500 loss 0.7295 (248s)
+1385.8s 109 [gpu1] [loeo__S1__India__s0] step 1250/1500 loss 0.7059 (248s)
+1425.8s 110 [gpu0] [loeo__S1__Mekong__s0] step 1500/1500 loss 0.7120 (297s)
+1425.8s 111 [gpu0] ==> done loeo__S1__Mekong__s0 in 298s
+1425.8s 112 [gpu1] [loeo__S1__India__s0] step 1500/1500 loss 0.6881 (297s)
+1425.8s 113 [gpu1] ==> done loeo__S1__India__s0 in 299s
+1485.8s 114 [gpu0] [loeo__S1__Pakistan__s0] step 250/1500 loss 1.3055 (50s)
+1485.8s 115 [gpu1] [loeo__S1__Nigeria__s0] step 250/1500 loss 1.3353 (50s)
+1525.8s 116 [gpu0] [loeo__S1__Pakistan__s0] step 500/1500 loss 0.8896 (99s)
+1525.8s 117 [gpu1] [loeo__S1__Nigeria__s0] step 500/1500 loss 0.9068 (99s)
+1585.8s 118 [gpu0] [loeo__S1__Pakistan__s0] step 750/1500 loss 0.7852 (149s)
+1585.8s 119 [gpu1] [loeo__S1__Nigeria__s0] step 750/1500 loss 0.8114 (149s)
+1625.8s 120 [gpu0] [loeo__S1__Pakistan__s0] step 1000/1500 loss 0.7402 (198s)
+1625.8s 121 [gpu1] [loeo__S1__Nigeria__s0] step 1000/1500 loss 0.7565 (198s)
+1685.8s 122 [gpu0] [loeo__S1__Pakistan__s0] step 1250/1500 loss 0.7075 (248s)
+1685.8s 123 [gpu1] [loeo__S1__Nigeria__s0] step 1250/1500 loss 0.7257 (248s)
+1725.8s 124 [gpu0] [loeo__S1__Pakistan__s0] step 1500/1500 loss 0.6979 (297s)
+1725.8s 125 [gpu0] ==> done loeo__S1__Pakistan__s0 in 298s
+1725.8s 126 [gpu1] [loeo__S1__Nigeria__s0] step 1500/1500 loss 0.6987 (297s)
+1725.8s 127 [gpu1] ==> done loeo__S1__Nigeria__s0 in 298s
+1785.8s 128 [gpu0] [loeo__S1__Somalia__s0] step 250/1500 loss 1.3091 (50s)
+1785.8s 129 [gpu1] [loeo__S1__Paraguay__s0] step 250/1500 loss 1.3301 (50s)
+1825.8s 130 [gpu0] [loeo__S1__Somalia__s0] step 500/1500 loss 0.8958 (99s)
+1825.8s 131 [gpu1] [loeo__S1__Paraguay__s0] step 500/1500 loss 0.9112 (99s)
+1885.8s 132 [gpu0] [loeo__S1__Somalia__s0] step 750/1500 loss 0.7852 (149s)
+1885.8s 133 [gpu1] [loeo__S1__Paraguay__s0] step 750/1500 loss 0.8084 (149s)
+1925.8s 134 [gpu0] [loeo__S1__Somalia__s0] step 1000/1500 loss 0.7442 (198s)
+1925.8s 135 [gpu1] [loeo__S1__Paraguay__s0] step 1000/1500 loss 0.7504 (198s)
+1985.8s 136 [gpu0] [loeo__S1__Somalia__s0] step 1250/1500 loss 0.7005 (248s)
+1985.8s 137 [gpu1] [loeo__S1__Paraguay__s0] step 1250/1500 loss 0.7217 (248s)
+2025.8s 138 [gpu0] [loeo__S1__Somalia__s0] step 1500/1500 loss 0.6862 (297s)
+2025.8s 139 [gpu0] ==> done loeo__S1__Somalia__s0 in 298s
+2025.8s 140 [gpu1] [loeo__S1__Paraguay__s0] step 1500/1500 loss 0.7099 (297s)
+2025.8s 141 [gpu1] ==> done loeo__S1__Paraguay__s0 in 298s
+2085.8s 142 [gpu0] [loeo__S1__Sri-Lanka__s0] step 250/1500 loss 1.3239 (50s)
+2085.8s 143 [gpu1] [loeo__S1__Spain__s0] step 250/1500 loss 1.3170 (50s)
+2125.8s 144 [gpu0] [loeo__S1__Sri-Lanka__s0] step 500/1500 loss 0.8935 (99s)
+2125.8s 145 [gpu1] [loeo__S1__Spain__s0] step 500/1500 loss 0.9060 (99s)
+2185.8s 146 [gpu0] [loeo__S1__Sri-Lanka__s0] step 750/1500 loss 0.8023 (149s)
+2185.8s 147 [gpu1] [loeo__S1__Spain__s0] step 750/1500 loss 0.7991 (149s)
+2225.8s 148 [gpu0] [loeo__S1__Sri-Lanka__s0] step 1000/1500 loss 0.7526 (198s)
+2225.8s 149 [gpu1] [loeo__S1__Spain__s0] step 1000/1500 loss 0.7614 (198s)
+2285.8s 150 [gpu0] [loeo__S1__Sri-Lanka__s0] step 1250/1500 loss 0.7086 (248s)
+2285.8s 151 [gpu1] [loeo__S1__Spain__s0] step 1250/1500 loss 0.7156 (248s)
+2325.8s 152 [gpu0] [loeo__S1__Sri-Lanka__s0] step 1500/1500 loss 0.7012 (297s)
+2325.8s 153 [gpu0] ==> done loeo__S1__Sri-Lanka__s0 in 299s
+2325.8s 154 [gpu1] [loeo__S1__Spain__s0] step 1500/1500 loss 0.7159 (297s)
+2325.8s 155 [gpu1] ==> done loeo__S1__Spain__s0 in 298s
+2385.8s 156 [gpu0] [loeo__S1pref__Bolivia__s0] step 250/1500 loss 1.3313 (52s)
+2385.8s 157 [gpu1] [loeo__S1__USA__s0] step 250/1500 loss 1.3064 (50s)
+2425.8s 158 [gpu0] [loeo__S1pref__Bolivia__s0] step 500/1500 loss 0.8973 (105s)
+2425.8s 159 [gpu1] [loeo__S1__USA__s0] step 500/1500 loss 0.9157 (100s)
+2485.8s 160 [gpu0] [loeo__S1pref__Bolivia__s0] step 750/1500 loss 0.8024 (157s)
+2485.8s 161 [gpu1] [loeo__S1__USA__s0] step 750/1500 loss 0.8206 (149s)
+2525.8s 162 [gpu1] [loeo__S1__USA__s0] step 1000/1500 loss 0.7790 (199s)
+2545.8s 163 [gpu0] [loeo__S1pref__Bolivia__s0] step 1000/1500 loss 0.7528 (209s)
+2585.8s 164 [gpu0] [loeo__S1pref__Bolivia__s0] step 1250/1500 loss 0.7234 (262s)
+2585.8s 165 [gpu1] [loeo__S1__USA__s0] step 1250/1500 loss 0.7421 (249s)
+2625.8s 166 [gpu1] [loeo__S1__USA__s0] step 1500/1500 loss 0.7317 (298s)
+2625.8s 167 [gpu1] ==> done loeo__S1__USA__s0 in 299s
+2645.8s 168 [gpu0] [loeo__S1pref__Bolivia__s0] step 1500/1500 loss 0.7006 (314s)
+2645.8s 169 [gpu0] ==> done loeo__S1pref__Bolivia__s0 in 315s
+2685.8s 170 [gpu1] [loeo__S1pref__Ghana__s0] step 250/1500 loss 1.3362 (53s)
+2705.8s 171 [gpu0] [loeo__S1pref__India__s0] step 250/1500 loss 1.3228 (52s)
+2725.8s 172 [gpu1] [loeo__S1pref__Ghana__s0] step 500/1500 loss 0.8962 (105s)
+2745.8s 173 [gpu0] [loeo__S1pref__India__s0] step 500/1500 loss 0.9005 (105s)
+2785.8s 174 [gpu1] [loeo__S1pref__Ghana__s0] step 750/1500 loss 0.7933 (157s)
+2805.8s 175 [gpu0] [loeo__S1pref__India__s0] step 750/1500 loss 0.7867 (157s)
+2845.8s 176 [gpu0] [loeo__S1pref__India__s0] step 1000/1500 loss 0.7325 (209s)
+2845.8s 177 [gpu1] [loeo__S1pref__Ghana__s0] step 1000/1500 loss 0.7413 (209s)
+2885.8s 178 [gpu1] [loeo__S1pref__Ghana__s0] step 1250/1500 loss 0.7136 (262s)
+2905.8s 179 [gpu0] [loeo__S1pref__India__s0] step 1250/1500 loss 0.6996 (262s)
+2945.8s 180 [gpu1] [loeo__S1pref__Ghana__s0] step 1500/1500 loss 0.6924 (314s)
+2945.8s 181 [gpu1] ==> done loeo__S1pref__Ghana__s0 in 315s
+2965.8s 182 [gpu0] [loeo__S1pref__India__s0] step 1500/1500 loss 0.6836 (314s)
+2965.8s 183 [gpu0] ==> done loeo__S1pref__India__s0 in 316s
+3005.8s 184 [gpu0] [loeo__S1pref__Nigeria__s0] step 250/1500 loss 1.3372 (52s)
+3005.8s 185 [gpu1] [loeo__S1pref__Mekong__s0] step 250/1500 loss 1.3388 (52s)
+3045.8s 186 [gpu1] [loeo__S1pref__Mekong__s0] step 500/1500 loss 0.9093 (105s)
+3065.8s 187 [gpu0] [loeo__S1pref__Nigeria__s0] step 500/1500 loss 0.9134 (105s)
+3105.8s 188 [gpu1] [loeo__S1pref__Mekong__s0] step 750/1500 loss 0.8000 (157s)
+3125.8s 189 [gpu0] [loeo__S1pref__Nigeria__s0] step 750/1500 loss 0.8117 (157s)
+3145.8s 190 [gpu1] [loeo__S1pref__Mekong__s0] step 1000/1500 loss 0.7535 (209s)
+3165.8s 191 [gpu0] [loeo__S1pref__Nigeria__s0] step 1000/1500 loss 0.7619 (209s)
+3205.8s 192 [gpu1] [loeo__S1pref__Mekong__s0] step 1250/1500 loss 0.7191 (261s)
+3225.8s 193 [gpu0] [loeo__S1pref__Nigeria__s0] step 1250/1500 loss 0.7257 (261s)
+3265.8s 194 [gpu0] [loeo__S1pref__Nigeria__s0] step 1500/1500 loss 0.6969 (314s)
+3265.8s 195 [gpu0] ==> done loeo__S1pref__Nigeria__s0 in 315s
+3265.8s 196 [gpu1] [loeo__S1pref__Mekong__s0] step 1500/1500 loss 0.7028 (314s)
+3265.8s 197 [gpu1] ==> done loeo__S1pref__Mekong__s0 in 315s
+3305.8s 198 [gpu1] [loeo__S1pref__Pakistan__s0] step 250/1500 loss 1.3088 (52s)
+3325.8s 199 [gpu0] [loeo__S1pref__Paraguay__s0] step 250/1500 loss 1.3222 (53s)
+3365.8s 200 [gpu1] [loeo__S1pref__Pakistan__s0] step 500/1500 loss 0.8906 (105s)
+3385.8s 201 [gpu0] [loeo__S1pref__Paraguay__s0] step 500/1500 loss 0.9045 (105s)
+3405.8s 202 [gpu1] [loeo__S1pref__Pakistan__s0] step 750/1500 loss 0.7836 (157s)
+3425.8s 203 [gpu0] [loeo__S1pref__Paraguay__s0] step 750/1500 loss 0.7968 (157s)
+3465.8s 204 [gpu1] [loeo__S1pref__Pakistan__s0] step 1000/1500 loss 0.7324 (209s)
+3485.8s 205 [gpu0] [loeo__S1pref__Paraguay__s0] step 1000/1500 loss 0.7416 (209s)
+3525.8s 206 [gpu1] [loeo__S1pref__Pakistan__s0] step 1250/1500 loss 0.7014 (261s)
+3545.8s 207 [gpu0] [loeo__S1pref__Paraguay__s0] step 1250/1500 loss 0.7167 (262s)
+3566.0s 208 [gpu1] [loeo__S1pref__Pakistan__s0] step 1500/1500 loss 0.6876 (314s)
+3566.0s 209 [gpu1] ==> done loeo__S1pref__Pakistan__s0 in 315s
+3585.8s 210 [gpu0] [loeo__S1pref__Paraguay__s0] step 1500/1500 loss 0.7063 (314s)
+3585.8s 211 [gpu0] ==> done loeo__S1pref__Paraguay__s0 in 316s
+3625.8s 212 [gpu1] [loeo__S1pref__Somalia__s0] step 250/1500 loss 1.3068 (52s)
+3645.8s 213 [gpu0] [loeo__S1pref__Spain__s0] step 250/1500 loss 1.3217 (52s)
+3685.8s 214 [gpu1] [loeo__S1pref__Somalia__s0] step 500/1500 loss 0.8910 (105s)
+3705.8s 215 [gpu0] [loeo__S1pref__Spain__s0] step 500/1500 loss 0.9019 (105s)
+3725.8s 216 [gpu1] [loeo__S1pref__Somalia__s0] step 750/1500 loss 0.7878 (157s)
+3745.8s 217 [gpu0] [loeo__S1pref__Spain__s0] step 750/1500 loss 0.7983 (157s)
+3785.8s 218 [gpu1] [loeo__S1pref__Somalia__s0] step 1000/1500 loss 0.7454 (209s)
+3805.8s 219 [gpu0] [loeo__S1pref__Spain__s0] step 1000/1500 loss 0.7624 (209s)
+3825.8s 220 [gpu1] [loeo__S1pref__Somalia__s0] step 1250/1500 loss 0.7049 (261s)
+3845.8s 221 [gpu0] [loeo__S1pref__Spain__s0] step 1250/1500 loss 0.7199 (261s)
+3885.8s 222 [gpu1] [loeo__S1pref__Somalia__s0] step 1500/1500 loss 0.6931 (313s)
+3885.8s 223 [gpu1] ==> done loeo__S1pref__Somalia__s0 in 314s
+3905.8s 224 [gpu0] [loeo__S1pref__Spain__s0] step 1500/1500 loss 0.7170 (313s)
+3905.8s 225 [gpu0] ==> done loeo__S1pref__Spain__s0 in 315s
+3945.8s 226 [gpu1] [loeo__S1pref__Sri-Lanka__s0] step 250/1500 loss 1.3220 (52s)
+3965.8s 227 [gpu0] [loeo__S1pref__USA__s0] step 250/1500 loss 1.3065 (52s)
+3985.8s 228 [gpu1] [loeo__S1pref__Sri-Lanka__s0] step 500/1500 loss 0.8953 (105s)
+4005.8s 229 [gpu0] [loeo__S1pref__USA__s0] step 500/1500 loss 0.9016 (105s)
+4045.8s 230 [gpu1] [loeo__S1pref__Sri-Lanka__s0] step 750/1500 loss 0.7972 (157s)
+4065.8s 231 [gpu0] [loeo__S1pref__USA__s0] step 750/1500 loss 0.8190 (157s)
+4105.8s 232 [gpu0] [loeo__S1pref__USA__s0] step 1000/1500 loss 0.7808 (209s)
+4105.8s 233 [gpu1] [loeo__S1pref__Sri-Lanka__s0] step 1000/1500 loss 0.7513 (209s)
+4145.8s 234 [gpu1] [loeo__S1pref__Sri-Lanka__s0] step 1250/1500 loss 0.7060 (262s)
+4165.8s 235 [gpu0] [loeo__S1pref__USA__s0] step 1250/1500 loss 0.7494 (262s)
+4205.8s 236 [gpu1] [loeo__S1pref__Sri-Lanka__s0] step 1500/1500 loss 0.6980 (314s)
+4205.8s 237 [gpu1] ==> done loeo__S1pref__Sri-Lanka__s0 in 315s
+4225.8s 238 [gpu0] [loeo__S1pref__USA__s0] step 1500/1500 loss 0.7390 (314s)
+4225.8s 239 [gpu0] ==> done loeo__S1pref__USA__s0 in 316s
+4265.8s 240 [gpu1] [loeo__S1pdw__Bolivia__s0] step 250/1500 loss 1.3217 (55s)
+4285.8s 241 [gpu0] [loeo__S1pdw__Ghana__s0] step 250/1500 loss 1.3308 (56s)
+4305.8s 242 [gpu1] [loeo__S1pdw__Bolivia__s0] step 500/1500 loss 0.8588 (111s)
+4325.8s 243 [gpu0] [loeo__S1pdw__Ghana__s0] step 500/1500 loss 0.8526 (111s)
+4365.9s 244 [gpu1] [loeo__S1pdw__Bolivia__s0] step 750/1500 loss 0.7600 (166s)
+4385.8s 245 [gpu0] [loeo__S1pdw__Ghana__s0] step 750/1500 loss 0.7463 (166s)
+4425.9s 246 [gpu1] [loeo__S1pdw__Bolivia__s0] step 1000/1500 loss 0.7088 (222s)
+4445.8s 247 [gpu0] [loeo__S1pdw__Ghana__s0] step 1000/1500 loss 0.6962 (222s)
+4485.9s 248 [gpu1] [loeo__S1pdw__Bolivia__s0] step 1250/1500 loss 0.6826 (277s)
+4505.8s 249 [gpu0] [loeo__S1pdw__Ghana__s0] step 1250/1500 loss 0.6708 (278s)
+4525.9s 250 [gpu1] [loeo__S1pdw__Bolivia__s0] step 1500/1500 loss 0.6575 (333s)
+4545.8s 251 [gpu0] [loeo__S1pdw__Ghana__s0] step 1500/1500 loss 0.6463 (333s)
+4545.8s 252 [gpu1] ==> done loeo__S1pdw__Bolivia__s0 in 334s
+4565.9s 253 [gpu0] ==> done loeo__S1pdw__Ghana__s0 in 335s
+4585.8s 254 [gpu1] [loeo__S1pdw__India__s0] step 250/1500 loss 1.3272 (56s)
+4605.9s 255 [gpu0] [loeo__S1pdw__Mekong__s0] step 250/1500 loss 1.3312 (56s)
+4645.9s 256 [gpu1] [loeo__S1pdw__India__s0] step 500/1500 loss 0.8596 (111s)
+4665.9s 257 [gpu0] [loeo__S1pdw__Mekong__s0] step 500/1500 loss 0.8592 (112s)
+4705.9s 258 [gpu1] [loeo__S1pdw__India__s0] step 750/1500 loss 0.7348 (167s)
+4725.9s 259 [gpu0] [loeo__S1pdw__Mekong__s0] step 750/1500 loss 0.7518 (168s)
+4765.9s 260 [gpu1] [loeo__S1pdw__India__s0] step 1000/1500 loss 0.6867 (223s)
+4785.9s 261 [gpu0] [loeo__S1pdw__Mekong__s0] step 1000/1500 loss 0.7139 (223s)
+4805.9s 262 [gpu1] [loeo__S1pdw__India__s0] step 1250/1500 loss 0.6550 (278s)
+4845.9s 263 [gpu0] [loeo__S1pdw__Mekong__s0] step 1250/1500 loss 0.6759 (279s)
+4865.9s 264 [gpu1] [loeo__S1pdw__India__s0] step 1500/1500 loss 0.6410 (334s)
+4865.9s 265 [gpu1] ==> done loeo__S1pdw__India__s0 in 336s
+4885.9s 266 [gpu0] [loeo__S1pdw__Mekong__s0] step 1500/1500 loss 0.6577 (334s)
+4885.9s 267 [gpu0] ==> done loeo__S1pdw__Mekong__s0 in 335s
+4925.9s 268 [gpu1] [loeo__S1pdw__Nigeria__s0] step 250/1500 loss 1.3296 (56s)
+4945.9s 269 [gpu0] [loeo__S1pdw__Pakistan__s0] step 250/1500 loss 1.3028 (56s)
+4985.9s 270 [gpu1] [loeo__S1pdw__Nigeria__s0] step 500/1500 loss 0.8590 (111s)
+5005.9s 271 [gpu0] [loeo__S1pdw__Pakistan__s0] step 500/1500 loss 0.8481 (111s)
+5045.9s 272 [gpu1] [loeo__S1pdw__Nigeria__s0] step 750/1500 loss 0.7596 (166s)
+5065.9s 273 [gpu0] [loeo__S1pdw__Pakistan__s0] step 750/1500 loss 0.7443 (167s)
+5085.9s 274 [gpu1] [loeo__S1pdw__Nigeria__s0] step 1000/1500 loss 0.7137 (221s)
+5105.9s 275 [gpu0] [loeo__S1pdw__Pakistan__s0] step 1000/1500 loss 0.6951 (221s)
+5145.9s 276 [gpu1] [loeo__S1pdw__Nigeria__s0] step 1250/1500 loss 0.6813 (276s)
+5165.9s 277 [gpu0] [loeo__S1pdw__Pakistan__s0] step 1250/1500 loss 0.6614 (276s)
+5205.9s 278 [gpu1] [loeo__S1pdw__Nigeria__s0] step 1500/1500 loss 0.6519 (331s)
+5205.9s 279 [gpu1] ==> done loeo__S1pdw__Nigeria__s0 in 332s
+5225.9s 280 [gpu0] [loeo__S1pdw__Pakistan__s0] step 1500/1500 loss 0.6482 (332s)
+5225.9s 281 [gpu0] ==> done loeo__S1pdw__Pakistan__s0 in 333s
+5265.9s 282 [gpu1] [loeo__S1pdw__Paraguay__s0] step 250/1500 loss 1.3174 (56s)
+5285.9s 283 [gpu0] [loeo__S1pdw__Somalia__s0] step 250/1500 loss 1.3024 (55s)
+5325.9s 284 [gpu1] [loeo__S1pdw__Paraguay__s0] step 500/1500 loss 0.8700 (111s)
+5345.9s 285 [gpu0] [loeo__S1pdw__Somalia__s0] step 500/1500 loss 0.8496 (111s)
+5365.9s 286 [gpu1] [loeo__S1pdw__Paraguay__s0] step 750/1500 loss 0.7550 (167s)
+5385.9s 287 [gpu0] [loeo__S1pdw__Somalia__s0] step 750/1500 loss 0.7388 (166s)
+5425.9s 288 [gpu1] [loeo__S1pdw__Paraguay__s0] step 1000/1500 loss 0.6991 (222s)
+5445.9s 289 [gpu0] [loeo__S1pdw__Somalia__s0] step 1000/1500 loss 0.6947 (222s)
+5485.9s 290 [gpu1] [loeo__S1pdw__Paraguay__s0] step 1250/1500 loss 0.6688 (278s)
+5505.9s 291 [gpu0] [loeo__S1pdw__Somalia__s0] step 1250/1500 loss 0.6527 (277s)
+5545.9s 292 [gpu1] [loeo__S1pdw__Paraguay__s0] step 1500/1500 loss 0.6605 (333s)
+5545.9s 293 [gpu1] ==> done loeo__S1pdw__Paraguay__s0 in 335s
+5565.9s 294 [gpu0] [loeo__S1pdw__Somalia__s0] step 1500/1500 loss 0.6382 (333s)
+5565.9s 295 [gpu0] ==> done loeo__S1pdw__Somalia__s0 in 334s
+5605.9s 296 [gpu1] [loeo__S1pdw__Spain__s0] step 250/1500 loss 1.3017 (56s)
+5625.9s 297 [gpu0] [loeo__S1pdw__Sri-Lanka__s0] step 250/1500 loss 1.3178 (56s)
+5645.9s 298 [gpu1] [loeo__S1pdw__Spain__s0] step 500/1500 loss 0.8628 (112s)
+5665.9s 299 [gpu0] [loeo__S1pdw__Sri-Lanka__s0] step 500/1500 loss 0.8601 (112s)
+5705.9s 300 [gpu1] [loeo__S1pdw__Spain__s0] step 750/1500 loss 0.7546 (167s)
+5725.9s 301 [gpu0] [loeo__S1pdw__Sri-Lanka__s0] step 750/1500 loss 0.7555 (167s)
+5765.9s 302 [gpu1] [loeo__S1pdw__Spain__s0] step 1000/1500 loss 0.7183 (223s)
+5785.9s 303 [gpu0] [loeo__S1pdw__Sri-Lanka__s0] step 1000/1500 loss 0.7089 (223s)
+5825.9s 304 [gpu1] [loeo__S1pdw__Spain__s0] step 1250/1500 loss 0.6772 (279s)
+5845.9s 305 [gpu0] [loeo__S1pdw__Sri-Lanka__s0] step 1250/1500 loss 0.6652 (279s)
+5865.9s 306 [gpu1] [loeo__S1pdw__Spain__s0] step 1500/1500 loss 0.6726 (335s)
+5885.9s 307 [gpu0] [loeo__S1pdw__Sri-Lanka__s0] step 1500/1500 loss 0.6548 (335s)
+5885.9s 308 [gpu1] ==> done loeo__S1pdw__Spain__s0 in 336s
+5905.9s 309 [gpu0] ==> done loeo__S1pdw__Sri-Lanka__s0 in 336s
+5925.9s 310 [gpu1] [loeo__S1pdw__USA__s0] step 250/1500 loss 1.3155 (55s)
+5945.9s 311 [gpu0] [loeo__S1prefpdw__Bolivia__s0] step 250/1500 loss 1.3254 (56s)
+5985.9s 312 [gpu1] [loeo__S1pdw__USA__s0] step 500/1500 loss 0.8894 (110s)
+6005.9s 313 [gpu0] [loeo__S1prefpdw__Bolivia__s0] step 500/1500 loss 0.8531 (111s)
+6045.9s 314 [gpu1] [loeo__S1pdw__USA__s0] step 750/1500 loss 0.7943 (165s)
+6065.9s 315 [gpu0] [loeo__S1prefpdw__Bolivia__s0] step 750/1500 loss 0.7535 (167s)
+6105.9s 316 [gpu1] [loeo__S1pdw__USA__s0] step 1000/1500 loss 0.7576 (220s)
+6125.9s 317 [gpu0] [loeo__S1prefpdw__Bolivia__s0] step 1000/1500 loss 0.7020 (222s)
+6145.9s 318 [gpu1] [loeo__S1pdw__USA__s0] step 1250/1500 loss 0.7191 (275s)
+6165.9s 319 [gpu0] [loeo__S1prefpdw__Bolivia__s0] step 1250/1500 loss 0.6745 (278s)
+6205.9s 320 [gpu1] [loeo__S1pdw__USA__s0] step 1500/1500 loss 0.7107 (330s)
+6205.9s 321 [gpu1] ==> done loeo__S1pdw__USA__s0 in 333s
+6225.9s 322 [gpu0] [loeo__S1prefpdw__Bolivia__s0] step 1500/1500 loss 0.6503 (333s)
+6225.9s 323 [gpu0] ==> done loeo__S1prefpdw__Bolivia__s0 in 334s
+6265.9s 324 [gpu1] [loeo__S1prefpdw__Ghana__s0] step 250/1500 loss 1.3268 (56s)
+6285.9s 325 [gpu0] [loeo__S1prefpdw__India__s0] step 250/1500 loss 1.3141 (56s)
+6326.0s 326 [gpu1] [loeo__S1prefpdw__Ghana__s0] step 500/1500 loss 0.8566 (112s)
+6345.9s 327 [gpu0] [loeo__S1prefpdw__India__s0] step 500/1500 loss 0.8446 (112s)
+6386.0s 328 [gpu1] [loeo__S1prefpdw__Ghana__s0] step 750/1500 loss 0.7359 (167s)
+6405.9s 329 [gpu0] [loeo__S1prefpdw__India__s0] step 750/1500 loss 0.7319 (168s)
+6426.0s 330 [gpu1] [loeo__S1prefpdw__Ghana__s0] step 1000/1500 loss 0.6902 (223s)
+6445.9s 331 [gpu0] [loeo__S1prefpdw__India__s0] step 1000/1500 loss 0.6823 (224s)
+6486.0s 332 [gpu1] [loeo__S1prefpdw__Ghana__s0] step 1250/1500 loss 0.6644 (278s)
+6505.9s 333 [gpu0] [loeo__S1prefpdw__India__s0] step 1250/1500 loss 0.6557 (279s)
+6546.0s 334 [gpu1] [loeo__S1prefpdw__Ghana__s0] step 1500/1500 loss 0.6422 (334s)
+6546.0s 335 [gpu1] ==> done loeo__S1prefpdw__Ghana__s0 in 337s
+6565.9s 336 [gpu0] [loeo__S1prefpdw__India__s0] step 1500/1500 loss 0.6423 (335s)
+6565.9s 337 [gpu0] ==> done loeo__S1prefpdw__India__s0 in 338s
+6606.0s 338 [gpu1] [loeo__S1prefpdw__Mekong__s0] step 250/1500 loss 1.3269 (56s)
+6625.9s 339 [gpu0] [loeo__S1prefpdw__Nigeria__s0] step 250/1500 loss 1.3229 (56s)
+6666.0s 340 [gpu1] [loeo__S1prefpdw__Mekong__s0] step 500/1500 loss 0.8765 (112s)
+6685.9s 341 [gpu0] [loeo__S1prefpdw__Nigeria__s0] step 500/1500 loss 0.8705 (112s)
+6706.0s 342 [gpu1] [loeo__S1prefpdw__Mekong__s0] step 750/1500 loss 0.7591 (168s)
+6746.0s 343 [gpu0] [loeo__S1prefpdw__Nigeria__s0] step 750/1500 loss 0.7628 (168s)
+6766.0s 344 [gpu1] [loeo__S1prefpdw__Mekong__s0] step 1000/1500 loss 0.7182 (223s)
+6786.0s 345 [gpu0] [loeo__S1prefpdw__Nigeria__s0] step 1000/1500 loss 0.7105 (224s)
+6826.0s 346 [gpu1] [loeo__S1prefpdw__Mekong__s0] step 1250/1500 loss 0.6811 (279s)
+6846.0s 347 [gpu0] [loeo__S1prefpdw__Nigeria__s0] step 1250/1500 loss 0.6801 (280s)
+6886.0s 348 [gpu1] [loeo__S1prefpdw__Mekong__s0] step 1500/1500 loss 0.6657 (335s)
+6886.0s 349 [gpu1] ==> done loeo__S1prefpdw__Mekong__s0 in 337s
+6906.0s 350 [gpu0] [loeo__S1prefpdw__Nigeria__s0] step 1500/1500 loss 0.6550 (335s)
+6906.0s 351 [gpu0] ==> done loeo__S1prefpdw__Nigeria__s0 in 336s
+6946.0s 352 [gpu1] [loeo__S1prefpdw__Pakistan__s0] step 250/1500 loss 1.3002 (56s)
+6966.0s 353 [gpu0] [loeo__S1prefpdw__Paraguay__s0] step 250/1500 loss 1.3055 (56s)
+6986.0s 354 [gpu1] [loeo__S1prefpdw__Pakistan__s0] step 500/1500 loss 0.8563 (112s)
+7026.0s 355 [gpu0] [loeo__S1prefpdw__Paraguay__s0] step 500/1500 loss 0.8610 (112s)
+7046.0s 356 [gpu1] [loeo__S1prefpdw__Pakistan__s0] step 750/1500 loss 0.7372 (167s)
+7066.0s 357 [gpu0] [loeo__S1prefpdw__Paraguay__s0] step 750/1500 loss 0.7471 (168s)
+7106.0s 358 [gpu1] [loeo__S1prefpdw__Pakistan__s0] step 1000/1500 loss 0.6901 (223s)
+7126.0s 359 [gpu0] [loeo__S1prefpdw__Paraguay__s0] step 1000/1500 loss 0.6955 (224s)
+7166.0s 360 [gpu1] [loeo__S1prefpdw__Pakistan__s0] step 1250/1500 loss 0.6598 (279s)
+7186.0s 361 [gpu0] [loeo__S1prefpdw__Paraguay__s0] step 1250/1500 loss 0.6656 (280s)
+7226.0s 362 [gpu1] [loeo__S1prefpdw__Pakistan__s0] step 1500/1500 loss 0.6448 (335s)
+7226.0s 363 [gpu1] ==> done loeo__S1prefpdw__Pakistan__s0 in 336s
+7246.0s 364 [gpu0] [loeo__S1prefpdw__Paraguay__s0] step 1500/1500 loss 0.6605 (336s)
+7246.0s 365 [gpu0] ==> done loeo__S1prefpdw__Paraguay__s0 in 339s
+7266.0s 366 [gpu1] [loeo__S1prefpdw__Somalia__s0] step 250/1500 loss 1.2953 (56s)
+7306.0s 367 [gpu0] [loeo__S1prefpdw__Spain__s0] step 250/1500 loss 1.3073 (56s)
+7326.0s 368 [gpu1] [loeo__S1prefpdw__Somalia__s0] step 500/1500 loss 0.8649 (112s)
+7346.0s 369 [gpu0] [loeo__S1prefpdw__Spain__s0] step 500/1500 loss 0.8673 (112s)
+7386.0s 370 [gpu1] [loeo__S1prefpdw__Somalia__s0] step 750/1500 loss 0.7418 (167s)
+7406.0s 371 [gpu0] [loeo__S1prefpdw__Spain__s0] step 750/1500 loss 0.7507 (168s)
+7446.0s 372 [gpu1] [loeo__S1prefpdw__Somalia__s0] step 1000/1500 loss 0.6967 (223s)
+7466.0s 373 [gpu0] [loeo__S1prefpdw__Spain__s0] step 1000/1500 loss 0.7091 (224s)
+7506.0s 374 [gpu1] [loeo__S1prefpdw__Somalia__s0] step 1250/1500 loss 0.6568 (279s)
+7526.0s 375 [gpu0] [loeo__S1prefpdw__Spain__s0] step 1250/1500 loss 0.6691 (279s)
+7546.0s 376 [gpu1] [loeo__S1prefpdw__Somalia__s0] step 1500/1500 loss 0.6457 (335s)
+7546.0s 377 [gpu1] ==> done loeo__S1prefpdw__Somalia__s0 in 336s
+7586.0s 378 [gpu0] [loeo__S1prefpdw__Spain__s0] step 1500/1500 loss 0.6653 (336s)
+7586.0s 379 [gpu0] ==> done loeo__S1prefpdw__Spain__s0 in 337s
+7606.0s 380 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s0] step 250/1500 loss 1.3121 (56s)
+7646.0s 381 [gpu0] [loeo__S1prefpdw__USA__s0] step 250/1500 loss 1.3009 (56s)
+7666.0s 382 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s0] step 500/1500 loss 0.8531 (112s)
+7686.0s 383 [gpu0] [loeo__S1prefpdw__USA__s0] step 500/1500 loss 0.8809 (112s)
+7726.0s 384 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s0] step 750/1500 loss 0.7460 (168s)
+7746.0s 385 [gpu0] [loeo__S1prefpdw__USA__s0] step 750/1500 loss 0.7822 (168s)
+7786.0s 386 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s0] step 1000/1500 loss 0.7034 (223s)
+7806.0s 387 [gpu0] [loeo__S1prefpdw__USA__s0] step 1000/1500 loss 0.7404 (224s)
+7826.0s 388 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s0] step 1250/1500 loss 0.6575 (279s)
+7866.0s 389 [gpu0] [loeo__S1prefpdw__USA__s0] step 1250/1500 loss 0.7049 (280s)
+7886.0s 390 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s0] step 1500/1500 loss 0.6512 (335s)
+7886.0s 391 [gpu1] ==> done loeo__S1prefpdw__Sri-Lanka__s0 in 337s
+7906.0s 392 [gpu0] [loeo__S1prefpdw__USA__s0] step 1500/1500 loss 0.6973 (335s)
+7926.0s 393 [gpu0] ==> done loeo__S1prefpdw__USA__s0 in 338s
+7946.0s 394 [gpu1] [loeo__S1__Bolivia__s1] step 250/1500 loss 1.1509 (50s)
+7966.0s 395 [gpu0] [loeo__S1__Ghana__s1] step 250/1500 loss 1.1466 (50s)
+7986.0s 396 [gpu1] [loeo__S1__Bolivia__s1] step 500/1500 loss 0.8633 (100s)
+8026.0s 397 [gpu0] [loeo__S1__Ghana__s1] step 500/1500 loss 0.8507 (99s)
+8046.0s 398 [gpu1] [loeo__S1__Bolivia__s1] step 750/1500 loss 0.7779 (149s)
+8066.0s 399 [gpu0] [loeo__S1__Ghana__s1] step 750/1500 loss 0.7759 (149s)
+8086.0s 400 [gpu1] [loeo__S1__Bolivia__s1] step 1000/1500 loss 0.7433 (199s)
+8126.0s 401 [gpu0] [loeo__S1__Ghana__s1] step 1000/1500 loss 0.7275 (198s)
+8146.0s 402 [gpu1] [loeo__S1__Bolivia__s1] step 1250/1500 loss 0.7079 (248s)
+8166.0s 403 [gpu0] [loeo__S1__Ghana__s1] step 1250/1500 loss 0.6995 (248s)
+8186.0s 404 [gpu1] [loeo__S1__Bolivia__s1] step 1500/1500 loss 0.6957 (298s)
+8186.0s 405 [gpu1] ==> done loeo__S1__Bolivia__s1 in 298s
+8226.0s 406 [gpu0] [loeo__S1__Ghana__s1] step 1500/1500 loss 0.6848 (297s)
+8226.0s 407 [gpu0] ==> done loeo__S1__Ghana__s1 in 299s
+8246.0s 408 [gpu1] [loeo__S1__India__s1] step 250/1500 loss 1.1566 (50s)
+8266.0s 409 [gpu0] [loeo__S1__Mekong__s1] step 250/1500 loss 1.1653 (50s)
+8286.0s 410 [gpu1] [loeo__S1__India__s1] step 500/1500 loss 0.8688 (99s)
+8326.0s 411 [gpu0] [loeo__S1__Mekong__s1] step 500/1500 loss 0.8689 (99s)
+8346.0s 412 [gpu1] [loeo__S1__India__s1] step 750/1500 loss 0.7939 (149s)
+8366.0s 413 [gpu0] [loeo__S1__Mekong__s1] step 750/1500 loss 0.7998 (149s)
+8386.0s 414 [gpu1] [loeo__S1__India__s1] step 1000/1500 loss 0.7300 (198s)
+8406.0s 415 [gpu0] [loeo__S1__Mekong__s1] step 1000/1500 loss 0.7558 (198s)
+8446.0s 416 [gpu1] [loeo__S1__India__s1] step 1250/1500 loss 0.7043 (248s)
+8466.0s 417 [gpu0] [loeo__S1__Mekong__s1] step 1250/1500 loss 0.7199 (248s)
+8486.0s 418 [gpu1] [loeo__S1__India__s1] step 1500/1500 loss 0.6840 (297s)
+8486.0s 419 [gpu1] ==> done loeo__S1__India__s1 in 299s
+8506.0s 420 [gpu0] [loeo__S1__Mekong__s1] step 1500/1500 loss 0.7130 (298s)
+8506.0s 421 [gpu0] ==> done loeo__S1__Mekong__s1 in 298s
+8546.0s 422 [gpu1] [loeo__S1__Nigeria__s1] step 250/1500 loss 1.1513 (50s)
+8566.0s 423 [gpu0] [loeo__S1__Pakistan__s1] step 250/1500 loss 1.1352 (50s)
+8586.0s 424 [gpu1] [loeo__S1__Nigeria__s1] step 500/1500 loss 0.8654 (99s)
+8606.0s 425 [gpu0] [loeo__S1__Pakistan__s1] step 500/1500 loss 0.8479 (99s)
+8646.0s 426 [gpu1] [loeo__S1__Nigeria__s1] step 750/1500 loss 0.7857 (149s)
+8666.0s 427 [gpu0] [loeo__S1__Pakistan__s1] step 750/1500 loss 0.7665 (149s)
+8686.0s 428 [gpu1] [loeo__S1__Nigeria__s1] step 1000/1500 loss 0.7387 (198s)
+8706.0s 429 [gpu0] [loeo__S1__Pakistan__s1] step 1000/1500 loss 0.7172 (198s)
+8746.1s 430 [gpu1] [loeo__S1__Nigeria__s1] step 1250/1500 loss 0.7095 (248s)
+8766.0s 431 [gpu0] [loeo__S1__Pakistan__s1] step 1250/1500 loss 0.6912 (248s)
+8786.1s 432 [gpu1] [loeo__S1__Nigeria__s1] step 1500/1500 loss 0.6932 (297s)
+8786.1s 433 [gpu1] ==> done loeo__S1__Nigeria__s1 in 298s
+8806.0s 434 [gpu0] [loeo__S1__Pakistan__s1] step 1500/1500 loss 0.6742 (297s)
+8806.0s 435 [gpu0] ==> done loeo__S1__Pakistan__s1 in 298s
+8846.1s 436 [gpu1] [loeo__S1__Paraguay__s1] step 250/1500 loss 1.1577 (50s)
+8866.0s 437 [gpu0] [loeo__S1__Somalia__s1] step 250/1500 loss 1.1428 (50s)
+8886.1s 438 [gpu1] [loeo__S1__Paraguay__s1] step 500/1500 loss 0.8544 (99s)
+8906.0s 439 [gpu0] [loeo__S1__Somalia__s1] step 500/1500 loss 0.8453 (99s)
+8926.1s 440 [gpu1] [loeo__S1__Paraguay__s1] step 750/1500 loss 0.7833 (149s)
+8966.1s 441 [gpu0] [loeo__S1__Somalia__s1] step 750/1500 loss 0.7675 (149s)
+8986.0s 442 [gpu1] [loeo__S1__Paraguay__s1] step 1000/1500 loss 0.7311 (198s)
+9006.1s 443 [gpu0] [loeo__S1__Somalia__s1] step 1000/1500 loss 0.7160 (198s)
+9026.0s 444 [gpu1] [loeo__S1__Paraguay__s1] step 1250/1500 loss 0.7074 (248s)
+9066.1s 445 [gpu0] [loeo__S1__Somalia__s1] step 1250/1500 loss 0.6888 (248s)
+9086.0s 446 [gpu1] [loeo__S1__Paraguay__s1] step 1500/1500 loss 0.6862 (297s)
+9086.0s 447 [gpu1] ==> done loeo__S1__Paraguay__s1 in 299s
+9106.1s 448 [gpu0] [loeo__S1__Somalia__s1] step 1500/1500 loss 0.6677 (297s)
+9106.1s 449 [gpu0] ==> done loeo__S1__Somalia__s1 in 298s
+9126.0s 450 [gpu1] [loeo__S1__Spain__s1] step 250/1500 loss 1.1502 (49s)
+9166.1s 451 [gpu0] [loeo__S1__Sri-Lanka__s1] step 250/1500 loss 1.1543 (50s)
+9186.0s 452 [gpu1] [loeo__S1__Spain__s1] step 500/1500 loss 0.8700 (99s)
+9206.1s 453 [gpu0] [loeo__S1__Sri-Lanka__s1] step 500/1500 loss 0.8532 (99s)
+9226.0s 454 [gpu1] [loeo__S1__Spain__s1] step 750/1500 loss 0.7853 (148s)
+9266.1s 455 [gpu0] [loeo__S1__Sri-Lanka__s1] step 750/1500 loss 0.7729 (149s)
+9286.0s 456 [gpu1] [loeo__S1__Spain__s1] step 1000/1500 loss 0.7420 (198s)
+9306.1s 457 [gpu0] [loeo__S1__Sri-Lanka__s1] step 1000/1500 loss 0.7235 (198s)
+9326.0s 458 [gpu1] [loeo__S1__Spain__s1] step 1250/1500 loss 0.7068 (248s)
+9366.1s 459 [gpu0] [loeo__S1__Sri-Lanka__s1] step 1250/1500 loss 0.6970 (248s)
+9386.1s 460 [gpu1] [loeo__S1__Spain__s1] step 1500/1500 loss 0.6909 (297s)
+9386.1s 461 [gpu1] ==> done loeo__S1__Spain__s1 in 298s
+9406.1s 462 [gpu0] [loeo__S1__Sri-Lanka__s1] step 1500/1500 loss 0.6829 (298s)
+9406.1s 463 [gpu0] ==> done loeo__S1__Sri-Lanka__s1 in 299s
+9426.1s 464 [gpu1] [loeo__S1__USA__s1] step 250/1500 loss 1.1522 (50s)
+9466.1s 465 [gpu0] [loeo__S1pref__Bolivia__s1] step 250/1500 loss 1.1531 (53s)
+9486.1s 466 [gpu1] [loeo__S1__USA__s1] step 500/1500 loss 0.8756 (99s)
+9506.1s 467 [gpu0] [loeo__S1pref__Bolivia__s1] step 500/1500 loss 0.8549 (105s)
+9526.1s 468 [gpu1] [loeo__S1__USA__s1] step 750/1500 loss 0.8205 (149s)
+9566.1s 469 [gpu0] [loeo__S1pref__Bolivia__s1] step 750/1500 loss 0.7735 (157s)
+9586.1s 470 [gpu1] [loeo__S1__USA__s1] step 1000/1500 loss 0.7737 (199s)
+9626.1s 471 [gpu0] [loeo__S1pref__Bolivia__s1] step 1000/1500 loss 0.7337 (210s)
+9626.1s 472 [gpu1] [loeo__S1__USA__s1] step 1250/1500 loss 0.7502 (248s)
+9666.1s 473 [gpu0] [loeo__S1pref__Bolivia__s1] step 1250/1500 loss 0.6992 (262s)
+9686.1s 474 [gpu1] [loeo__S1__USA__s1] step 1500/1500 loss 0.7304 (298s)
+9686.1s 475 [gpu1] ==> done loeo__S1__USA__s1 in 299s
+9726.1s 476 [gpu0] [loeo__S1pref__Bolivia__s1] step 1500/1500 loss 0.6886 (314s)
+9726.1s 477 [gpu0] ==> done loeo__S1pref__Bolivia__s1 in 315s
+9726.1s 478 [gpu1] [loeo__S1pref__Ghana__s1] step 250/1500 loss 1.1521 (52s)
+9786.1s 479 [gpu0] [loeo__S1pref__India__s1] step 250/1500 loss 1.1508 (52s)
+9786.1s 480 [gpu1] [loeo__S1pref__Ghana__s1] step 500/1500 loss 0.8536 (105s)
+9826.1s 481 [gpu0] [loeo__S1pref__India__s1] step 500/1500 loss 0.8558 (105s)
+9846.1s 482 [gpu1] [loeo__S1pref__Ghana__s1] step 750/1500 loss 0.7757 (157s)
+9886.1s 483 [gpu0] [loeo__S1pref__India__s1] step 750/1500 loss 0.7728 (157s)
+9886.1s 484 [gpu1] [loeo__S1pref__Ghana__s1] step 1000/1500 loss 0.7252 (209s)
+9926.1s 485 [gpu0] [loeo__S1pref__India__s1] step 1000/1500 loss 0.7103 (209s)
+9946.1s 486 [gpu1] [loeo__S1pref__Ghana__s1] step 1250/1500 loss 0.6964 (261s)
+9986.1s 487 [gpu0] [loeo__S1pref__India__s1] step 1250/1500 loss 0.6847 (261s)
+10006.1s 488 [gpu1] [loeo__S1pref__Ghana__s1] step 1500/1500 loss 0.6807 (313s)
+10006.1s 489 [gpu1] ==> done loeo__S1pref__Ghana__s1 in 315s
+10046.1s 490 [gpu0] [loeo__S1pref__India__s1] step 1500/1500 loss 0.6621 (313s)
+10046.1s 491 [gpu0] ==> done loeo__S1pref__India__s1 in 315s
+10046.1s 492 [gpu1] [loeo__S1pref__Mekong__s1] step 250/1500 loss 1.1698 (52s)
+10086.1s 493 [gpu0] [loeo__S1pref__Nigeria__s1] step 250/1500 loss 1.1569 (52s)
+10106.1s 494 [gpu1] [loeo__S1pref__Mekong__s1] step 500/1500 loss 0.8642 (105s)
+10146.1s 495 [gpu0] [loeo__S1pref__Nigeria__s1] step 500/1500 loss 0.8615 (105s)
+10146.1s 496 [gpu1] [loeo__S1pref__Mekong__s1] step 750/1500 loss 0.7958 (157s)
+10206.1s 497 [gpu0] [loeo__S1pref__Nigeria__s1] step 750/1500 loss 0.7770 (157s)
+10206.1s 498 [gpu1] [loeo__S1pref__Mekong__s1] step 1000/1500 loss 0.7452 (209s)
+10246.1s 499 [gpu0] [loeo__S1pref__Nigeria__s1] step 1000/1500 loss 0.7290 (209s)
+10266.1s 500 [gpu1] [loeo__S1pref__Mekong__s1] step 1250/1500 loss 0.7081 (261s)
+10306.1s 501 [gpu0] [loeo__S1pref__Nigeria__s1] step 1250/1500 loss 0.6993 (261s)
+10306.1s 502 [gpu1] [loeo__S1pref__Mekong__s1] step 1500/1500 loss 0.7003 (314s)
+10306.1s 503 [gpu1] ==> done loeo__S1pref__Mekong__s1 in 315s
+10346.1s 504 [gpu0] [loeo__S1pref__Nigeria__s1] step 1500/1500 loss 0.6835 (314s)
+10346.1s 505 [gpu0] ==> done loeo__S1pref__Nigeria__s1 in 315s
+10366.1s 506 [gpu1] [loeo__S1pref__Pakistan__s1] step 250/1500 loss 1.1383 (52s)
+10406.1s 507 [gpu0] [loeo__S1pref__Paraguay__s1] step 250/1500 loss 1.1542 (53s)
+10426.1s 508 [gpu1] [loeo__S1pref__Pakistan__s1] step 500/1500 loss 0.8500 (105s)
+10466.1s 509 [gpu0] [loeo__S1pref__Paraguay__s1] step 500/1500 loss 0.8531 (105s)
+10466.1s 510 [gpu1] [loeo__S1pref__Pakistan__s1] step 750/1500 loss 0.7644 (157s)
+10506.1s 511 [gpu0] [loeo__S1pref__Paraguay__s1] step 750/1500 loss 0.7718 (157s)
+10526.1s 512 [gpu1] [loeo__S1pref__Pakistan__s1] step 1000/1500 loss 0.7126 (209s)
+10566.1s 513 [gpu0] [loeo__S1pref__Paraguay__s1] step 1000/1500 loss 0.7156 (209s)
+10566.1s 514 [gpu1] [loeo__S1pref__Pakistan__s1] step 1250/1500 loss 0.6812 (261s)
+10626.1s 515 [gpu0] [loeo__S1pref__Paraguay__s1] step 1250/1500 loss 0.6966 (262s)
+10626.1s 516 [gpu1] [loeo__S1pref__Pakistan__s1] step 1500/1500 loss 0.6503 (314s)
+10626.1s 517 [gpu1] ==> done loeo__S1pref__Pakistan__s1 in 315s
+10666.1s 518 [gpu0] [loeo__S1pref__Paraguay__s1] step 1500/1500 loss 0.6805 (314s)
+10666.1s 519 [gpu0] ==> done loeo__S1pref__Paraguay__s1 in 316s
+10686.1s 520 [gpu1] [loeo__S1pref__Somalia__s1] step 250/1500 loss 1.1470 (52s)
+10726.1s 521 [gpu0] [loeo__S1pref__Spain__s1] step 250/1500 loss 1.1541 (53s)
+10726.1s 522 [gpu1] [loeo__S1pref__Somalia__s1] step 500/1500 loss 0.8340 (105s)
+10766.1s 523 [gpu0] [loeo__S1pref__Spain__s1] step 500/1500 loss 0.8623 (105s)
+10786.1s 524 [gpu1] [loeo__S1pref__Somalia__s1] step 750/1500 loss 0.7594 (157s)
+10826.1s 525 [gpu0] [loeo__S1pref__Spain__s1] step 750/1500 loss 0.7880 (157s)
+10846.1s 526 [gpu1] [loeo__S1pref__Somalia__s1] step 1000/1500 loss 0.7072 (209s)
+10886.1s 527 [gpu0] [loeo__S1pref__Spain__s1] step 1000/1500 loss 0.7435 (209s)
+10886.1s 528 [gpu1] [loeo__S1pref__Somalia__s1] step 1250/1500 loss 0.6805 (262s)
+10926.1s 529 [gpu0] [loeo__S1pref__Spain__s1] step 1250/1500 loss 0.7092 (262s)
+10946.1s 530 [gpu1] [loeo__S1pref__Somalia__s1] step 1500/1500 loss 0.6591 (314s)
+10946.1s 531 [gpu1] ==> done loeo__S1pref__Somalia__s1 in 315s
+10986.1s 532 [gpu0] [loeo__S1pref__Spain__s1] step 1500/1500 loss 0.6895 (314s)
+10986.1s 533 [gpu0] ==> done loeo__S1pref__Spain__s1 in 315s
+10986.1s 534 [gpu1] [loeo__S1pref__Sri-Lanka__s1] step 250/1500 loss 1.1560 (53s)
+11046.1s 535 [gpu0] [loeo__S1pref__USA__s1] step 250/1500 loss 1.1463 (53s)
+11046.1s 536 [gpu1] [loeo__S1pref__Sri-Lanka__s1] step 500/1500 loss 0.8528 (105s)
+11086.1s 537 [gpu0] [loeo__S1pref__USA__s1] step 500/1500 loss 0.8724 (105s)
+11106.1s 538 [gpu1] [loeo__S1pref__Sri-Lanka__s1] step 750/1500 loss 0.7666 (157s)
+11146.1s 539 [gpu0] [loeo__S1pref__USA__s1] step 750/1500 loss 0.8047 (157s)
+11146.1s 540 [gpu1] [loeo__S1pref__Sri-Lanka__s1] step 1000/1500 loss 0.7158 (210s)
+11206.1s 541 [gpu0] [loeo__S1pref__USA__s1] step 1000/1500 loss 0.7590 (210s)
+11206.1s 542 [gpu1] [loeo__S1pref__Sri-Lanka__s1] step 1250/1500 loss 0.6902 (262s)
+11246.1s 543 [gpu0] [loeo__S1pref__USA__s1] step 1250/1500 loss 0.7334 (262s)
+11266.1s 544 [gpu1] [loeo__S1pref__Sri-Lanka__s1] step 1500/1500 loss 0.6735 (315s)
+11266.1s 545 [gpu1] ==> done loeo__S1pref__Sri-Lanka__s1 in 316s
+11306.1s 546 [gpu0] [loeo__S1pref__USA__s1] step 1500/1500 loss 0.7155 (315s)
+11306.1s 547 [gpu0] ==> done loeo__S1pref__USA__s1 in 317s
+11306.1s 548 [gpu1] [loeo__S1pdw__Bolivia__s1] step 250/1500 loss 1.1214 (55s)
+11366.1s 549 [gpu0] [loeo__S1pdw__Ghana__s1] step 250/1500 loss 1.1307 (56s)
+11366.1s 550 [gpu1] [loeo__S1pdw__Bolivia__s1] step 500/1500 loss 0.8237 (111s)
+11406.1s 551 [gpu0] [loeo__S1pdw__Ghana__s1] step 500/1500 loss 0.8131 (112s)
+11426.1s 552 [gpu1] [loeo__S1pdw__Bolivia__s1] step 750/1500 loss 0.7325 (166s)
+11466.1s 553 [gpu0] [loeo__S1pdw__Ghana__s1] step 750/1500 loss 0.7325 (167s)
+11486.1s 554 [gpu1] [loeo__S1pdw__Bolivia__s1] step 1000/1500 loss 0.6967 (221s)
+11526.1s 555 [gpu0] [loeo__S1pdw__Ghana__s1] step 1000/1500 loss 0.6836 (222s)
+11526.1s 556 [gpu1] [loeo__S1pdw__Bolivia__s1] step 1250/1500 loss 0.6586 (277s)
+11586.1s 557 [gpu0] [loeo__S1pdw__Ghana__s1] step 1250/1500 loss 0.6497 (278s)
+11586.1s 558 [gpu1] [loeo__S1pdw__Bolivia__s1] step 1500/1500 loss 0.6522 (332s)
+11586.1s 559 [gpu1] ==> done loeo__S1pdw__Bolivia__s1 in 333s
+11646.1s 560 [gpu0] [loeo__S1pdw__Ghana__s1] step 1500/1500 loss 0.6203 (334s)
+11646.1s 561 [gpu0] ==> done loeo__S1pdw__Ghana__s1 in 336s
+11646.1s 562 [gpu1] [loeo__S1pdw__India__s1] step 250/1500 loss 1.1301 (56s)
+11686.2s 563 [gpu0] [loeo__S1pdw__Mekong__s1] step 250/1500 loss 1.1448 (55s)
+11706.1s 564 [gpu1] [loeo__S1pdw__India__s1] step 500/1500 loss 0.8193 (111s)
+11746.1s 565 [gpu0] [loeo__S1pdw__Mekong__s1] step 500/1500 loss 0.8315 (111s)
+11766.1s 566 [gpu1] [loeo__S1pdw__India__s1] step 750/1500 loss 0.7345 (167s)
+11806.1s 567 [gpu0] [loeo__S1pdw__Mekong__s1] step 750/1500 loss 0.7568 (166s)
+11806.1s 568 [gpu1] [loeo__S1pdw__India__s1] step 1000/1500 loss 0.6743 (222s)
+11866.2s 569 [gpu0] [loeo__S1pdw__Mekong__s1] step 1000/1500 loss 0.7111 (222s)
+11866.2s 570 [gpu1] [loeo__S1pdw__India__s1] step 1250/1500 loss 0.6455 (278s)
+11926.2s 571 [gpu0] [loeo__S1pdw__Mekong__s1] step 1250/1500 loss 0.6750 (277s)
+11926.2s 572 [gpu1] [loeo__S1pdw__India__s1] step 1500/1500 loss 0.6157 (333s)
+11926.2s 573 [gpu1] ==> done loeo__S1pdw__India__s1 in 335s
+11966.2s 574 [gpu0] [loeo__S1pdw__Mekong__s1] step 1500/1500 loss 0.6685 (333s)
+11966.2s 575 [gpu0] ==> done loeo__S1pdw__Mekong__s1 in 334s
+11986.1s 576 [gpu1] [loeo__S1pdw__Nigeria__s1] step 250/1500 loss 1.1380 (56s)
+12026.2s 577 [gpu0] [loeo__S1pdw__Pakistan__s1] step 250/1500 loss 1.1224 (56s)
+12046.1s 578 [gpu1] [loeo__S1pdw__Nigeria__s1] step 500/1500 loss 0.8232 (111s)
+12086.2s 579 [gpu0] [loeo__S1pdw__Pakistan__s1] step 500/1500 loss 0.8164 (111s)
+12086.2s 580 [gpu1] [loeo__S1pdw__Nigeria__s1] step 750/1500 loss 0.7379 (167s)
+12146.2s 581 [gpu0] [loeo__S1pdw__Pakistan__s1] step 750/1500 loss 0.7404 (166s)
+12146.2s 582 [gpu1] [loeo__S1pdw__Nigeria__s1] step 1000/1500 loss 0.6893 (222s)
+12186.2s 583 [gpu0] [loeo__S1pdw__Pakistan__s1] step 1000/1500 loss 0.6794 (222s)
+12206.1s 584 [gpu1] [loeo__S1pdw__Nigeria__s1] step 1250/1500 loss 0.6573 (278s)
+12246.2s 585 [gpu0] [loeo__S1pdw__Pakistan__s1] step 1250/1500 loss 0.6537 (278s)
+12266.1s 586 [gpu1] [loeo__S1pdw__Nigeria__s1] step 1500/1500 loss 0.6364 (333s)
+12266.1s 587 [gpu1] ==> done loeo__S1pdw__Nigeria__s1 in 334s
+12306.2s 588 [gpu0] [loeo__S1pdw__Pakistan__s1] step 1500/1500 loss 0.6316 (333s)
+12306.2s 589 [gpu0] ==> done loeo__S1pdw__Pakistan__s1 in 335s
+12326.1s 590 [gpu1] [loeo__S1pdw__Paraguay__s1] step 250/1500 loss 1.1335 (56s)
+12366.2s 591 [gpu0] [loeo__S1pdw__Somalia__s1] step 250/1500 loss 1.1252 (55s)
+12366.2s 592 [gpu1] [loeo__S1pdw__Paraguay__s1] step 500/1500 loss 0.8128 (111s)
+12426.2s 593 [gpu0] [loeo__S1pdw__Somalia__s1] step 500/1500 loss 0.8032 (111s)
+12426.2s 594 [gpu1] [loeo__S1pdw__Paraguay__s1] step 750/1500 loss 0.7335 (166s)
+12466.2s 595 [gpu0] [loeo__S1pdw__Somalia__s1] step 750/1500 loss 0.7232 (166s)
+12486.2s 596 [gpu1] [loeo__S1pdw__Paraguay__s1] step 1000/1500 loss 0.6785 (221s)
+12526.2s 597 [gpu0] [loeo__S1pdw__Somalia__s1] step 1000/1500 loss 0.6643 (221s)
+12546.2s 598 [gpu1] [loeo__S1pdw__Paraguay__s1] step 1250/1500 loss 0.6509 (277s)
+12586.2s 599 [gpu0] [loeo__S1pdw__Somalia__s1] step 1250/1500 loss 0.6403 (277s)
+12586.2s 600 [gpu1] [loeo__S1pdw__Paraguay__s1] step 1500/1500 loss 0.6195 (333s)
+12586.2s 601 [gpu1] ==> done loeo__S1pdw__Paraguay__s1 in 335s
+12646.2s 602 [gpu0] [loeo__S1pdw__Somalia__s1] step 1500/1500 loss 0.6006 (333s)
+12646.2s 603 [gpu0] ==> done loeo__S1pdw__Somalia__s1 in 335s
+12646.2s 604 [gpu1] [loeo__S1pdw__Spain__s1] step 250/1500 loss 1.1291 (56s)
+12706.2s 605 [gpu0] [loeo__S1pdw__Sri-Lanka__s1] step 250/1500 loss 1.1321 (56s)
+12706.2s 606 [gpu1] [loeo__S1pdw__Spain__s1] step 500/1500 loss 0.8234 (112s)
+12746.2s 607 [gpu0] [loeo__S1pdw__Sri-Lanka__s1] step 500/1500 loss 0.8165 (111s)
+12766.2s 608 [gpu1] [loeo__S1pdw__Spain__s1] step 750/1500 loss 0.7425 (167s)
+12806.2s 609 [gpu0] [loeo__S1pdw__Sri-Lanka__s1] step 750/1500 loss 0.7387 (167s)
+12826.2s 610 [gpu1] [loeo__S1pdw__Spain__s1] step 1000/1500 loss 0.6911 (223s)
+12866.2s 611 [gpu0] [loeo__S1pdw__Sri-Lanka__s1] step 1000/1500 loss 0.6824 (222s)
+12866.2s 612 [gpu1] [loeo__S1pdw__Spain__s1] step 1250/1500 loss 0.6613 (278s)
+12926.2s 613 [gpu0] [loeo__S1pdw__Sri-Lanka__s1] step 1250/1500 loss 0.6569 (277s)
+12926.2s 614 [gpu1] [loeo__S1pdw__Spain__s1] step 1500/1500 loss 0.6432 (333s)
+12926.2s 615 [gpu1] ==> done loeo__S1pdw__Spain__s1 in 334s
+12966.2s 616 [gpu0] [loeo__S1pdw__Sri-Lanka__s1] step 1500/1500 loss 0.6362 (333s)
+12986.2s 617 [gpu0] ==> done loeo__S1pdw__Sri-Lanka__s1 in 335s
+12986.2s 618 [gpu1] [loeo__S1pdw__USA__s1] step 250/1500 loss 1.1254 (56s)
+13026.2s 619 [gpu0] [loeo__S1prefpdw__Bolivia__s1] step 250/1500 loss 1.1331 (56s)
+13046.2s 620 [gpu1] [loeo__S1pdw__USA__s1] step 500/1500 loss 0.8405 (110s)
+13086.2s 621 [gpu0] [loeo__S1prefpdw__Bolivia__s1] step 500/1500 loss 0.8128 (111s)
+13086.2s 622 [gpu1] [loeo__S1pdw__USA__s1] step 750/1500 loss 0.7869 (165s)
+13146.2s 623 [gpu0] [loeo__S1prefpdw__Bolivia__s1] step 750/1500 loss 0.7263 (167s)
+13146.2s 624 [gpu1] [loeo__S1pdw__USA__s1] step 1000/1500 loss 0.7321 (220s)
+13206.2s 625 [gpu0] [loeo__S1prefpdw__Bolivia__s1] step 1000/1500 loss 0.6873 (222s)
+13206.2s 626 [gpu1] [loeo__S1pdw__USA__s1] step 1250/1500 loss 0.7067 (275s)
+13246.2s 627 [gpu0] [loeo__S1prefpdw__Bolivia__s1] step 1250/1500 loss 0.6454 (278s)
+13266.2s 628 [gpu1] [loeo__S1pdw__USA__s1] step 1500/1500 loss 0.6926 (330s)
+13266.2s 629 [gpu1] ==> done loeo__S1pdw__USA__s1 in 333s
+13306.2s 630 [gpu0] [loeo__S1prefpdw__Bolivia__s1] step 1500/1500 loss 0.6155 (334s)
+13306.2s 631 [gpu0] ==> done loeo__S1prefpdw__Bolivia__s1 in 335s
+13326.2s 632 [gpu1] [loeo__S1prefpdw__Ghana__s1] step 250/1500 loss 1.1320 (56s)
+13366.2s 633 [gpu0] [loeo__S1prefpdw__India__s1] step 250/1500 loss 1.1382 (56s)
+13366.2s 634 [gpu1] [loeo__S1prefpdw__Ghana__s1] step 500/1500 loss 0.8149 (112s)
+13426.2s 635 [gpu0] [loeo__S1prefpdw__India__s1] step 500/1500 loss 0.8157 (112s)
+13426.2s 636 [gpu1] [loeo__S1prefpdw__Ghana__s1] step 750/1500 loss 0.7296 (168s)
+13486.2s 637 [gpu0] [loeo__S1prefpdw__India__s1] step 750/1500 loss 0.7280 (168s)
+13486.2s 638 [gpu1] [loeo__S1prefpdw__Ghana__s1] step 1000/1500 loss 0.6753 (223s)
+13526.2s 639 [gpu0] [loeo__S1prefpdw__India__s1] step 1000/1500 loss 0.6715 (224s)
+13546.2s 640 [gpu1] [loeo__S1prefpdw__Ghana__s1] step 1250/1500 loss 0.6362 (279s)
+13586.2s 641 [gpu0] [loeo__S1prefpdw__India__s1] step 1250/1500 loss 0.6483 (280s)
+13606.2s 642 [gpu1] [loeo__S1prefpdw__Ghana__s1] step 1500/1500 loss 0.6012 (334s)
+13606.2s 643 [gpu1] ==> done loeo__S1prefpdw__Ghana__s1 in 338s
+13646.2s 644 [gpu0] [loeo__S1prefpdw__India__s1] step 1500/1500 loss 0.6289 (336s)
+13646.2s 645 [gpu0] ==> done loeo__S1prefpdw__India__s1 in 339s
+13666.2s 646 [gpu1] [loeo__S1prefpdw__Mekong__s1] step 250/1500 loss 1.1515 (56s)
+13706.2s 647 [gpu0] [loeo__S1prefpdw__Nigeria__s1] step 250/1500 loss 1.1394 (56s)
+13706.2s 648 [gpu1] [loeo__S1prefpdw__Mekong__s1] step 500/1500 loss 0.8231 (112s)
+13766.2s 649 [gpu0] [loeo__S1prefpdw__Nigeria__s1] step 500/1500 loss 0.8149 (112s)
+13766.2s 650 [gpu1] [loeo__S1prefpdw__Mekong__s1] step 750/1500 loss 0.7398 (167s)
+13826.2s 651 [gpu0] [loeo__S1prefpdw__Nigeria__s1] step 750/1500 loss 0.7337 (168s)
+13826.2s 652 [gpu1] [loeo__S1prefpdw__Mekong__s1] step 1000/1500 loss 0.6988 (223s)
+13866.3s 653 [gpu0] [loeo__S1prefpdw__Nigeria__s1] step 1000/1500 loss 0.6875 (224s)
+13886.2s 654 [gpu1] [loeo__S1prefpdw__Mekong__s1] step 1250/1500 loss 0.6536 (279s)
+13926.2s 655 [gpu0] [loeo__S1prefpdw__Nigeria__s1] step 1250/1500 loss 0.6573 (280s)
+13926.2s 656 [gpu1] [loeo__S1prefpdw__Mekong__s1] step 1500/1500 loss 0.6250 (335s)
+13946.2s 657 [gpu1] ==> done loeo__S1prefpdw__Mekong__s1 in 336s
+13986.3s 658 [gpu0] [loeo__S1prefpdw__Nigeria__s1] step 1500/1500 loss 0.6384 (336s)
+13986.3s 659 [gpu0] ==> done loeo__S1prefpdw__Nigeria__s1 in 337s
+13986.3s 660 [gpu1] [loeo__S1prefpdw__Pakistan__s1] step 250/1500 loss 1.1242 (56s)
+14046.2s 661 [gpu0] [loeo__S1prefpdw__Paraguay__s1] step 250/1500 loss 1.1424 (56s)
+14046.2s 662 [gpu1] [loeo__S1prefpdw__Pakistan__s1] step 500/1500 loss 0.8063 (112s)
+14106.2s 663 [gpu0] [loeo__S1prefpdw__Paraguay__s1] step 500/1500 loss 0.8093 (112s)
+14106.2s 664 [gpu1] [loeo__S1prefpdw__Pakistan__s1] step 750/1500 loss 0.7238 (167s)
+14146.3s 665 [gpu0] [loeo__S1prefpdw__Paraguay__s1] step 750/1500 loss 0.7240 (168s)
+14166.2s 666 [gpu1] [loeo__S1prefpdw__Pakistan__s1] step 1000/1500 loss 0.6710 (223s)
+14206.3s 667 [gpu0] [loeo__S1prefpdw__Paraguay__s1] step 1000/1500 loss 0.6718 (224s)
+14206.3s 668 [gpu1] [loeo__S1prefpdw__Pakistan__s1] step 1250/1500 loss 0.6433 (279s)
+14266.3s 669 [gpu0] [loeo__S1prefpdw__Paraguay__s1] step 1250/1500 loss 0.6401 (280s)
+14266.3s 670 [gpu1] [loeo__S1prefpdw__Pakistan__s1] step 1500/1500 loss 0.6087 (335s)
+14266.3s 671 [gpu1] ==> done loeo__S1prefpdw__Pakistan__s1 in 336s
+14326.3s 672 [gpu0] [loeo__S1prefpdw__Paraguay__s1] step 1500/1500 loss 0.6180 (336s)
+14326.3s 673 [gpu0] ==> done loeo__S1prefpdw__Paraguay__s1 in 339s
+14326.3s 674 [gpu1] [loeo__S1prefpdw__Somalia__s1] step 250/1500 loss 1.1360 (56s)
+14386.3s 675 [gpu0] [loeo__S1prefpdw__Spain__s1] step 250/1500 loss 1.1410 (56s)
+14386.3s 676 [gpu1] [loeo__S1prefpdw__Somalia__s1] step 500/1500 loss 0.8020 (112s)
+14446.3s 677 [gpu0] [loeo__S1prefpdw__Spain__s1] step 500/1500 loss 0.8241 (112s)
+14446.3s 678 [gpu1] [loeo__S1prefpdw__Somalia__s1] step 750/1500 loss 0.7192 (168s)
+14486.3s 679 [gpu0] [loeo__S1prefpdw__Spain__s1] step 750/1500 loss 0.7411 (168s)
+14506.2s 680 [gpu1] [loeo__S1prefpdw__Somalia__s1] step 1000/1500 loss 0.6631 (224s)
+14546.3s 681 [gpu0] [loeo__S1prefpdw__Spain__s1] step 1000/1500 loss 0.6965 (224s)
+14546.3s 682 [gpu1] [loeo__S1prefpdw__Somalia__s1] step 1250/1500 loss 0.6336 (280s)
+14606.3s 683 [gpu0] [loeo__S1prefpdw__Spain__s1] step 1250/1500 loss 0.6575 (280s)
+14606.3s 684 [gpu1] [loeo__S1prefpdw__Somalia__s1] step 1500/1500 loss 0.5868 (335s)
+14606.3s 685 [gpu1] ==> done loeo__S1prefpdw__Somalia__s1 in 337s
+14666.3s 686 [gpu0] [loeo__S1prefpdw__Spain__s1] step 1500/1500 loss 0.6189 (336s)
+14666.3s 687 [gpu0] ==> done loeo__S1prefpdw__Spain__s1 in 337s
+14666.3s 688 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s1] step 250/1500 loss 1.1435 (56s)
+14726.3s 689 [gpu0] [loeo__S1prefpdw__USA__s1] step 250/1500 loss 1.1320 (56s)
+14726.3s 690 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s1] step 500/1500 loss 0.8159 (112s)
+14766.3s 691 [gpu0] [loeo__S1prefpdw__USA__s1] step 500/1500 loss 0.8409 (112s)
+14786.2s 692 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s1] step 750/1500 loss 0.7267 (168s)
+14826.3s 693 [gpu0] [loeo__S1prefpdw__USA__s1] step 750/1500 loss 0.7809 (168s)
+14826.3s 694 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s1] step 1000/1500 loss 0.6736 (223s)
+14886.3s 695 [gpu0] [loeo__S1prefpdw__USA__s1] step 1000/1500 loss 0.7285 (224s)
+14886.3s 696 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s1] step 1250/1500 loss 0.6441 (279s)
+14946.3s 697 [gpu0] [loeo__S1prefpdw__USA__s1] step 1250/1500 loss 0.7049 (280s)
+14946.3s 698 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s1] step 1500/1500 loss 0.6165 (335s)
+14946.3s 699 [gpu1] ==> done loeo__S1prefpdw__Sri-Lanka__s1 in 337s
+15006.3s 700 [gpu0] [loeo__S1prefpdw__USA__s1] step 1500/1500 loss 0.6790 (335s)
+15006.3s 701 [gpu0] ==> done loeo__S1prefpdw__USA__s1 in 338s
+15006.3s 702 [gpu1] [loeo__S1__Bolivia__s2] step 250/1500 loss 1.1354 (50s)
+15046.3s 703 [gpu0] [loeo__S1__Ghana__s2] step 250/1500 loss 1.1218 (49s)
+15046.3s 704 [gpu1] [loeo__S1__Bolivia__s2] step 500/1500 loss 0.8303 (100s)
+15086.3s 705 [gpu1] [loeo__S1__Bolivia__s2] step 750/1500 loss 0.7776 (149s)
+15106.3s 706 [gpu0] [loeo__S1__Ghana__s2] step 500/1500 loss 0.8199 (99s)
+15146.3s 707 [gpu0] [loeo__S1__Ghana__s2] step 750/1500 loss 0.7622 (148s)
+15146.3s 708 [gpu1] [loeo__S1__Bolivia__s2] step 1000/1500 loss 0.7246 (199s)
+15186.3s 709 [gpu1] [loeo__S1__Bolivia__s2] step 1250/1500 loss 0.6733 (248s)
+15206.3s 710 [gpu0] [loeo__S1__Ghana__s2] step 1000/1500 loss 0.7255 (198s)
+15246.3s 711 [gpu0] [loeo__S1__Ghana__s2] step 1250/1500 loss 0.6941 (248s)
+15246.3s 712 [gpu1] [loeo__S1__Bolivia__s2] step 1500/1500 loss 0.6402 (298s)
+15246.3s 713 [gpu1] ==> done loeo__S1__Bolivia__s2 in 299s
+15286.3s 714 [gpu1] [loeo__S1__India__s2] step 250/1500 loss 1.1283 (50s)
+15306.3s 715 [gpu0] [loeo__S1__Ghana__s2] step 1500/1500 loss 0.6862 (297s)
+15306.3s 716 [gpu0] ==> done loeo__S1__Ghana__s2 in 299s
+15346.3s 717 [gpu0] [loeo__S1__Mekong__s2] step 250/1500 loss 1.1507 (50s)
+15346.3s 718 [gpu1] [loeo__S1__India__s2] step 500/1500 loss 0.8179 (99s)
+15386.3s 719 [gpu1] [loeo__S1__India__s2] step 750/1500 loss 0.7577 (149s)
+15406.3s 720 [gpu0] [loeo__S1__Mekong__s2] step 500/1500 loss 0.8426 (99s)
+15446.3s 721 [gpu0] [loeo__S1__Mekong__s2] step 750/1500 loss 0.7822 (149s)
+15446.3s 722 [gpu1] [loeo__S1__India__s2] step 1000/1500 loss 0.7115 (198s)
+15486.3s 723 [gpu1] [loeo__S1__India__s2] step 1250/1500 loss 0.6605 (248s)
+15506.3s 724 [gpu0] [loeo__S1__Mekong__s2] step 1000/1500 loss 0.7505 (199s)
+15546.3s 725 [gpu0] [loeo__S1__Mekong__s2] step 1250/1500 loss 0.6815 (248s)
+15546.3s 726 [gpu1] [loeo__S1__India__s2] step 1500/1500 loss 0.6147 (298s)
+15546.3s 727 [gpu1] ==> done loeo__S1__India__s2 in 299s
+15586.3s 728 [gpu1] [loeo__S1__Nigeria__s2] step 250/1500 loss 1.1277 (50s)
+15606.3s 729 [gpu0] [loeo__S1__Mekong__s2] step 1500/1500 loss 0.6498 (298s)
+15606.3s 730 [gpu0] ==> done loeo__S1__Mekong__s2 in 299s
+15646.3s 731 [gpu0] [loeo__S1__Pakistan__s2] step 250/1500 loss 1.1205 (50s)
+15646.3s 732 [gpu1] [loeo__S1__Nigeria__s2] step 500/1500 loss 0.8322 (100s)
+15686.3s 733 [gpu1] [loeo__S1__Nigeria__s2] step 750/1500 loss 0.7678 (149s)
+15706.3s 734 [gpu0] [loeo__S1__Pakistan__s2] step 500/1500 loss 0.8138 (100s)
+15746.3s 735 [gpu0] [loeo__S1__Pakistan__s2] step 750/1500 loss 0.7613 (149s)
+15746.3s 736 [gpu1] [loeo__S1__Nigeria__s2] step 1000/1500 loss 0.7339 (199s)
+15786.3s 737 [gpu1] [loeo__S1__Nigeria__s2] step 1250/1500 loss 0.6875 (249s)
+15806.3s 738 [gpu0] [loeo__S1__Pakistan__s2] step 1000/1500 loss 0.7225 (199s)
+15846.3s 739 [gpu0] [loeo__S1__Pakistan__s2] step 1250/1500 loss 0.6747 (249s)
+15846.3s 740 [gpu1] [loeo__S1__Nigeria__s2] step 1500/1500 loss 0.6443 (299s)
+15846.3s 741 [gpu1] ==> done loeo__S1__Nigeria__s2 in 299s
+15886.3s 742 [gpu1] [loeo__S1__Paraguay__s2] step 250/1500 loss 1.1351 (50s)
+15906.3s 743 [gpu0] [loeo__S1__Pakistan__s2] step 1500/1500 loss 0.6347 (299s)
+15906.3s 744 [gpu0] ==> done loeo__S1__Pakistan__s2 in 299s
+15946.3s 745 [gpu0] [loeo__S1__Somalia__s2] step 250/1500 loss 1.1227 (50s)
+15946.3s 746 [gpu1] [loeo__S1__Paraguay__s2] step 500/1500 loss 0.8388 (99s)
+15986.3s 747 [gpu1] [loeo__S1__Paraguay__s2] step 750/1500 loss 0.7846 (149s)
+16006.3s 748 [gpu0] [loeo__S1__Somalia__s2] step 500/1500 loss 0.8162 (100s)
+16046.3s 749 [gpu0] [loeo__S1__Somalia__s2] step 750/1500 loss 0.7680 (149s)
+16046.3s 750 [gpu1] [loeo__S1__Paraguay__s2] step 1000/1500 loss 0.7338 (198s)
+16086.3s 751 [gpu1] [loeo__S1__Paraguay__s2] step 1250/1500 loss 0.6994 (248s)
+16106.3s 752 [gpu0] [loeo__S1__Somalia__s2] step 1000/1500 loss 0.7177 (199s)
+16146.3s 753 [gpu0] [loeo__S1__Somalia__s2] step 1250/1500 loss 0.6916 (249s)
+16146.3s 754 [gpu1] [loeo__S1__Paraguay__s2] step 1500/1500 loss 0.6583 (298s)
+16146.3s 755 [gpu1] ==> done loeo__S1__Paraguay__s2 in 299s
+16186.3s 756 [gpu1] [loeo__S1__Spain__s2] step 250/1500 loss 1.1279 (50s)
+16206.3s 757 [gpu0] [loeo__S1__Somalia__s2] step 1500/1500 loss 0.6736 (299s)
+16206.3s 758 [gpu0] ==> done loeo__S1__Somalia__s2 in 299s
+16246.3s 759 [gpu0] [loeo__S1__Sri-Lanka__s2] step 250/1500 loss 1.1122 (50s)
+16246.3s 760 [gpu1] [loeo__S1__Spain__s2] step 500/1500 loss 0.8314 (99s)
+16286.3s 761 [gpu1] [loeo__S1__Spain__s2] step 750/1500 loss 0.7705 (149s)
+16306.3s 762 [gpu0] [loeo__S1__Sri-Lanka__s2] step 500/1500 loss 0.8156 (100s)
+16346.3s 763 [gpu0] [loeo__S1__Sri-Lanka__s2] step 750/1500 loss 0.7660 (149s)
+16346.3s 764 [gpu1] [loeo__S1__Spain__s2] step 1000/1500 loss 0.7419 (199s)
+16386.3s 765 [gpu1] [loeo__S1__Spain__s2] step 1250/1500 loss 0.6661 (248s)
+16406.3s 766 [gpu0] [loeo__S1__Sri-Lanka__s2] step 1000/1500 loss 0.7194 (199s)
+16446.3s 767 [gpu0] [loeo__S1__Sri-Lanka__s2] step 1250/1500 loss 0.6546 (249s)
+16446.3s 768 [gpu1] [loeo__S1__Spain__s2] step 1500/1500 loss 0.6310 (298s)
+16446.3s 769 [gpu1] ==> done loeo__S1__Spain__s2 in 299s
+16486.3s 770 [gpu1] [loeo__S1__USA__s2] step 250/1500 loss 1.1164 (50s)
+16506.3s 771 [gpu0] [loeo__S1__Sri-Lanka__s2] step 1500/1500 loss 0.6271 (299s)
+16506.3s 772 [gpu0] ==> done loeo__S1__Sri-Lanka__s2 in 300s
+16546.3s 773 [gpu0] [loeo__S1pref__Bolivia__s2] step 250/1500 loss 1.1433 (53s)
+16546.3s 774 [gpu1] [loeo__S1__USA__s2] step 500/1500 loss 0.8517 (99s)
+16586.3s 775 [gpu1] [loeo__S1__USA__s2] step 750/1500 loss 0.8024 (149s)
+16606.3s 776 [gpu0] [loeo__S1pref__Bolivia__s2] step 500/1500 loss 0.8294 (105s)
+16646.3s 777 [gpu0] [loeo__S1pref__Bolivia__s2] step 750/1500 loss 0.7672 (157s)
+16646.3s 778 [gpu1] [loeo__S1__USA__s2] step 1000/1500 loss 0.7644 (198s)
+16686.3s 779 [gpu1] [loeo__S1__USA__s2] step 1250/1500 loss 0.6920 (248s)
+16706.3s 780 [gpu0] [loeo__S1pref__Bolivia__s2] step 1000/1500 loss 0.7163 (210s)
+16746.3s 781 [gpu1] [loeo__S1__USA__s2] step 1500/1500 loss 0.6567 (298s)
+16746.3s 782 [gpu1] ==> done loeo__S1__USA__s2 in 299s
+16766.3s 783 [gpu0] [loeo__S1pref__Bolivia__s2] step 1250/1500 loss 0.6680 (262s)
+16786.3s 784 [gpu1] [loeo__S1pref__Ghana__s2] step 250/1500 loss 1.1280 (52s)
+16806.3s 785 [gpu0] [loeo__S1pref__Bolivia__s2] step 1500/1500 loss 0.6327 (314s)
+16806.3s 786 [gpu0] ==> done loeo__S1pref__Bolivia__s2 in 315s
+16846.4s 787 [gpu1] [loeo__S1pref__Ghana__s2] step 500/1500 loss 0.8164 (105s)
+16866.3s 788 [gpu0] [loeo__S1pref__India__s2] step 250/1500 loss 1.1330 (53s)
+16906.3s 789 [gpu1] [loeo__S1pref__Ghana__s2] step 750/1500 loss 0.7589 (157s)
+16926.3s 790 [gpu0] [loeo__S1pref__India__s2] step 500/1500 loss 0.8286 (105s)
+16946.3s 791 [gpu1] [loeo__S1pref__Ghana__s2] step 1000/1500 loss 0.7141 (209s)
+16966.3s 792 [gpu0] [loeo__S1pref__India__s2] step 750/1500 loss 0.7610 (157s)
+17006.3s 793 [gpu1] [loeo__S1pref__Ghana__s2] step 1250/1500 loss 0.6724 (262s)
+17026.3s 794 [gpu0] [loeo__S1pref__India__s2] step 1000/1500 loss 0.7077 (210s)
+17046.3s 795 [gpu1] [loeo__S1pref__Ghana__s2] step 1500/1500 loss 0.6501 (314s)
+17066.3s 796 [gpu0] [loeo__S1pref__India__s2] step 1250/1500 loss 0.6602 (262s)
+17066.3s 797 [gpu1] ==> done loeo__S1pref__Ghana__s2 in 316s
+17106.4s 798 [gpu1] [loeo__S1pref__Mekong__s2] step 250/1500 loss 1.1469 (53s)
+17126.3s 799 [gpu0] [loeo__S1pref__India__s2] step 1500/1500 loss 0.6155 (314s)
+17126.3s 800 [gpu0] ==> done loeo__S1pref__India__s2 in 316s
+17166.4s 801 [gpu1] [loeo__S1pref__Mekong__s2] step 500/1500 loss 0.8518 (105s)
+17186.3s 802 [gpu0] [loeo__S1pref__Nigeria__s2] step 250/1500 loss 1.1331 (53s)
+17206.4s 803 [gpu1] [loeo__S1pref__Mekong__s2] step 750/1500 loss 0.7792 (157s)
+17226.3s 804 [gpu0] [loeo__S1pref__Nigeria__s2] step 500/1500 loss 0.8301 (105s)
+17266.4s 805 [gpu1] [loeo__S1pref__Mekong__s2] step 1000/1500 loss 0.7404 (210s)
+17286.3s 806 [gpu0] [loeo__S1pref__Nigeria__s2] step 750/1500 loss 0.7641 (157s)
+17326.4s 807 [gpu1] [loeo__S1pref__Mekong__s2] step 1250/1500 loss 0.6701 (262s)
+17346.3s 808 [gpu0] [loeo__S1pref__Nigeria__s2] step 1000/1500 loss 0.7316 (209s)
+17366.4s 809 [gpu1] [loeo__S1pref__Mekong__s2] step 1500/1500 loss 0.6426 (314s)
+17366.4s 810 [gpu1] ==> done loeo__S1pref__Mekong__s2 in 315s
+17386.3s 811 [gpu0] [loeo__S1pref__Nigeria__s2] step 1250/1500 loss 0.6759 (262s)
+17426.4s 812 [gpu1] [loeo__S1pref__Pakistan__s2] step 250/1500 loss 1.1228 (52s)
+17446.3s 813 [gpu0] [loeo__S1pref__Nigeria__s2] step 1500/1500 loss 0.6348 (314s)
+17446.3s 814 [gpu0] ==> done loeo__S1pref__Nigeria__s2 in 315s
+17486.4s 815 [gpu1] [loeo__S1pref__Pakistan__s2] step 500/1500 loss 0.8210 (105s)
+17506.3s 816 [gpu0] [loeo__S1pref__Paraguay__s2] step 250/1500 loss 1.1366 (52s)
+17526.4s 817 [gpu1] [loeo__S1pref__Pakistan__s2] step 750/1500 loss 0.7581 (157s)
+17546.3s 818 [gpu0] [loeo__S1pref__Paraguay__s2] step 500/1500 loss 0.8342 (105s)
+17586.4s 819 [gpu1] [loeo__S1pref__Pakistan__s2] step 1000/1500 loss 0.7143 (209s)
+17606.3s 820 [gpu0] [loeo__S1pref__Paraguay__s2] step 750/1500 loss 0.7762 (157s)
+17626.4s 821 [gpu1] [loeo__S1pref__Pakistan__s2] step 1250/1500 loss 0.6422 (262s)
+17646.3s 822 [gpu0] [loeo__S1pref__Paraguay__s2] step 1000/1500 loss 0.7079 (210s)
+17686.4s 823 [gpu1] [loeo__S1pref__Pakistan__s2] step 1500/1500 loss 0.6182 (314s)
+17686.4s 824 [gpu1] ==> done loeo__S1pref__Pakistan__s2 in 315s
+17706.3s 825 [gpu0] [loeo__S1pref__Paraguay__s2] step 1250/1500 loss 0.6505 (262s)
+17746.4s 826 [gpu1] [loeo__S1pref__Somalia__s2] step 250/1500 loss 1.1220 (52s)
+17766.3s 827 [gpu0] [loeo__S1pref__Paraguay__s2] step 1500/1500 loss 0.6129 (314s)
+17766.3s 828 [gpu0] ==> done loeo__S1pref__Paraguay__s2 in 317s
+17786.4s 829 [gpu1] [loeo__S1pref__Somalia__s2] step 500/1500 loss 0.8153 (105s)
+17806.3s 830 [gpu0] [loeo__S1pref__Spain__s2] step 250/1500 loss 1.1300 (52s)
+17846.4s 831 [gpu1] [loeo__S1pref__Somalia__s2] step 750/1500 loss 0.7559 (157s)
+17866.3s 832 [gpu0] [loeo__S1pref__Spain__s2] step 500/1500 loss 0.8277 (105s)
+17906.4s 833 [gpu1] [loeo__S1pref__Somalia__s2] step 1000/1500 loss 0.7077 (209s)
+17926.3s 834 [gpu0] [loeo__S1pref__Spain__s2] step 750/1500 loss 0.7637 (157s)
+17946.4s 835 [gpu1] [loeo__S1pref__Somalia__s2] step 1250/1500 loss 0.6535 (261s)
+17966.3s 836 [gpu0] [loeo__S1pref__Spain__s2] step 1000/1500 loss 0.7309 (209s)
+18006.4s 837 [gpu1] [loeo__S1pref__Somalia__s2] step 1500/1500 loss 0.6120 (314s)
+18006.4s 838 [gpu1] ==> done loeo__S1pref__Somalia__s2 in 315s
+18026.3s 839 [gpu0] [loeo__S1pref__Spain__s2] step 1250/1500 loss 0.6521 (262s)
+18046.4s 840 [gpu1] [loeo__S1pref__Sri-Lanka__s2] step 250/1500 loss 1.1166 (52s)
+18066.3s 841 [gpu0] [loeo__S1pref__Spain__s2] step 1500/1500 loss 0.6257 (314s)
+18066.3s 842 [gpu0] ==> done loeo__S1pref__Spain__s2 in 315s
+18106.4s 843 [gpu1] [loeo__S1pref__Sri-Lanka__s2] step 500/1500 loss 0.8284 (105s)
+18126.3s 844 [gpu0] [loeo__S1pref__USA__s2] step 250/1500 loss 1.1127 (52s)
+18166.4s 845 [gpu1] [loeo__S1pref__Sri-Lanka__s2] step 750/1500 loss 0.7668 (157s)
+18186.4s 846 [gpu0] [loeo__S1pref__USA__s2] step 500/1500 loss 0.8457 (105s)
+18206.4s 847 [gpu1] [loeo__S1pref__Sri-Lanka__s2] step 1000/1500 loss 0.7008 (209s)
+18226.4s 848 [gpu0] [loeo__S1pref__USA__s2] step 750/1500 loss 0.7934 (157s)
+18266.4s 849 [gpu1] [loeo__S1pref__Sri-Lanka__s2] step 1250/1500 loss 0.6433 (262s)
+18286.4s 850 [gpu0] [loeo__S1pref__USA__s2] step 1000/1500 loss 0.7455 (209s)
+18306.4s 851 [gpu1] [loeo__S1pref__Sri-Lanka__s2] step 1500/1500 loss 0.6158 (314s)
+18326.4s 852 [gpu1] ==> done loeo__S1pref__Sri-Lanka__s2 in 315s
+18346.4s 853 [gpu0] [loeo__S1pref__USA__s2] step 1250/1500 loss 0.6776 (262s)
+18366.4s 854 [gpu1] [loeo__S1pdw__Bolivia__s2] step 250/1500 loss 1.1117 (55s)
+18386.4s 855 [gpu0] [loeo__S1pref__USA__s2] step 1500/1500 loss 0.6414 (315s)
+18386.4s 856 [gpu0] ==> done loeo__S1pref__USA__s2 in 317s
+18426.4s 857 [gpu1] [loeo__S1pdw__Bolivia__s2] step 500/1500 loss 0.7936 (109s)
+18446.4s 858 [gpu0] [loeo__S1pdw__Ghana__s2] step 250/1500 loss 1.1009 (55s)
+18486.4s 859 [gpu1] [loeo__S1pdw__Bolivia__s2] step 750/1500 loss 0.7253 (164s)
+18506.4s 860 [gpu0] [loeo__S1pdw__Ghana__s2] step 500/1500 loss 0.7688 (111s)
+18546.4s 861 [gpu1] [loeo__S1pdw__Bolivia__s2] step 1000/1500 loss 0.6768 (220s)
+18566.4s 862 [gpu0] [loeo__S1pdw__Ghana__s2] step 750/1500 loss 0.7068 (166s)
+18586.4s 863 [gpu1] [loeo__S1pdw__Bolivia__s2] step 1250/1500 loss 0.6201 (275s)
+18606.4s 864 [gpu0] [loeo__S1pdw__Ghana__s2] step 1000/1500 loss 0.6505 (222s)
+18646.4s 865 [gpu1] [loeo__S1pdw__Bolivia__s2] step 1500/1500 loss 0.5798 (331s)
+18646.4s 866 [gpu1] ==> done loeo__S1pdw__Bolivia__s2 in 332s
+18666.4s 867 [gpu0] [loeo__S1pdw__Ghana__s2] step 1250/1500 loss 0.5875 (277s)
+18706.4s 868 [gpu1] [loeo__S1pdw__India__s2] step 250/1500 loss 1.1110 (56s)
+18726.4s 869 [gpu0] [loeo__S1pdw__Ghana__s2] step 1500/1500 loss 0.5698 (334s)
+18726.4s 870 [gpu0] ==> done loeo__S1pdw__Ghana__s2 in 336s
+18766.4s 871 [gpu1] [loeo__S1pdw__India__s2] step 500/1500 loss 0.7841 (112s)
+18786.4s 872 [gpu0] [loeo__S1pdw__Mekong__s2] step 250/1500 loss 1.1259 (56s)
+18826.4s 873 [gpu1] [loeo__S1pdw__India__s2] step 750/1500 loss 0.7167 (167s)
+18846.4s 874 [gpu0] [loeo__S1pdw__Mekong__s2] step 500/1500 loss 0.8160 (111s)
+18866.4s 875 [gpu1] [loeo__S1pdw__India__s2] step 1000/1500 loss 0.6669 (223s)
+18886.4s 876 [gpu0] [loeo__S1pdw__Mekong__s2] step 750/1500 loss 0.7387 (167s)
+18926.4s 877 [gpu1] [loeo__S1pdw__India__s2] step 1250/1500 loss 0.6328 (279s)
+18946.4s 878 [gpu0] [loeo__S1pdw__Mekong__s2] step 1000/1500 loss 0.7050 (223s)
+18986.4s 879 [gpu1] [loeo__S1pdw__India__s2] step 1500/1500 loss 0.5977 (334s)
+18986.4s 880 [gpu1] ==> done loeo__S1pdw__India__s2 in 336s
+19006.4s 881 [gpu0] [loeo__S1pdw__Mekong__s2] step 1250/1500 loss 0.6544 (278s)
+19046.4s 882 [gpu1] [loeo__S1pdw__Nigeria__s2] step 250/1500 loss 1.1104 (56s)
+19066.4s 883 [gpu0] [loeo__S1pdw__Mekong__s2] step 1500/1500 loss 0.6086 (334s)
+19066.4s 884 [gpu0] ==> done loeo__S1pdw__Mekong__s2 in 335s
+19106.4s 885 [gpu1] [loeo__S1pdw__Nigeria__s2] step 500/1500 loss 0.7956 (111s)
+19126.4s 886 [gpu0] [loeo__S1pdw__Pakistan__s2] step 250/1500 loss 1.1009 (56s)
+19146.4s 887 [gpu1] [loeo__S1pdw__Nigeria__s2] step 750/1500 loss 0.7302 (167s)
+19186.4s 888 [gpu0] [loeo__S1pdw__Pakistan__s2] step 500/1500 loss 0.7780 (112s)
+19206.4s 889 [gpu1] [loeo__S1pdw__Nigeria__s2] step 1000/1500 loss 0.6915 (222s)
+19226.4s 890 [gpu0] [loeo__S1pdw__Pakistan__s2] step 750/1500 loss 0.7259 (167s)
+19266.4s 891 [gpu1] [loeo__S1pdw__Nigeria__s2] step 1250/1500 loss 0.6402 (277s)
+19286.4s 892 [gpu0] [loeo__S1pdw__Pakistan__s2] step 1000/1500 loss 0.6798 (222s)
+19326.4s 893 [gpu1] [loeo__S1pdw__Nigeria__s2] step 1500/1500 loss 0.6034 (333s)
+19326.4s 894 [gpu1] ==> done loeo__S1pdw__Nigeria__s2 in 334s
+19346.4s 895 [gpu0] [loeo__S1pdw__Pakistan__s2] step 1250/1500 loss 0.6187 (278s)
+19366.4s 896 [gpu1] [loeo__S1pdw__Paraguay__s2] step 250/1500 loss 1.1117 (56s)
+19406.4s 897 [gpu0] [loeo__S1pdw__Pakistan__s2] step 1500/1500 loss 0.5762 (334s)
+19406.4s 898 [gpu0] ==> done loeo__S1pdw__Pakistan__s2 in 335s
+19426.4s 899 [gpu1] [loeo__S1pdw__Paraguay__s2] step 500/1500 loss 0.7929 (112s)
+19446.4s 900 [gpu0] [loeo__S1pdw__Somalia__s2] step 250/1500 loss 1.0993 (56s)
+19486.4s 901 [gpu1] [loeo__S1pdw__Paraguay__s2] step 750/1500 loss 0.7322 (167s)
+19506.4s 902 [gpu0] [loeo__S1pdw__Somalia__s2] step 500/1500 loss 0.7712 (111s)
+19546.4s 903 [gpu1] [loeo__S1pdw__Paraguay__s2] step 1000/1500 loss 0.6825 (223s)
+19566.4s 904 [gpu0] [loeo__S1pdw__Somalia__s2] step 750/1500 loss 0.7177 (167s)
+19606.4s 905 [gpu1] [loeo__S1pdw__Paraguay__s2] step 1250/1500 loss 0.6453 (278s)
+19626.4s 906 [gpu0] [loeo__S1pdw__Somalia__s2] step 1000/1500 loss 0.6730 (222s)
+19646.4s 907 [gpu1] [loeo__S1pdw__Paraguay__s2] step 1500/1500 loss 0.6089 (334s)
+19646.4s 908 [gpu1] ==> done loeo__S1pdw__Paraguay__s2 in 336s
+19686.5s 909 [gpu0] [loeo__S1pdw__Somalia__s2] step 1250/1500 loss 0.6086 (278s)
+19706.4s 910 [gpu1] [loeo__S1pdw__Spain__s2] step 250/1500 loss 1.1062 (56s)
+19726.5s 911 [gpu0] [loeo__S1pdw__Somalia__s2] step 1500/1500 loss 0.5633 (334s)
+19726.5s 912 [gpu0] ==> done loeo__S1pdw__Somalia__s2 in 335s
+19766.4s 913 [gpu1] [loeo__S1pdw__Spain__s2] step 500/1500 loss 0.7881 (112s)
+19786.4s 914 [gpu0] [loeo__S1pdw__Sri-Lanka__s2] step 250/1500 loss 1.0945 (56s)
+19826.5s 915 [gpu1] [loeo__S1pdw__Spain__s2] step 750/1500 loss 0.7283 (167s)
+19846.4s 916 [gpu0] [loeo__S1pdw__Sri-Lanka__s2] step 500/1500 loss 0.7827 (112s)
+19886.5s 917 [gpu1] [loeo__S1pdw__Spain__s2] step 1000/1500 loss 0.6942 (223s)
+19906.4s 918 [gpu0] [loeo__S1pdw__Sri-Lanka__s2] step 750/1500 loss 0.7335 (167s)
+19926.5s 919 [gpu1] [loeo__S1pdw__Spain__s2] step 1250/1500 loss 0.6248 (279s)
+19966.5s 920 [gpu0] [loeo__S1pdw__Sri-Lanka__s2] step 1000/1500 loss 0.6776 (223s)
+19986.4s 921 [gpu1] [loeo__S1pdw__Spain__s2] step 1500/1500 loss 0.5810 (334s)
+19986.4s 922 [gpu1] ==> done loeo__S1pdw__Spain__s2 in 336s
+20006.5s 923 [gpu0] [loeo__S1pdw__Sri-Lanka__s2] step 1250/1500 loss 0.6075 (279s)
+20046.5s 924 [gpu1] [loeo__S1pdw__USA__s2] step 250/1500 loss 1.0943 (56s)
+20066.4s 925 [gpu0] [loeo__S1pdw__Sri-Lanka__s2] step 1500/1500 loss 0.5695 (334s)
+20066.4s 926 [gpu0] ==> done loeo__S1pdw__Sri-Lanka__s2 in 336s
+20106.5s 927 [gpu1] [loeo__S1pdw__USA__s2] step 500/1500 loss 0.8225 (111s)
+20126.4s 928 [gpu0] [loeo__S1prefpdw__Bolivia__s2] step 250/1500 loss 1.1223 (56s)
+20166.5s 929 [gpu1] [loeo__S1pdw__USA__s2] step 750/1500 loss 0.7625 (166s)
+20186.4s 930 [gpu0] [loeo__S1prefpdw__Bolivia__s2] step 500/1500 loss 0.8030 (111s)
+20206.5s 931 [gpu1] [loeo__S1pdw__USA__s2] step 1000/1500 loss 0.7331 (221s)
+20246.5s 932 [gpu0] [loeo__S1prefpdw__Bolivia__s2] step 750/1500 loss 0.7301 (167s)
+20266.4s 933 [gpu1] [loeo__S1pdw__USA__s2] step 1250/1500 loss 0.6810 (275s)
+20286.5s 934 [gpu0] [loeo__S1prefpdw__Bolivia__s2] step 1000/1500 loss 0.6788 (222s)
+20326.5s 935 [gpu1] [loeo__S1pdw__USA__s2] step 1500/1500 loss 0.6355 (330s)
+20326.5s 936 [gpu1] ==> done loeo__S1pdw__USA__s2 in 333s
+20346.4s 937 [gpu0] [loeo__S1prefpdw__Bolivia__s2] step 1250/1500 loss 0.6198 (279s)
+20386.5s 938 [gpu1] [loeo__S1prefpdw__Ghana__s2] step 250/1500 loss 1.1044 (56s)
+20406.4s 939 [gpu0] [loeo__S1prefpdw__Bolivia__s2] step 1500/1500 loss 0.5833 (335s)
+20406.4s 940 [gpu0] ==> done loeo__S1prefpdw__Bolivia__s2 in 336s
+20446.5s 941 [gpu1] [loeo__S1prefpdw__Ghana__s2] step 500/1500 loss 0.7734 (112s)
+20466.4s 942 [gpu0] [loeo__S1prefpdw__India__s2] step 250/1500 loss 1.1130 (56s)
+20486.5s 943 [gpu1] [loeo__S1prefpdw__Ghana__s2] step 750/1500 loss 0.7046 (168s)
+20526.5s 944 [gpu0] [loeo__S1prefpdw__India__s2] step 500/1500 loss 0.7809 (112s)
+20546.4s 945 [gpu1] [loeo__S1prefpdw__Ghana__s2] step 1000/1500 loss 0.6566 (224s)
+20566.5s 946 [gpu0] [loeo__S1prefpdw__India__s2] step 750/1500 loss 0.7097 (168s)
+20606.5s 947 [gpu1] [loeo__S1prefpdw__Ghana__s2] step 1250/1500 loss 0.6006 (279s)
+20626.5s 948 [gpu0] [loeo__S1prefpdw__India__s2] step 1000/1500 loss 0.6612 (224s)
+20666.5s 949 [gpu1] [loeo__S1prefpdw__Ghana__s2] step 1500/1500 loss 0.5821 (335s)
+20666.5s 950 [gpu1] ==> done loeo__S1prefpdw__Ghana__s2 in 338s
+20686.5s 951 [gpu0] [loeo__S1prefpdw__India__s2] step 1250/1500 loss 0.6034 (280s)
+20726.5s 952 [gpu1] [loeo__S1prefpdw__Mekong__s2] step 250/1500 loss 1.1351 (56s)
+20746.5s 953 [gpu0] [loeo__S1prefpdw__India__s2] step 1500/1500 loss 0.5596 (337s)
+20746.5s 954 [gpu0] ==> done loeo__S1prefpdw__India__s2 in 339s
+20766.5s 955 [gpu1] [loeo__S1prefpdw__Mekong__s2] step 500/1500 loss 0.8072 (112s)
+20806.5s 956 [gpu0] [loeo__S1prefpdw__Nigeria__s2] step 250/1500 loss 1.1115 (56s)
+20826.5s 957 [gpu1] [loeo__S1prefpdw__Mekong__s2] step 750/1500 loss 0.7313 (168s)
+20866.5s 958 [gpu0] [loeo__S1prefpdw__Nigeria__s2] step 500/1500 loss 0.7879 (112s)
+20886.5s 959 [gpu1] [loeo__S1prefpdw__Mekong__s2] step 1000/1500 loss 0.6969 (224s)
+20906.5s 960 [gpu0] [loeo__S1prefpdw__Nigeria__s2] step 750/1500 loss 0.7176 (168s)
+20946.5s 961 [gpu1] [loeo__S1prefpdw__Mekong__s2] step 1250/1500 loss 0.6279 (279s)
+20966.5s 962 [gpu0] [loeo__S1prefpdw__Nigeria__s2] step 1000/1500 loss 0.6799 (224s)
+21006.5s 963 [gpu1] [loeo__S1prefpdw__Mekong__s2] step 1500/1500 loss 0.5820 (335s)
+21006.5s 964 [gpu1] ==> done loeo__S1prefpdw__Mekong__s2 in 337s
+21026.5s 965 [gpu0] [loeo__S1prefpdw__Nigeria__s2] step 1250/1500 loss 0.6231 (281s)
+21046.5s 966 [gpu1] [loeo__S1prefpdw__Pakistan__s2] step 250/1500 loss 1.1044 (56s)
+21086.5s 967 [gpu0] [loeo__S1prefpdw__Nigeria__s2] step 1500/1500 loss 0.5843 (336s)
+21086.5s 968 [gpu0] ==> done loeo__S1prefpdw__Nigeria__s2 in 338s
+21106.5s 969 [gpu1] [loeo__S1prefpdw__Pakistan__s2] step 500/1500 loss 0.7781 (112s)
+21146.5s 970 [gpu0] [loeo__S1prefpdw__Paraguay__s2] step 250/1500 loss 1.1160 (56s)
+21166.5s 971 [gpu1] [loeo__S1prefpdw__Pakistan__s2] step 750/1500 loss 0.7151 (168s)
+21186.5s 972 [gpu0] [loeo__S1prefpdw__Paraguay__s2] step 500/1500 loss 0.7906 (112s)
+21226.5s 973 [gpu1] [loeo__S1prefpdw__Pakistan__s2] step 1000/1500 loss 0.6626 (224s)
+21246.5s 974 [gpu0] [loeo__S1prefpdw__Paraguay__s2] step 750/1500 loss 0.7200 (169s)
+21286.6s 975 [gpu1] [loeo__S1prefpdw__Pakistan__s2] step 1250/1500 loss 0.5946 (279s)
+21306.5s 976 [gpu0] [loeo__S1prefpdw__Paraguay__s2] step 1000/1500 loss 0.6582 (225s)
+21326.5s 977 [gpu1] [loeo__S1prefpdw__Pakistan__s2] step 1500/1500 loss 0.5598 (335s)
+21326.5s 978 [gpu1] ==> done loeo__S1prefpdw__Pakistan__s2 in 337s
+21366.6s 979 [gpu0] [loeo__S1prefpdw__Paraguay__s2] step 1250/1500 loss 0.5903 (281s)
+21386.5s 980 [gpu1] [loeo__S1prefpdw__Somalia__s2] step 250/1500 loss 1.1100 (56s)
+21426.6s 981 [gpu0] [loeo__S1prefpdw__Paraguay__s2] step 1500/1500 loss 0.5584 (337s)
+21426.6s 982 [gpu0] ==> done loeo__S1prefpdw__Paraguay__s2 in 340s
+21446.5s 983 [gpu1] [loeo__S1prefpdw__Somalia__s2] step 500/1500 loss 0.7736 (112s)
+21486.5s 984 [gpu0] [loeo__S1prefpdw__Spain__s2] step 250/1500 loss 1.1154 (56s)
+21506.5s 985 [gpu1] [loeo__S1prefpdw__Somalia__s2] step 750/1500 loss 0.7123 (167s)
+21526.6s 986 [gpu0] [loeo__S1prefpdw__Spain__s2] step 500/1500 loss 0.7924 (112s)
+21566.5s 987 [gpu1] [loeo__S1prefpdw__Somalia__s2] step 1000/1500 loss 0.6594 (223s)
+21586.5s 988 [gpu0] [loeo__S1prefpdw__Spain__s2] step 750/1500 loss 0.7236 (168s)
+21606.5s 989 [gpu1] [loeo__S1prefpdw__Somalia__s2] step 1250/1500 loss 0.6048 (279s)
+21646.5s 990 [gpu0] [loeo__S1prefpdw__Spain__s2] step 1000/1500 loss 0.6959 (224s)
+21666.5s 991 [gpu1] [loeo__S1prefpdw__Somalia__s2] step 1500/1500 loss 0.5557 (335s)
+21666.5s 992 [gpu1] ==> done loeo__S1prefpdw__Somalia__s2 in 337s
+21706.6s 993 [gpu0] [loeo__S1prefpdw__Spain__s2] step 1250/1500 loss 0.6049 (280s)
+21726.5s 994 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s2] step 250/1500 loss 1.0992 (56s)
+21766.6s 995 [gpu0] [loeo__S1prefpdw__Spain__s2] step 1500/1500 loss 0.5755 (336s)
+21766.6s 996 [gpu0] ==> done loeo__S1prefpdw__Spain__s2 in 338s
+21786.5s 997 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s2] step 500/1500 loss 0.7779 (112s)
+21826.6s 998 [gpu0] [loeo__S1prefpdw__USA__s2] step 250/1500 loss 1.1000 (56s)
+21846.5s 999 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s2] step 750/1500 loss 0.7201 (168s)
+21866.6s 1000 [gpu0] [loeo__S1prefpdw__USA__s2] step 500/1500 loss 0.8234 (112s)
+21886.5s 1001 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s2] step 1000/1500 loss 0.6747 (223s)
+21926.6s 1002 [gpu0] [loeo__S1prefpdw__USA__s2] step 750/1500 loss 0.7632 (168s)
+21946.5s 1003 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s2] step 1250/1500 loss 0.5979 (279s)
+21986.6s 1004 [gpu0] [loeo__S1prefpdw__USA__s2] step 1000/1500 loss 0.7319 (225s)
+22006.5s 1005 [gpu1] [loeo__S1prefpdw__Sri-Lanka__s2] step 1500/1500 loss 0.5649 (335s)
+22006.5s 1006 [gpu1] ==> done loeo__S1prefpdw__Sri-Lanka__s2 in 338s
+22006.5s 1007 [gpu1] deadline reached, stopping
+22046.6s 1008 [gpu0] [loeo__S1prefpdw__USA__s2] step 1250/1500 loss 0.6859 (281s)
+22106.6s 1009 [gpu0] [loeo__S1prefpdw__USA__s2] step 1500/1500 loss 0.6343 (337s)
+22106.6s 1010 [gpu0] ==> done loeo__S1prefpdw__USA__s2 in 340s
+22106.6s 1011 phase loeo: 132/132 jobs finished | elapsed 6.14 h
+22109.4s 1012 LOEO seeds complete: [0, 1, 2]
+22136.1s 1013 
+22136.1s 1014 LOEO (threshold 0.5): per-seed macro IoU, seed-ensemble result and per-event IoU:
+22136.1s 1015 variant                                              S1                    S1+ref                     S1+dw                 S1+ref+dw
+22136.1s 1016 macro_IoU_seed_mean                               0.564                     0.602                     0.585                     0.606
+22136.1s 1017 macro_IoU_seed_sd                                 0.001                     0.007                     0.008                     0.004
+22136.1s 1018 per_seed                       [0.5655, 0.5627, 0.5635]  [0.6075, 0.6048, 0.5941]  [0.5797, 0.5937, 0.5818]  [0.6026, 0.6043, 0.6102]
+22136.1s 1019 seed_ensemble_macro_IoU                           0.574                     0.617                       0.6                      0.62
+22136.1s 1020 seed_ensemble_macro_precision                     0.706                     0.768                      0.79                     0.805
+22136.1s 1021 Somalia_prec                                      0.308                     0.696                     0.816                      0.81
+22136.1s 1022 Pakistan_prec                                      0.38                     0.593                      0.72                      0.74
+22136.1s 1023 worst_event                                     Somalia                  Pakistan                   Somalia                   Somalia
+22136.1s 1024 worst_IoU                                         0.261                      0.42                     0.325                     0.339
+22136.1s 1025 IoU_Bolivia                                       0.608                     0.682                     0.568                      0.68
+22136.1s 1026 IoU_Ghana                                         0.532                     0.592                     0.533                     0.532
+22136.1s 1027 IoU_India                                         0.506                      0.56                     0.464                     0.509
+22136.1s 1028 IoU_Mekong                                        0.839                      0.84                      0.84                     0.871
+22136.1s 1029 IoU_Nigeria                                       0.785                     0.788                     0.782                     0.789
+22136.1s 1030 IoU_Pakistan                                      0.321                      0.42                     0.489                     0.494
+22136.1s 1031 IoU_Paraguay                                      0.589                     0.528                      0.58                     0.559
+22136.1s 1032 IoU_Somalia                                       0.261                     0.431                     0.325                     0.339
+22136.1s 1033 IoU_Spain                                         0.683                      0.72                     0.709                     0.703
+22136.1s 1034 IoU_Sri-Lanka                                     0.638                     0.661                     0.695                     0.718
+22136.1s 1035 IoU_USA                                           0.551                     0.559                     0.612                     0.623
+22138.3s 1036 paired macro-IoU     S1+ref minus S1: seed-averaged +0.0374 95% CI [+0.0189, +0.0577] | per-seed diffs [0.0419, 0.0421, 0.0306] | seed-ensemble +0.0417 [+0.0221, +0.0641]
+22140.6s 1037 paired macro-IoU      S1+dw minus S1: seed-averaged +0.0215 95% CI [+0.0006, +0.0429] | per-seed diffs [0.0142, 0.031, 0.0183] | seed-ensemble +0.0268 [+0.0034, +0.0517]
+22142.7s 1038 paired macro-IoU  S1+ref+dw minus S1: seed-averaged +0.0420 95% CI [+0.0203, +0.0638] | per-seed diffs [0.037, 0.0415, 0.0468] | seed-ensemble +0.0469 [+0.0224, +0.0718]
+22142.7s 1039 
+22142.7s 1040 best variant by seed-mean LOEO macro IoU: S1+ref+dw
+22161.6s 1041 
+22161.6s 1042 macro_IoU by threshold:
+22161.6s 1043 variant     S1  S1+dw  S1+ref  S1+ref+dw
+22161.6s 1044 thr
+22161.6s 1045 0.3      0.569  0.597   0.605      0.613
+22161.6s 1046 0.4      0.574  0.601   0.615      0.620
+22161.6s 1047 0.5      0.574  0.600   0.617      0.620
+22161.6s 1048 0.6      0.569  0.590   0.610      0.612
+22161.6s 1049 0.7      0.552  0.572   0.586      0.595
+22161.6s 1050 0.8      0.516  0.542   0.543      0.569
+22161.6s 1051 0.9      0.446  0.476   0.470      0.497
+22161.6s 1052 
+22161.6s 1053 macro_precision by threshold:
+22161.6s 1054 variant     S1  S1+dw  S1+ref  S1+ref+dw
+22161.6s 1055 thr
+22161.6s 1056 0.3      0.652  0.721   0.703      0.740
+22161.6s 1057 0.4      0.680  0.759   0.738      0.776
+22161.6s 1058 0.5      0.706  0.790   0.768      0.805
+22161.6s 1059 0.6      0.732  0.818   0.799      0.832
+22161.6s 1060 0.7      0.759  0.843   0.829      0.857
+22161.6s 1061 0.8      0.790  0.868   0.857      0.885
+22161.6s 1062 0.9      0.836  0.898   0.898      0.918
+22161.6s 1063 
+22161.6s 1064 macro_recall by threshold:
+22161.6s 1065 variant     S1  S1+dw  S1+ref  S1+ref+dw
+22161.6s 1066 thr
+22161.6s 1067 0.3      0.809  0.771   0.802      0.783
+22161.6s 1068 0.4      0.776  0.740   0.775      0.755
+22161.6s 1069 0.5      0.744  0.710   0.748      0.729
+22161.6s 1070 0.6      0.709  0.676   0.713      0.698
+22161.6s 1071 0.7      0.659  0.636   0.662      0.660
+22161.6s 1072 0.8      0.588  0.587   0.593      0.613
+22161.6s 1073 0.9      0.480  0.499   0.493      0.518
+22248.8s 1074 
+22248.8s 1075 RECALL-MATCHED (target macro recall 0.744 = S1 at 0.5; reference precision 0.706, IoU 0.5738):
+22248.8s 1076 variant   thr  macro_recall  macro_precision  macro_IoU
+22248.8s 1077 S1 0.500        0.7445           0.7058     0.5738
+22248.8s 1078 S1+ref 0.500        0.7477           0.7684     0.6166
+22248.8s 1079 S1+dw 0.375        0.7474           0.7503     0.6011
+22248.8s 1080 S1+ref+dw 0.450        0.7422           0.7913     0.6206
+22276.0s 1081 
+22276.0s 1082 exclusion filters, macro_IoU (threshold 0.5):
+22276.0s 1083 variant                      S1  S1+dw  S1+ref  S1+ref+dw
+22276.0s 1084 exclusion
+22276.0s 1085 DW bare>0.5               0.578  0.600   0.617      0.620
+22276.0s 1086 DW bare|built>0.5         0.578  0.600   0.617      0.620
+22276.0s 1087 DW built>0.5              0.574  0.600   0.617      0.620
+22276.0s 1088 HAND>15                   0.573  0.602   0.615      0.619
+22276.0s 1089 HAND>15|slope>5           0.540  0.565   0.577      0.582
+22276.0s 1090 HAND>15|slope>5|bare>0.5  0.544  0.565   0.578      0.582
+22276.0s 1091 none                      0.574  0.600   0.617      0.620
+22276.0s 1092 
+22276.0s 1093 exclusion filters, macro_precision (threshold 0.5):
+22276.0s 1094 variant                      S1  S1+dw  S1+ref  S1+ref+dw
+22276.0s 1095 exclusion
+22276.0s 1096 DW bare>0.5               0.712  0.790   0.772      0.806
+22276.0s 1097 DW bare|built>0.5         0.713  0.790   0.772      0.806
+22276.0s 1098 DW built>0.5              0.706  0.790   0.769      0.805
+22276.0s 1099 HAND>15                   0.708  0.798   0.770      0.807
+22276.0s 1100 HAND>15|slope>5           0.711  0.800   0.771      0.808
+22276.0s 1101 HAND>15|slope>5|bare>0.5  0.717  0.800   0.774      0.809
+22276.0s 1102 none                      0.706  0.790   0.768      0.805
+22276.0s 1103 
+22276.0s 1104 exclusion filters, macro_recall (threshold 0.5):
+22276.0s 1105 variant                      S1  S1+dw  S1+ref  S1+ref+dw
+22276.0s 1106 exclusion
+22276.0s 1107 DW bare>0.5               0.742  0.710   0.746      0.729
+22276.0s 1108 DW bare|built>0.5         0.742  0.710   0.746      0.728
+22276.0s 1109 DW built>0.5              0.744  0.710   0.747      0.729
+22276.0s 1110 HAND>15                   0.740  0.707   0.744      0.725
+22276.0s 1111 HAND>15|slope>5           0.684  0.655   0.688      0.673
+22276.0s 1112 HAND>15|slope>5|bare>0.5  0.683  0.654   0.687      0.673
+22276.0s 1113 none                      0.744  0.710   0.748      0.729
+22276.2s 1114 official-split jobs: 60
+22276.2s 1115 --- phase final: attempt 1, 60 jobs left, 2 worker(s)
+22296.3s 1116 [gpu0] worker on GPU 0 | jobs 60
+22296.3s 1117 [gpu0] /kaggle/working/worker.py:107: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+22296.3s 1118 [gpu0]   scaler = torch.cuda.amp.GradScaler()
+22296.3s 1119 [gpu1] worker on GPU 1 | jobs 60
+22296.3s 1120 [gpu1] /kaggle/working/worker.py:107: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+22296.3s 1121 [gpu1]   scaler = torch.cuda.amp.GradScaler()
+22336.3s 1122 [gpu1] [final__S1__unet_resnet34__s0] step 250/3000 loss 1.4638 (46s) valid IoU(EMA) 0.5984
+22376.3s 1123 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 250/3000 loss 1.2277 (75s) valid IoU(EMA) 0.6484
+22396.3s 1124 [gpu1] [final__S1__unet_resnet34__s0] step 500/3000 loss 0.9721 (96s) valid IoU(EMA) 0.6269
+22436.3s 1125 [gpu1] [final__S1__unet_resnet34__s0] step 750/3000 loss 0.8385 (146s) valid IoU(EMA) 0.6338
+22456.3s 1126 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 500/3000 loss 0.8802 (156s) valid IoU(EMA) 0.6427
+22496.3s 1127 [gpu1] [final__S1__unet_resnet34__s0] step 1000/3000 loss 0.7788 (197s) valid IoU(EMA) 0.6642
+22536.3s 1128 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 750/3000 loss 0.7860 (235s) valid IoU(EMA) 0.6414
+22536.3s 1129 [gpu1] [final__S1__unet_resnet34__s0] step 1250/3000 loss 0.7177 (247s) valid IoU(EMA) 0.6411
+22596.3s 1130 [gpu1] [final__S1__unet_resnet34__s0] step 1500/3000 loss 0.6536 (298s) valid IoU(EMA) 0.6504
+22616.3s 1131 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 1000/3000 loss 0.7261 (314s) valid IoU(EMA) 0.6548
+22636.3s 1132 [gpu1] [final__S1__unet_resnet34__s0] step 1750/3000 loss 0.6551 (349s) valid IoU(EMA) 0.6333
+22676.3s 1133 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 1250/3000 loss 0.6729 (392s) valid IoU(EMA) 0.6293
+22696.3s 1134 [gpu1] [final__S1__unet_resnet34__s0] step 2000/3000 loss 0.6293 (400s) valid IoU(EMA) 0.6300
+22736.3s 1135 [gpu1] [final__S1__unet_resnet34__s0] step 2250/3000 loss 0.6042 (451s) valid IoU(EMA) 0.6253
+22756.3s 1136 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 1500/3000 loss 0.6679 (471s) valid IoU(EMA) 0.6418
+22796.3s 1137 [gpu1] [final__S1__unet_resnet34__s0] step 2500/3000 loss 0.5798 (503s) valid IoU(EMA) 0.6291
+22836.4s 1138 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 1750/3000 loss 0.6292 (549s) valid IoU(EMA) 0.6381
+22856.3s 1139 [gpu1] [final__S1__unet_resnet34__s0] step 2750/3000 loss 0.5602 (554s) valid IoU(EMA) 0.6283
+22896.4s 1140 [gpu1] [final__S1__unet_resnet34__s0] step 3000/3000 loss 0.5568 (605s) valid IoU(EMA) 0.6228
+22896.4s 1141 [gpu1] ==> done final__S1__unet_resnet34__s0 in 616s
+22916.3s 1142 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 2000/3000 loss 0.6109 (628s) valid IoU(EMA) 0.6288
+22976.3s 1143 [gpu1] [final__S1__unet_mit_b2__s0] step 250/3000 loss 1.2826 (70s) valid IoU(EMA) 0.6256
+22996.3s 1144 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 2250/3000 loss 0.5976 (706s) valid IoU(EMA) 0.6298
+23056.3s 1145 [gpu1] [final__S1__unet_mit_b2__s0] step 500/3000 loss 0.8876 (142s) valid IoU(EMA) 0.6359
+23076.3s 1146 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 2500/3000 loss 0.5884 (785s) valid IoU(EMA) 0.6247
+23116.4s 1147 [gpu1] [final__S1__unet_mit_b2__s0] step 750/3000 loss 0.8021 (213s) valid IoU(EMA) 0.6428
+23156.4s 1148 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 2750/3000 loss 0.5725 (863s) valid IoU(EMA) 0.6239
+23196.4s 1149 [gpu1] [final__S1__unet_mit_b2__s0] step 1000/3000 loss 0.7584 (284s) valid IoU(EMA) 0.6221
+23236.4s 1150 [gpu0] [final__S1__unet_resnext50_32x4d__s0] step 3000/3000 loss 0.5592 (942s) valid IoU(EMA) 0.6209
+23256.3s 1151 [gpu0] ==> done final__S1__unet_resnext50_32x4d__s0 in 959s
+23256.3s 1152 [gpu1] [final__S1__unet_mit_b2__s0] step 1250/3000 loss 0.6818 (355s) valid IoU(EMA) 0.6433
+23296.4s 1153 [gpu0] [final__S1pref__unet_resnet34__s0] step 250/3000 loss 1.4660 (53s) valid IoU(EMA) 0.6189
+23336.4s 1154 [gpu1] [final__S1__unet_mit_b2__s0] step 1500/3000 loss 0.6457 (427s) valid IoU(EMA) 0.6535
+23356.3s 1155 [gpu0] [final__S1pref__unet_resnet34__s0] step 500/3000 loss 0.9665 (107s) valid IoU(EMA) 0.6579
+23416.4s 1156 [gpu0] [final__S1pref__unet_resnet34__s0] step 750/3000 loss 0.8343 (162s) valid IoU(EMA) 0.6753
+23416.4s 1157 [gpu1] [final__S1__unet_mit_b2__s0] step 1750/3000 loss 0.6215 (498s) valid IoU(EMA) 0.6531
+23476.4s 1158 [gpu0] [final__S1pref__unet_resnet34__s0] step 1000/3000 loss 0.7763 (216s) valid IoU(EMA) 0.6811
+23476.4s 1159 [gpu1] [final__S1__unet_mit_b2__s0] step 2000/3000 loss 0.6219 (569s) valid IoU(EMA) 0.6365
+23516.4s 1160 [gpu0] [final__S1pref__unet_resnet34__s0] step 1250/3000 loss 0.7340 (270s) valid IoU(EMA) 0.6792
+23556.4s 1161 [gpu1] [final__S1__unet_mit_b2__s0] step 2250/3000 loss 0.5930 (641s) valid IoU(EMA) 0.6414
+23576.3s 1162 [gpu0] [final__S1pref__unet_resnet34__s0] step 1500/3000 loss 0.6726 (325s) valid IoU(EMA) 0.6754
+23616.4s 1163 [gpu1] [final__S1__unet_mit_b2__s0] step 2500/3000 loss 0.5679 (712s) valid IoU(EMA) 0.6455
+23636.3s 1164 [gpu0] [final__S1pref__unet_resnet34__s0] step 1750/3000 loss 0.6486 (379s) valid IoU(EMA) 0.6743
+23676.4s 1165 [gpu0] [final__S1pref__unet_resnet34__s0] step 2000/3000 loss 0.6271 (434s) valid IoU(EMA) 0.6729
+23696.3s 1166 [gpu1] [final__S1__unet_mit_b2__s0] step 2750/3000 loss 0.5620 (784s) valid IoU(EMA) 0.6467
+23736.4s 1167 [gpu0] [final__S1pref__unet_resnet34__s0] step 2250/3000 loss 0.5913 (489s) valid IoU(EMA) 0.6738
+23756.3s 1168 [gpu1] [final__S1__unet_mit_b2__s0] step 3000/3000 loss 0.5443 (855s) valid IoU(EMA) 0.6427
+23776.4s 1169 [gpu1] ==> done final__S1__unet_mit_b2__s0 in 873s
+23796.3s 1170 [gpu0] [final__S1pref__unet_resnet34__s0] step 2500/3000 loss 0.5752 (543s) valid IoU(EMA) 0.6751
+23856.4s 1171 [gpu0] [final__S1pref__unet_resnet34__s0] step 2750/3000 loss 0.5552 (599s) valid IoU(EMA) 0.6732
+23856.4s 1172 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 250/3000 loss 1.2289 (80s) valid IoU(EMA) 0.6608
+23896.4s 1173 [gpu0] [final__S1pref__unet_resnet34__s0] step 3000/3000 loss 0.5431 (653s) valid IoU(EMA) 0.6718
+23916.4s 1174 [gpu0] ==> done final__S1pref__unet_resnet34__s0 in 666s
+23936.4s 1175 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 500/3000 loss 0.8769 (162s) valid IoU(EMA) 0.6698
+23996.4s 1176 [gpu0] [final__S1pref__unet_mit_b2__s0] step 250/3000 loss 1.2745 (72s) valid IoU(EMA) 0.6269
+24016.4s 1177 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 750/3000 loss 0.7772 (243s) valid IoU(EMA) 0.6729
+24056.4s 1178 [gpu0] [final__S1pref__unet_mit_b2__s0] step 500/3000 loss 0.8799 (146s) valid IoU(EMA) 0.6432
+24116.4s 1179 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 1000/3000 loss 0.7131 (325s) valid IoU(EMA) 0.6883
+24136.4s 1180 [gpu0] [final__S1pref__unet_mit_b2__s0] step 750/3000 loss 0.7808 (220s) valid IoU(EMA) 0.6560
+24196.4s 1181 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 1250/3000 loss 0.6502 (407s) valid IoU(EMA) 0.6864
+24216.4s 1182 [gpu0] [final__S1pref__unet_mit_b2__s0] step 1000/3000 loss 0.7293 (294s) valid IoU(EMA) 0.6517
+24276.4s 1183 [gpu0] [final__S1pref__unet_mit_b2__s0] step 1250/3000 loss 0.6987 (367s) valid IoU(EMA) 0.6591
+24276.4s 1184 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 1500/3000 loss 0.6267 (488s) valid IoU(EMA) 0.6736
+24356.4s 1185 [gpu0] [final__S1pref__unet_mit_b2__s0] step 1500/3000 loss 0.7011 (441s) valid IoU(EMA) 0.6504
+24356.4s 1186 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 1750/3000 loss 0.6096 (570s) valid IoU(EMA) 0.6885
+24436.4s 1187 [gpu0] [final__S1pref__unet_mit_b2__s0] step 1750/3000 loss 0.6458 (515s) valid IoU(EMA) 0.6583
+24436.4s 1188 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 2000/3000 loss 0.5785 (652s) valid IoU(EMA) 0.6859
+24516.4s 1189 [gpu0] [final__S1pref__unet_mit_b2__s0] step 2000/3000 loss 0.6553 (588s) valid IoU(EMA) 0.6540
+24516.4s 1190 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 2250/3000 loss 0.5449 (734s) valid IoU(EMA) 0.6799
+24576.4s 1191 [gpu0] [final__S1pref__unet_mit_b2__s0] step 2250/3000 loss 0.5888 (662s) valid IoU(EMA) 0.6427
+24596.4s 1192 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 2500/3000 loss 0.5197 (817s) valid IoU(EMA) 0.6781
+24656.4s 1193 [gpu0] [final__S1pref__unet_mit_b2__s0] step 2500/3000 loss 0.5670 (736s) valid IoU(EMA) 0.6411
+24676.4s 1194 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 2750/3000 loss 0.5107 (899s) valid IoU(EMA) 0.6797
+24736.4s 1195 [gpu0] [final__S1pref__unet_mit_b2__s0] step 2750/3000 loss 0.5504 (809s) valid IoU(EMA) 0.6333
+24756.4s 1196 [gpu1] [final__S1pref__unet_resnext50_32x4d__s0] step 3000/3000 loss 0.5022 (980s) valid IoU(EMA) 0.6814
+24776.4s 1197 [gpu1] ==> done final__S1pref__unet_resnext50_32x4d__s0 in 999s
+24796.4s 1198 [gpu0] [final__S1pref__unet_mit_b2__s0] step 3000/3000 loss 0.5387 (883s) valid IoU(EMA) 0.6380
+24816.4s 1199 [gpu0] ==> done final__S1pref__unet_mit_b2__s0 in 902s
+24836.4s 1200 [gpu1] [final__S1pdw__unet_resnet34__s0] step 250/3000 loss 1.4695 (55s) valid IoU(EMA) 0.6508
+24896.4s 1201 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 250/3000 loss 1.2169 (82s) valid IoU(EMA) 0.6901
+24896.4s 1202 [gpu1] [final__S1pdw__unet_resnet34__s0] step 500/3000 loss 0.9295 (112s) valid IoU(EMA) 0.6818
+24956.4s 1203 [gpu1] [final__S1pdw__unet_resnet34__s0] step 750/3000 loss 0.7912 (170s) valid IoU(EMA) 0.6962
+24996.4s 1204 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 500/3000 loss 0.8496 (167s) valid IoU(EMA) 0.6879
+25016.4s 1205 [gpu1] [final__S1pdw__unet_resnet34__s0] step 1000/3000 loss 0.7343 (227s) valid IoU(EMA) 0.7026
+25056.4s 1206 [gpu1] [final__S1pdw__unet_resnet34__s0] step 1250/3000 loss 0.7048 (285s) valid IoU(EMA) 0.7071
+25076.4s 1207 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 750/3000 loss 0.7363 (252s) valid IoU(EMA) 0.6876
+25116.4s 1208 [gpu1] [final__S1pdw__unet_resnet34__s0] step 1500/3000 loss 0.6607 (342s) valid IoU(EMA) 0.6971
+25156.4s 1209 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 1000/3000 loss 0.6813 (338s) valid IoU(EMA) 0.6990
+25176.4s 1210 [gpu1] [final__S1pdw__unet_resnet34__s0] step 1750/3000 loss 0.6239 (400s) valid IoU(EMA) 0.6933
+25236.4s 1211 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 1250/3000 loss 0.6170 (424s) valid IoU(EMA) 0.6850
+25236.4s 1212 [gpu1] [final__S1pdw__unet_resnet34__s0] step 2000/3000 loss 0.5701 (459s) valid IoU(EMA) 0.6893
+25296.4s 1213 [gpu1] [final__S1pdw__unet_resnet34__s0] step 2250/3000 loss 0.5282 (517s) valid IoU(EMA) 0.6905
+25336.4s 1214 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 1500/3000 loss 0.5479 (510s) valid IoU(EMA) 0.6819
+25356.4s 1215 [gpu1] [final__S1pdw__unet_resnet34__s0] step 2500/3000 loss 0.5087 (574s) valid IoU(EMA) 0.7005
+25416.5s 1216 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 1750/3000 loss 0.5332 (596s) valid IoU(EMA) 0.6886
+25416.5s 1217 [gpu1] [final__S1pdw__unet_resnet34__s0] step 2750/3000 loss 0.4913 (633s) valid IoU(EMA) 0.6961
+25476.4s 1218 [gpu1] [final__S1pdw__unet_resnet34__s0] step 3000/3000 loss 0.4842 (690s) valid IoU(EMA) 0.6937
+25476.4s 1219 [gpu1] ==> done final__S1pdw__unet_resnet34__s0 in 705s
+25496.4s 1220 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 2000/3000 loss 0.5100 (681s) valid IoU(EMA) 0.6865
+25556.5s 1221 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 250/3000 loss 1.2738 (73s) valid IoU(EMA) 0.6470
+25596.5s 1222 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 2250/3000 loss 0.4811 (767s) valid IoU(EMA) 0.6776
+25636.4s 1223 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 500/3000 loss 0.8484 (149s) valid IoU(EMA) 0.6935
+25676.4s 1224 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 2500/3000 loss 0.4599 (852s) valid IoU(EMA) 0.6842
+25716.4s 1225 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 750/3000 loss 0.7316 (226s) valid IoU(EMA) 0.7035
+25756.5s 1226 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 2750/3000 loss 0.4503 (938s) valid IoU(EMA) 0.6879
+25796.5s 1227 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 1000/3000 loss 0.6831 (302s) valid IoU(EMA) 0.6924
+25836.5s 1228 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s0] step 3000/3000 loss 0.4449 (1023s) valid IoU(EMA) 0.6873
+25856.4s 1229 [gpu0] ==> done final__S1pdw__unet_resnext50_32x4d__s0 in 1043s
+25856.4s 1230 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 1250/3000 loss 0.6293 (378s) valid IoU(EMA) 0.6873
+25916.5s 1231 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 250/3000 loss 1.4573 (56s) valid IoU(EMA) 0.6322
+25936.4s 1232 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 1500/3000 loss 0.5525 (455s) valid IoU(EMA) 0.6900
+25976.5s 1233 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 500/3000 loss 0.9447 (115s) valid IoU(EMA) 0.6684
+26016.5s 1234 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 1750/3000 loss 0.5338 (532s) valid IoU(EMA) 0.6932
+26036.4s 1235 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 750/3000 loss 0.7948 (175s) valid IoU(EMA) 0.6801
+26096.5s 1236 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 1000/3000 loss 0.7398 (234s) valid IoU(EMA) 0.7004
+26096.5s 1237 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 2000/3000 loss 0.5095 (609s) valid IoU(EMA) 0.6966
+26156.5s 1238 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 1250/3000 loss 0.6867 (293s) valid IoU(EMA) 0.7032
+26176.4s 1239 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 2250/3000 loss 0.4791 (686s) valid IoU(EMA) 0.6964
+26216.5s 1240 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 1500/3000 loss 0.6244 (352s) valid IoU(EMA) 0.6978
+26256.5s 1241 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 2500/3000 loss 0.4657 (762s) valid IoU(EMA) 0.7048
+26276.4s 1242 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 1750/3000 loss 0.5782 (412s) valid IoU(EMA) 0.6994
+26336.5s 1243 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 2000/3000 loss 0.5761 (471s) valid IoU(EMA) 0.6856
+26336.5s 1244 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 2750/3000 loss 0.4517 (839s) valid IoU(EMA) 0.7102
+26396.5s 1245 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 2250/3000 loss 0.5330 (531s) valid IoU(EMA) 0.6771
+26396.5s 1246 [gpu1] [final__S1pdw__unet_mit_b2__s0] step 3000/3000 loss 0.4494 (916s) valid IoU(EMA) 0.7121
+26416.4s 1247 [gpu1] ==> done final__S1pdw__unet_mit_b2__s0 in 939s
+26456.5s 1248 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 2500/3000 loss 0.5176 (591s) valid IoU(EMA) 0.6721
+26516.5s 1249 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 2750/3000 loss 0.5042 (650s) valid IoU(EMA) 0.6795
+26516.5s 1250 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 250/3000 loss 1.2156 (83s) valid IoU(EMA) 0.6833
+26576.5s 1251 [gpu0] [final__S1prefpdw__unet_resnet34__s0] step 3000/3000 loss 0.5011 (710s) valid IoU(EMA) 0.6797
+26596.4s 1252 [gpu0] ==> done final__S1prefpdw__unet_resnet34__s0 in 728s
+26596.4s 1253 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 500/3000 loss 0.8489 (170s) valid IoU(EMA) 0.7001
+26676.5s 1254 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 250/3000 loss 1.2697 (75s) valid IoU(EMA) 0.6376
+26676.5s 1255 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 750/3000 loss 0.7371 (256s) valid IoU(EMA) 0.7067
+26756.5s 1256 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 500/3000 loss 0.8514 (155s) valid IoU(EMA) 0.6998
+26776.4s 1257 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 1000/3000 loss 0.6962 (343s) valid IoU(EMA) 0.7121
+26836.5s 1258 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 750/3000 loss 0.7310 (234s) valid IoU(EMA) 0.7038
+26856.5s 1259 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 1250/3000 loss 0.6204 (429s) valid IoU(EMA) 0.6928
+26916.5s 1260 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 1000/3000 loss 0.6909 (314s) valid IoU(EMA) 0.6854
+26936.5s 1261 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 1500/3000 loss 0.5645 (515s) valid IoU(EMA) 0.6913
+26976.5s 1262 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 1250/3000 loss 0.6192 (393s) valid IoU(EMA) 0.6981
+27036.5s 1263 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 1750/3000 loss 0.5338 (602s) valid IoU(EMA) 0.7030
+27056.5s 1264 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 1500/3000 loss 0.5569 (472s) valid IoU(EMA) 0.6988
+27116.5s 1265 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 2000/3000 loss 0.5052 (689s) valid IoU(EMA) 0.7032
+27136.5s 1266 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 1750/3000 loss 0.5530 (551s) valid IoU(EMA) 0.7090
+27196.5s 1267 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 2250/3000 loss 0.4879 (776s) valid IoU(EMA) 0.7062
+27216.5s 1268 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 2000/3000 loss 0.5170 (631s) valid IoU(EMA) 0.7012
+27296.5s 1269 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 2250/3000 loss 0.4940 (710s) valid IoU(EMA) 0.7015
+27296.5s 1270 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 2500/3000 loss 0.4637 (863s) valid IoU(EMA) 0.7048
+27376.5s 1271 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 2500/3000 loss 0.4756 (790s) valid IoU(EMA) 0.6950
+27376.5s 1272 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 2750/3000 loss 0.4572 (950s) valid IoU(EMA) 0.7081
+27456.5s 1273 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 2750/3000 loss 0.4668 (869s) valid IoU(EMA) 0.6981
+27456.5s 1274 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s0] step 3000/3000 loss 0.4523 (1036s) valid IoU(EMA) 0.7082
+27476.5s 1275 [gpu1] ==> done final__S1prefpdw__unet_resnext50_32x4d__s0 in 1057s
+27536.5s 1276 [gpu0] [final__S1prefpdw__unet_mit_b2__s0] step 3000/3000 loss 0.4685 (947s) valid IoU(EMA) 0.6990
+27536.5s 1277 [gpu1] [final__S1__unet_resnet34__s1] step 250/3000 loss 1.2527 (50s) valid IoU(EMA) 0.6278
+27556.5s 1278 [gpu0] ==> done final__S1prefpdw__unet_mit_b2__s0 in 971s
+27576.5s 1279 [gpu1] [final__S1__unet_resnet34__s1] step 500/3000 loss 0.8997 (101s) valid IoU(EMA) 0.6392
+27636.5s 1280 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 250/3000 loss 1.2681 (76s) valid IoU(EMA) 0.6539
+27636.5s 1281 [gpu1] [final__S1__unet_resnet34__s1] step 750/3000 loss 0.8088 (152s) valid IoU(EMA) 0.6450
+27676.5s 1282 [gpu1] [final__S1__unet_resnet34__s1] step 1000/3000 loss 0.7642 (203s) valid IoU(EMA) 0.6442
+27716.5s 1283 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 500/3000 loss 0.8817 (154s) valid IoU(EMA) 0.6487
+27736.5s 1284 [gpu1] [final__S1__unet_resnet34__s1] step 1250/3000 loss 0.7263 (253s) valid IoU(EMA) 0.6567
+27776.5s 1285 [gpu1] [final__S1__unet_resnet34__s1] step 1500/3000 loss 0.6870 (305s) valid IoU(EMA) 0.6543
+27796.5s 1286 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 750/3000 loss 0.7861 (232s) valid IoU(EMA) 0.6574
+27836.5s 1287 [gpu1] [final__S1__unet_resnet34__s1] step 1750/3000 loss 0.6465 (356s) valid IoU(EMA) 0.6478
+27876.5s 1288 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 1000/3000 loss 0.7302 (310s) valid IoU(EMA) 0.6614
+27896.5s 1289 [gpu1] [final__S1__unet_resnet34__s1] step 2000/3000 loss 0.6453 (407s) valid IoU(EMA) 0.6480
+27936.5s 1290 [gpu1] [final__S1__unet_resnet34__s1] step 2250/3000 loss 0.6123 (458s) valid IoU(EMA) 0.6432
+27956.5s 1291 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 1250/3000 loss 0.6892 (388s) valid IoU(EMA) 0.6597
+27996.5s 1292 [gpu1] [final__S1__unet_resnet34__s1] step 2500/3000 loss 0.6091 (509s) valid IoU(EMA) 0.6469
+28036.5s 1293 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 1500/3000 loss 0.6550 (467s) valid IoU(EMA) 0.6530
+28036.5s 1294 [gpu1] [final__S1__unet_resnet34__s1] step 2750/3000 loss 0.5812 (560s) valid IoU(EMA) 0.6424
+28096.5s 1295 [gpu1] [final__S1__unet_resnet34__s1] step 3000/3000 loss 0.5860 (612s) valid IoU(EMA) 0.6428
+28096.5s 1296 [gpu1] ==> done final__S1__unet_resnet34__s1 in 623s
+28116.5s 1297 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 1750/3000 loss 0.6453 (545s) valid IoU(EMA) 0.6416
+28176.5s 1298 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 2000/3000 loss 0.6217 (624s) valid IoU(EMA) 0.6504
+28176.5s 1299 [gpu1] [final__S1__unet_mit_b2__s1] step 250/3000 loss 1.3421 (69s) valid IoU(EMA) 0.5824
+28236.5s 1300 [gpu1] [final__S1__unet_mit_b2__s1] step 500/3000 loss 0.9210 (140s) valid IoU(EMA) 0.6308
+28256.5s 1301 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 2250/3000 loss 0.5861 (703s) valid IoU(EMA) 0.6414
+28316.5s 1302 [gpu1] [final__S1__unet_mit_b2__s1] step 750/3000 loss 0.8098 (211s) valid IoU(EMA) 0.6576
+28336.5s 1303 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 2500/3000 loss 0.5740 (781s) valid IoU(EMA) 0.6371
+28396.5s 1304 [gpu1] [final__S1__unet_mit_b2__s1] step 1000/3000 loss 0.7590 (283s) valid IoU(EMA) 0.6721
+28416.5s 1305 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 2750/3000 loss 0.5487 (860s) valid IoU(EMA) 0.6359
+28456.5s 1306 [gpu1] [final__S1__unet_mit_b2__s1] step 1250/3000 loss 0.7226 (354s) valid IoU(EMA) 0.6461
+28496.5s 1307 [gpu0] [final__S1__unet_resnext50_32x4d__s1] step 3000/3000 loss 0.5592 (939s) valid IoU(EMA) 0.6367
+28516.5s 1308 [gpu0] ==> done final__S1__unet_resnext50_32x4d__s1 in 954s
+28536.5s 1309 [gpu1] [final__S1__unet_mit_b2__s1] step 1500/3000 loss 0.6653 (424s) valid IoU(EMA) 0.6668
+28576.5s 1310 [gpu0] [final__S1pref__unet_resnet34__s1] step 250/3000 loss 1.2586 (53s) valid IoU(EMA) 0.6625
+28596.5s 1311 [gpu1] [final__S1__unet_mit_b2__s1] step 1750/3000 loss 0.6713 (496s) valid IoU(EMA) 0.6690
+28616.5s 1312 [gpu0] [final__S1pref__unet_resnet34__s1] step 500/3000 loss 0.9038 (108s) valid IoU(EMA) 0.6646
+28676.5s 1313 [gpu0] [final__S1pref__unet_resnet34__s1] step 750/3000 loss 0.8021 (162s) valid IoU(EMA) 0.6711
+28676.5s 1314 [gpu1] [final__S1__unet_mit_b2__s1] step 2000/3000 loss 0.6085 (567s) valid IoU(EMA) 0.6733
+28736.6s 1315 [gpu0] [final__S1pref__unet_resnet34__s1] step 1000/3000 loss 0.7564 (217s) valid IoU(EMA) 0.6826
+28736.6s 1316 [gpu1] [final__S1__unet_mit_b2__s1] step 2250/3000 loss 0.5920 (639s) valid IoU(EMA) 0.6680
+28796.6s 1317 [gpu0] [final__S1pref__unet_resnet34__s1] step 1250/3000 loss 0.7181 (271s) valid IoU(EMA) 0.6772
+28816.5s 1318 [gpu1] [final__S1__unet_mit_b2__s1] step 2500/3000 loss 0.5760 (710s) valid IoU(EMA) 0.6510
+28836.6s 1319 [gpu0] [final__S1pref__unet_resnet34__s1] step 1500/3000 loss 0.6606 (326s) valid IoU(EMA) 0.6810
+28876.6s 1320 [gpu1] [final__S1__unet_mit_b2__s1] step 2750/3000 loss 0.5574 (781s) valid IoU(EMA) 0.6633
+28896.5s 1321 [gpu0] [final__S1pref__unet_resnet34__s1] step 1750/3000 loss 0.6455 (381s) valid IoU(EMA) 0.6989
+28956.6s 1322 [gpu0] [final__S1pref__unet_resnet34__s1] step 2000/3000 loss 0.6237 (436s) valid IoU(EMA) 0.6905
+28956.6s 1323 [gpu1] [final__S1__unet_mit_b2__s1] step 3000/3000 loss 0.5613 (853s) valid IoU(EMA) 0.6674
+28976.5s 1324 [gpu1] ==> done final__S1__unet_mit_b2__s1 in 870s
+29016.6s 1325 [gpu0] [final__S1pref__unet_resnet34__s1] step 2250/3000 loss 0.5866 (491s) valid IoU(EMA) 0.6914
+29056.6s 1326 [gpu0] [final__S1pref__unet_resnet34__s1] step 2500/3000 loss 0.5760 (546s) valid IoU(EMA) 0.6876
+29056.6s 1327 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 250/3000 loss 1.2750 (79s) valid IoU(EMA) 0.6333
+29116.6s 1328 [gpu0] [final__S1pref__unet_resnet34__s1] step 2750/3000 loss 0.5418 (600s) valid IoU(EMA) 0.6881
+29136.5s 1329 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 500/3000 loss 0.8802 (161s) valid IoU(EMA) 0.6768
+29176.6s 1330 [gpu0] [final__S1pref__unet_resnet34__s1] step 3000/3000 loss 0.5442 (655s) valid IoU(EMA) 0.6863
+29176.6s 1331 [gpu0] ==> done final__S1pref__unet_resnet34__s1 in 669s
+29216.6s 1332 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 750/3000 loss 0.7883 (243s) valid IoU(EMA) 0.6804
+29256.6s 1333 [gpu0] [final__S1pref__unet_mit_b2__s1] step 250/3000 loss 1.3311 (71s) valid IoU(EMA) 0.6182
+29296.6s 1334 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 1000/3000 loss 0.7337 (325s) valid IoU(EMA) 0.6923
+29336.6s 1335 [gpu0] [final__S1pref__unet_mit_b2__s1] step 500/3000 loss 0.9134 (145s) valid IoU(EMA) 0.6232
+29376.6s 1336 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 1250/3000 loss 0.6763 (406s) valid IoU(EMA) 0.7100
+29396.5s 1337 [gpu0] [final__S1pref__unet_mit_b2__s1] step 750/3000 loss 0.7978 (218s) valid IoU(EMA) 0.6574
+29456.6s 1338 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 1500/3000 loss 0.6434 (488s) valid IoU(EMA) 0.7032
+29476.5s 1339 [gpu0] [final__S1pref__unet_mit_b2__s1] step 1000/3000 loss 0.7454 (293s) valid IoU(EMA) 0.6784
+29536.6s 1340 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 1750/3000 loss 0.6044 (570s) valid IoU(EMA) 0.7031
+29556.5s 1341 [gpu0] [final__S1pref__unet_mit_b2__s1] step 1250/3000 loss 0.7046 (366s) valid IoU(EMA) 0.6730
+29616.6s 1342 [gpu0] [final__S1pref__unet_mit_b2__s1] step 1500/3000 loss 0.6913 (440s) valid IoU(EMA) 0.6856
+29636.5s 1343 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 2000/3000 loss 0.5892 (652s) valid IoU(EMA) 0.6870
+29696.6s 1344 [gpu0] [final__S1pref__unet_mit_b2__s1] step 1750/3000 loss 0.6397 (513s) valid IoU(EMA) 0.6600
+29716.5s 1345 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 2250/3000 loss 0.5661 (734s) valid IoU(EMA) 0.6915
+29776.6s 1346 [gpu0] [final__S1pref__unet_mit_b2__s1] step 2000/3000 loss 0.5999 (587s) valid IoU(EMA) 0.6790
+29796.5s 1347 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 2500/3000 loss 0.5425 (816s) valid IoU(EMA) 0.6951
+29836.6s 1348 [gpu0] [final__S1pref__unet_mit_b2__s1] step 2250/3000 loss 0.5548 (660s) valid IoU(EMA) 0.6830
+29876.6s 1349 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 2750/3000 loss 0.5177 (898s) valid IoU(EMA) 0.6923
+29916.6s 1350 [gpu0] [final__S1pref__unet_mit_b2__s1] step 2500/3000 loss 0.5468 (734s) valid IoU(EMA) 0.6666
+29956.6s 1351 [gpu1] [final__S1pref__unet_resnext50_32x4d__s1] step 3000/3000 loss 0.5254 (980s) valid IoU(EMA) 0.6881
+29976.5s 1352 [gpu1] ==> done final__S1pref__unet_resnext50_32x4d__s1 in 998s
+29996.6s 1353 [gpu0] [final__S1pref__unet_mit_b2__s1] step 2750/3000 loss 0.5229 (808s) valid IoU(EMA) 0.6665
+30036.6s 1354 [gpu1] [final__S1pdw__unet_resnet34__s1] step 250/3000 loss 1.2397 (55s) valid IoU(EMA) 0.6544
+30076.6s 1355 [gpu0] [final__S1pref__unet_mit_b2__s1] step 3000/3000 loss 0.5258 (882s) valid IoU(EMA) 0.6624
+30076.6s 1356 [gpu0] ==> done final__S1pref__unet_mit_b2__s1 in 901s
+30076.6s 1357 [gpu1] [final__S1pdw__unet_resnet34__s1] step 500/3000 loss 0.8778 (112s) valid IoU(EMA) 0.6875
+30136.6s 1358 [gpu1] [final__S1pdw__unet_resnet34__s1] step 750/3000 loss 0.7735 (169s) valid IoU(EMA) 0.7096
+30176.6s 1359 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 250/3000 loss 1.2450 (82s) valid IoU(EMA) 0.6582
+30196.6s 1360 [gpu1] [final__S1pdw__unet_resnet34__s1] step 1000/3000 loss 0.7252 (227s) valid IoU(EMA) 0.7050
+30256.6s 1361 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 500/3000 loss 0.8524 (168s) valid IoU(EMA) 0.6762
+30256.6s 1362 [gpu1] [final__S1pdw__unet_resnet34__s1] step 1250/3000 loss 0.6940 (285s) valid IoU(EMA) 0.6872
+30316.6s 1363 [gpu1] [final__S1pdw__unet_resnet34__s1] step 1500/3000 loss 0.6498 (342s) valid IoU(EMA) 0.6819
+30336.6s 1364 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 750/3000 loss 0.7431 (253s) valid IoU(EMA) 0.6854
+30376.6s 1365 [gpu1] [final__S1pdw__unet_resnet34__s1] step 1750/3000 loss 0.5860 (400s) valid IoU(EMA) 0.6816
+30416.6s 1366 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 1000/3000 loss 0.6941 (338s) valid IoU(EMA) 0.7093
+30436.6s 1367 [gpu1] [final__S1pdw__unet_resnet34__s1] step 2000/3000 loss 0.5473 (458s) valid IoU(EMA) 0.6744
+30496.6s 1368 [gpu1] [final__S1pdw__unet_resnet34__s1] step 2250/3000 loss 0.5277 (516s) valid IoU(EMA) 0.6815
+30516.6s 1369 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 1250/3000 loss 0.6463 (423s) valid IoU(EMA) 0.7029
+30556.6s 1370 [gpu1] [final__S1pdw__unet_resnet34__s1] step 2500/3000 loss 0.5206 (574s) valid IoU(EMA) 0.6893
+30596.6s 1371 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 1500/3000 loss 0.6044 (508s) valid IoU(EMA) 0.6848
+30596.6s 1372 [gpu1] [final__S1pdw__unet_resnet34__s1] step 2750/3000 loss 0.5091 (632s) valid IoU(EMA) 0.6872
+30656.6s 1373 [gpu1] [final__S1pdw__unet_resnet34__s1] step 3000/3000 loss 0.5103 (690s) valid IoU(EMA) 0.6913
+30676.6s 1374 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 1750/3000 loss 0.5493 (593s) valid IoU(EMA) 0.6914
+30676.6s 1375 [gpu1] ==> done final__S1pdw__unet_resnet34__s1 in 704s
+30756.6s 1376 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 2000/3000 loss 0.5168 (679s) valid IoU(EMA) 0.6901
+30756.6s 1377 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 250/3000 loss 1.3322 (74s) valid IoU(EMA) 0.6669
+30836.6s 1378 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 500/3000 loss 0.8706 (150s) valid IoU(EMA) 0.6926
+30856.6s 1379 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 2250/3000 loss 0.5021 (764s) valid IoU(EMA) 0.6948
+30896.6s 1380 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 750/3000 loss 0.7387 (228s) valid IoU(EMA) 0.7080
+30936.6s 1381 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 2500/3000 loss 0.4986 (849s) valid IoU(EMA) 0.7018
+30976.6s 1382 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 1000/3000 loss 0.7060 (304s) valid IoU(EMA) 0.7001
+31016.6s 1383 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 2750/3000 loss 0.4789 (934s) valid IoU(EMA) 0.6993
+31056.6s 1384 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 1250/3000 loss 0.6333 (380s) valid IoU(EMA) 0.6793
+31096.6s 1385 [gpu0] [final__S1pdw__unet_resnext50_32x4d__s1] step 3000/3000 loss 0.4859 (1019s) valid IoU(EMA) 0.6974
+31116.6s 1386 [gpu0] ==> done final__S1pdw__unet_resnext50_32x4d__s1 in 1039s
+31136.6s 1387 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 1500/3000 loss 0.5734 (456s) valid IoU(EMA) 0.6979
+31176.6s 1388 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 250/3000 loss 1.2524 (56s) valid IoU(EMA) 0.6624
+31216.6s 1389 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 1750/3000 loss 0.5718 (533s) valid IoU(EMA) 0.7089
+31236.6s 1390 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 500/3000 loss 0.8692 (115s) valid IoU(EMA) 0.6792
+31296.6s 1391 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 750/3000 loss 0.7618 (175s) valid IoU(EMA) 0.6989
+31296.6s 1392 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 2000/3000 loss 0.5097 (610s) valid IoU(EMA) 0.7065
+31356.6s 1393 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 1000/3000 loss 0.7101 (234s) valid IoU(EMA) 0.7129
+31356.6s 1394 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 2250/3000 loss 0.4875 (686s) valid IoU(EMA) 0.7001
+31416.7s 1395 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 1250/3000 loss 0.6581 (293s) valid IoU(EMA) 0.6957
+31436.6s 1396 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 2500/3000 loss 0.4716 (762s) valid IoU(EMA) 0.6973
+31476.7s 1397 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 1500/3000 loss 0.5980 (352s) valid IoU(EMA) 0.6993
+31516.7s 1398 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 2750/3000 loss 0.4575 (840s) valid IoU(EMA) 0.6975
+31536.6s 1399 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 1750/3000 loss 0.5609 (412s) valid IoU(EMA) 0.7036
+31596.7s 1400 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 2000/3000 loss 0.5321 (472s) valid IoU(EMA) 0.6966
+31596.7s 1401 [gpu1] [final__S1pdw__unet_mit_b2__s1] step 3000/3000 loss 0.4614 (917s) valid IoU(EMA) 0.7004
+31616.6s 1402 [gpu1] ==> done final__S1pdw__unet_mit_b2__s1 in 938s
+31656.7s 1403 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 2250/3000 loss 0.5306 (531s) valid IoU(EMA) 0.6881
+31696.7s 1404 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 250/3000 loss 1.2646 (84s) valid IoU(EMA) 0.6647
+31716.6s 1405 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 2500/3000 loss 0.5180 (590s) valid IoU(EMA) 0.6928
+31776.7s 1406 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 2750/3000 loss 0.5013 (650s) valid IoU(EMA) 0.6920
+31796.6s 1407 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 500/3000 loss 0.8451 (170s) valid IoU(EMA) 0.6799
+31836.7s 1408 [gpu0] [final__S1prefpdw__unet_resnet34__s1] step 3000/3000 loss 0.5102 (710s) valid IoU(EMA) 0.6918
+31856.6s 1409 [gpu0] ==> done final__S1prefpdw__unet_resnet34__s1 in 726s
+31876.7s 1410 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 750/3000 loss 0.7396 (256s) valid IoU(EMA) 0.7080
+31936.7s 1411 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 250/3000 loss 1.3250 (76s) valid IoU(EMA) 0.6490
+31956.6s 1412 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 1000/3000 loss 0.6887 (342s) valid IoU(EMA) 0.7114
+32016.7s 1413 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 500/3000 loss 0.8722 (155s) valid IoU(EMA) 0.6989
+32036.6s 1414 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 1250/3000 loss 0.6189 (429s) valid IoU(EMA) 0.7120
+32096.7s 1415 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 750/3000 loss 0.7396 (234s) valid IoU(EMA) 0.7087
+32136.7s 1416 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 1500/3000 loss 0.5662 (515s) valid IoU(EMA) 0.7122
+32156.6s 1417 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 1000/3000 loss 0.6917 (313s) valid IoU(EMA) 0.7154
+32216.7s 1418 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 1750/3000 loss 0.5288 (602s) valid IoU(EMA) 0.7093
+32236.6s 1419 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 1250/3000 loss 0.6742 (392s) valid IoU(EMA) 0.6937
+32316.7s 1420 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 1500/3000 loss 0.5651 (471s) valid IoU(EMA) 0.7043
+32316.7s 1421 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 2000/3000 loss 0.4889 (689s) valid IoU(EMA) 0.7085
+32396.7s 1422 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 1750/3000 loss 0.4949 (550s) valid IoU(EMA) 0.7184
+32396.7s 1423 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 2250/3000 loss 0.4731 (777s) valid IoU(EMA) 0.7045
+32476.7s 1424 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 2000/3000 loss 0.4809 (629s) valid IoU(EMA) 0.7086
+32476.7s 1425 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 2500/3000 loss 0.4652 (864s) valid IoU(EMA) 0.7059
+32556.7s 1426 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 2250/3000 loss 0.4578 (708s) valid IoU(EMA) 0.7051
+32576.6s 1427 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 2750/3000 loss 0.4425 (951s) valid IoU(EMA) 0.7119
+32636.7s 1428 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 2500/3000 loss 0.4534 (787s) valid IoU(EMA) 0.7129
+32656.6s 1429 [gpu1] [final__S1prefpdw__unet_resnext50_32x4d__s1] step 3000/3000 loss 0.4466 (1038s) valid IoU(EMA) 0.7131
+32676.7s 1430 [gpu1] ==> done final__S1prefpdw__unet_resnext50_32x4d__s1 in 1061s
+32716.7s 1431 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 2750/3000 loss 0.4404 (865s) valid IoU(EMA) 0.7135
+32716.7s 1432 [gpu1] [final__S1__unet_resnet34__s2] step 250/3000 loss 1.2390 (50s) valid IoU(EMA) 0.5932
+32776.7s 1433 [gpu1] [final__S1__unet_resnet34__s2] step 500/3000 loss 0.8823 (102s) valid IoU(EMA) 0.6320
+32796.6s 1434 [gpu0] [final__S1prefpdw__unet_mit_b2__s1] step 3000/3000 loss 0.4456 (943s) valid IoU(EMA) 0.7148
+32816.7s 1435 [gpu0] ==> done final__S1prefpdw__unet_mit_b2__s1 in 966s
+32836.6s 1436 [gpu1] [final__S1__unet_resnet34__s2] step 750/3000 loss 0.7946 (152s) valid IoU(EMA) 0.6444
+32876.7s 1437 [gpu1] [final__S1__unet_resnet34__s2] step 1000/3000 loss 0.7349 (203s) valid IoU(EMA) 0.6584
+32896.7s 1438 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 250/3000 loss 1.1442 (75s) valid IoU(EMA) 0.6278
+32936.7s 1439 [gpu1] [final__S1__unet_resnet34__s2] step 1250/3000 loss 0.6932 (254s) valid IoU(EMA) 0.6563
+32976.7s 1440 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 500/3000 loss 0.8466 (153s) valid IoU(EMA) 0.6397
+32976.7s 1441 [gpu1] [final__S1__unet_resnet34__s2] step 1500/3000 loss 0.6427 (305s) valid IoU(EMA) 0.6576
+33036.7s 1442 [gpu1] [final__S1__unet_resnet34__s2] step 1750/3000 loss 0.6675 (357s) valid IoU(EMA) 0.6606
+33056.7s 1443 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 750/3000 loss 0.7611 (231s) valid IoU(EMA) 0.6513
+33076.7s 1444 [gpu1] [final__S1__unet_resnet34__s2] step 2000/3000 loss 0.6209 (408s) valid IoU(EMA) 0.6417
+33116.7s 1445 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 1000/3000 loss 0.6944 (308s) valid IoU(EMA) 0.6484
+33136.7s 1446 [gpu1] [final__S1__unet_resnet34__s2] step 2250/3000 loss 0.5950 (459s) valid IoU(EMA) 0.6328
+33176.7s 1447 [gpu1] [final__S1__unet_resnet34__s2] step 2500/3000 loss 0.5761 (510s) valid IoU(EMA) 0.6341
+33196.7s 1448 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 1250/3000 loss 0.6587 (386s) valid IoU(EMA) 0.6492
+33236.7s 1449 [gpu1] [final__S1__unet_resnet34__s2] step 2750/3000 loss 0.5596 (561s) valid IoU(EMA) 0.6258
+33276.7s 1450 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 1500/3000 loss 0.6205 (464s) valid IoU(EMA) 0.6544
+33296.7s 1451 [gpu1] [final__S1__unet_resnet34__s2] step 3000/3000 loss 0.5650 (612s) valid IoU(EMA) 0.6216
+33296.7s 1452 [gpu1] ==> done final__S1__unet_resnet34__s2 in 623s
+33356.7s 1453 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 1750/3000 loss 0.6131 (543s) valid IoU(EMA) 0.6540
+33376.7s 1454 [gpu1] [final__S1__unet_mit_b2__s2] step 250/3000 loss 1.1770 (69s) valid IoU(EMA) 0.6248
+33436.7s 1455 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 2000/3000 loss 0.5890 (621s) valid IoU(EMA) 0.6317
+33436.7s 1456 [gpu1] [final__S1__unet_mit_b2__s2] step 500/3000 loss 0.8315 (140s) valid IoU(EMA) 0.6543
+33516.7s 1457 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 2250/3000 loss 0.5593 (700s) valid IoU(EMA) 0.6301
+33516.7s 1458 [gpu1] [final__S1__unet_mit_b2__s2] step 750/3000 loss 0.7622 (211s) valid IoU(EMA) 0.6560
+33576.7s 1459 [gpu1] [final__S1__unet_mit_b2__s2] step 1000/3000 loss 0.6895 (282s) valid IoU(EMA) 0.6617
+33596.7s 1460 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 2500/3000 loss 0.5348 (778s) valid IoU(EMA) 0.6273
+33656.7s 1461 [gpu1] [final__S1__unet_mit_b2__s2] step 1250/3000 loss 0.6619 (353s) valid IoU(EMA) 0.6425
+33676.7s 1462 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 2750/3000 loss 0.5238 (857s) valid IoU(EMA) 0.6226
+33716.7s 1463 [gpu1] [final__S1__unet_mit_b2__s2] step 1500/3000 loss 0.6319 (425s) valid IoU(EMA) 0.6385
+33756.7s 1464 [gpu0] [final__S1__unet_resnext50_32x4d__s2] step 3000/3000 loss 0.5300 (935s) valid IoU(EMA) 0.6192
+33756.7s 1465 [gpu0] ==> done final__S1__unet_resnext50_32x4d__s2 in 952s
+33756.7s 1466 [gpu0] deadline reached, stopping
+33796.7s 1467 [gpu1] [final__S1__unet_mit_b2__s2] step 1750/3000 loss 0.6199 (496s) valid IoU(EMA) 0.6504
+33856.7s 1468 [gpu1] [final__S1__unet_mit_b2__s2] step 2000/3000 loss 0.5779 (566s) valid IoU(EMA) 0.6514
+33936.7s 1469 [gpu1] [final__S1__unet_mit_b2__s2] step 2250/3000 loss 0.5770 (636s) valid IoU(EMA) 0.6485
+34016.7s 1470 [gpu1] [final__S1__unet_mit_b2__s2] step 2500/3000 loss 0.5323 (707s) valid IoU(EMA) 0.6568
+34076.7s 1471 [gpu1] [final__S1__unet_mit_b2__s2] step 2750/3000 loss 0.5164 (778s) valid IoU(EMA) 0.6504
+34156.7s 1472 [gpu1] [final__S1__unet_mit_b2__s2] step 3000/3000 loss 0.5212 (848s) valid IoU(EMA) 0.6493
+34156.7s 1473 [gpu1] ==> done final__S1__unet_mit_b2__s2 in 865s
+34156.7s 1474 [gpu1] deadline reached, stopping
+34156.7s 1475 phase final: 27/60 jobs finished | elapsed 9.49 h
+34228.9s 1476 model  n    thr  valid   test      test_ci95  test_prec  test_rec    bol       bol_ci95  bol_prec  bol_rec
+34228.9s 1477 S1 | unet:resnet34 x3  3 0.4600 0.6713 0.6889 (0.581, 0.771)     0.8255    0.8063 0.5831 (0.419, 0.682)    0.7961   0.6855
+34228.9s 1478 S1 | unet:resnext50_32x4d x3  3 0.4800 0.6677 0.6891 (0.582, 0.771)     0.8229    0.8090 0.5843 (0.422, 0.677)    0.7680   0.7096
+34228.9s 1479 S1 | unet:mit_b2 x3  3 0.4200 0.6741 0.6728  (0.56, 0.762)     0.8128    0.7962 0.5771 (0.392, 0.688)    0.7620   0.7039
+34228.9s 1480 S1 | ALL ensemble  9 0.4600 0.6786 0.6890 (0.578, 0.774)     0.8268    0.8052 0.5966  (0.434, 0.69)    0.7877   0.7110
+34228.9s 1481 S1+ref | unet:resnet34 x2  2 0.4200 0.7047 0.7019  (0.597, 0.78)     0.8242    0.8255 0.6786 (0.475, 0.782)    0.7133   0.9330
+34228.9s 1482 S1+ref | unet:resnext50_32x4d x2  2 0.4800 0.7077 0.7078 (0.612, 0.784)     0.8428    0.8155 0.6874 (0.469, 0.791)    0.7517   0.8893
+34228.9s 1483 S1+ref | unet:mit_b2 x2  2 0.3800 0.6817 0.6792  (0.574, 0.76)     0.8071    0.8108 0.6725 (0.464, 0.772)    0.7032   0.9391
+34228.9s 1484 S1+ref | ALL ensemble  6 0.4400 0.7050 0.7076  (0.61, 0.783)     0.8348    0.8227 0.6932 (0.487, 0.794)    0.7339   0.9260
+34228.9s 1485 S1+dw | unet:resnet34 x2  2 0.4200 0.7163 0.7149  (0.62, 0.788)     0.8381    0.8293 0.5867 (0.397, 0.716)    0.7305   0.7488
+34228.9s 1486 S1+dw | unet:resnext50_32x4d x2  2 0.5200 0.7101 0.7047 (0.599, 0.785)     0.8578    0.7980 0.6092 (0.428, 0.737)    0.7665   0.7480
+34228.9s 1487 S1+dw | unet:mit_b2 x2  2 0.5000 0.7207 0.6868 (0.574, 0.771)     0.8714    0.7643 0.2823 (0.186, 0.435)    0.6745   0.3268
+34228.9s 1488 S1+dw | ALL ensemble  6 0.4800 0.7251 0.7135 (0.613, 0.791)     0.8636    0.8041 0.5692 (0.414, 0.684)    0.7627   0.6917
+34228.9s 1489 S1+ref+dw | unet:resnet34 x2  2 0.4600 0.7117 0.6991 (0.593, 0.779)     0.8382    0.8082 0.6973 (0.509, 0.794)    0.7424   0.9198
+34228.9s 1490 S1+ref+dw | unet:resnext50_32x4d x2  2 0.4600 0.7215 0.7197 (0.618, 0.797)     0.8492    0.8252 0.6879  (0.493, 0.79)    0.7305   0.9219
+34228.9s 1491 S1+ref+dw | unet:mit_b2 x2  2 0.4200 0.7227 0.6736 (0.558, 0.768)     0.8547    0.7608 0.7176 (0.522, 0.807)    0.7847   0.8936
+34228.9s 1492 S1+ref+dw | ALL ensemble  6 0.4200 0.7263 0.7040   (0.6, 0.783)     0.8443    0.8090 0.7095 (0.528, 0.801)    0.7528   0.9250
+34228.9s 1493 
+34228.9s 1494 single models:
+34228.9s 1495 variant                  enc  seed  best_valid  test_iou  bol_iou
+34228.9s 1496 S1        unet:resnet34     0      0.6642    0.6827   0.5573
+34228.9s 1497 S1 unet:resnext50_32x4d     0      0.6548    0.6882   0.5810
+34228.9s 1498 S1          unet:mit_b2     0      0.6535    0.6562   0.5272
+34228.9s 1499 S1+ref        unet:resnet34     0      0.6811    0.7003   0.6675
+34228.9s 1500 S1+ref unet:resnext50_32x4d     0      0.6885    0.6978   0.6862
+34228.9s 1501 S1+ref          unet:mit_b2     0      0.6591    0.6722   0.6876
+34228.9s 1502 S1+dw        unet:resnet34     0      0.7071    0.7139   0.5945
+34228.9s 1503 S1+dw unet:resnext50_32x4d     0      0.6990    0.6999   0.6011
+34228.9s 1504 S1+dw          unet:mit_b2     0      0.7121    0.6768   0.2367
+34228.9s 1505 S1+ref+dw        unet:resnet34     0      0.7032    0.7086   0.6933
+34228.9s 1506 S1+ref+dw unet:resnext50_32x4d     0      0.7121    0.7169   0.6728
+34228.9s 1507 S1+ref+dw          unet:mit_b2     0      0.7090    0.6777   0.7364
+34228.9s 1508 S1        unet:resnet34     1      0.6567    0.6795   0.6369
+34228.9s 1509 S1 unet:resnext50_32x4d     1      0.6614    0.6846   0.5939
+34228.9s 1510 S1          unet:mit_b2     1      0.6733    0.6672   0.5456
+34228.9s 1511 S1+ref        unet:resnet34     1      0.6989    0.7003   0.7003
+34228.9s 1512 S1+ref unet:resnext50_32x4d     1      0.7100    0.7147   0.6843
+34228.9s 1513 S1+ref          unet:mit_b2     1      0.6856    0.6826   0.6782
+34228.9s 1514 S1+dw        unet:resnet34     1      0.7096    0.7118   0.5651
+34228.9s 1515 S1+dw unet:resnext50_32x4d     1      0.7093    0.7048   0.6104
+34228.9s 1516 S1+dw          unet:mit_b2     1      0.7089    0.6919   0.3817
+34228.9s 1517 S1+ref+dw        unet:resnet34     1      0.7129    0.6953   0.7096
+34228.9s 1518 S1+ref+dw unet:resnext50_32x4d     1      0.7131    0.6989   0.7041
+34228.9s 1519 S1+ref+dw          unet:mit_b2     1      0.7184    0.6665   0.6885
+34228.9s 1520 S1        unet:resnet34     2      0.6606    0.6689   0.4851
+34228.9s 1521 S1 unet:resnext50_32x4d     2      0.6544    0.6853   0.5447
+34228.9s 1522 S1          unet:mit_b2     2      0.6617    0.6868   0.5770
+34237.3s 1523 
+34237.3s 1524 TEST paired (same chips): S1+ref 0.7076 vs S1 0.6890 | diff +0.0187 95% CI [-0.0020, +0.0519] | precision 0.835 vs 0.827 | recall 0.823 vs 0.805
+34245.6s 1525 
+34245.6s 1526 TEST paired (same chips): S1+dw 0.7135 vs S1 0.6890 | diff +0.0243 95% CI [-0.0029, +0.0635] | precision 0.864 vs 0.827 | recall 0.804 vs 0.805
+34253.7s 1527 
+34253.7s 1528 TEST paired (same chips): S1+ref+dw 0.7040 vs S1 0.6890 | diff +0.0150 95% CI [-0.0379, +0.0703] | precision 0.844 vs 0.827 | recall 0.809 vs 0.805
+34253.7s 1529 
+34253.7s 1530 Reference: DeepSARFlood reports 0.72 test IoU (single-date S1 + JRC/DEM/slope/HAND inputs). Variants with pre-event reference, land cover or weather are multi-source/bi-temporal: label them as such. Bi-temporal prior work on Sen1Floods11: Yadav et al., IGARSS 2022 (arXiv 2204.09387).
+34253.7s 1531 saved to /kaggle/working/out | total 9.51 h
+34253.9s 1532 train+valid jobs: 12
+34253.9s 1533 --- phase full: attempt 1, 12 jobs left, 2 worker(s)
+34274.0s 1534 [gpu0] worker on GPU 0 | jobs 12
+34274.0s 1535 [gpu0] /kaggle/working/worker.py:107: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+34274.0s 1536 [gpu0]   scaler = torch.cuda.amp.GradScaler()
+34274.0s 1537 [gpu1] worker on GPU 1 | jobs 12
+34274.0s 1538 [gpu1] /kaggle/working/worker.py:107: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+34274.0s 1539 [gpu1]   scaler = torch.cuda.amp.GradScaler()
+34314.0s 1540 [gpu0] [full__S1__unet_resnet34__s0] step 250/3000 loss 1.4605 (46s)
+34354.1s 1541 [gpu0] [full__S1__unet_resnet34__s0] step 500/3000 loss 0.9573 (93s)
+34354.1s 1542 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 250/3000 loss 1.2281 (76s)
+34414.0s 1543 [gpu0] [full__S1__unet_resnet34__s0] step 750/3000 loss 0.8265 (140s)
+34414.0s 1544 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 500/3000 loss 0.8695 (152s)
+34454.0s 1545 [gpu0] [full__S1__unet_resnet34__s0] step 1000/3000 loss 0.7706 (189s)
+34494.1s 1546 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 750/3000 loss 0.7730 (228s)
+34514.0s 1547 [gpu0] [full__S1__unet_resnet34__s0] step 1250/3000 loss 0.7265 (238s)
+34554.0s 1548 [gpu0] [full__S1__unet_resnet34__s0] step 1500/3000 loss 0.6937 (287s)
+34574.0s 1549 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 1000/3000 loss 0.7414 (304s)
+34614.1s 1550 [gpu0] [full__S1__unet_resnet34__s0] step 1750/3000 loss 0.6497 (337s)
+34654.1s 1551 [gpu0] [full__S1__unet_resnet34__s0] step 2000/3000 loss 0.6573 (386s)
+34654.1s 1552 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 1250/3000 loss 0.6758 (380s)
+34714.1s 1553 [gpu0] [full__S1__unet_resnet34__s0] step 2250/3000 loss 0.6218 (436s)
+34734.0s 1554 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 1500/3000 loss 0.6625 (456s)
+34754.1s 1555 [gpu0] [full__S1__unet_resnet34__s0] step 2500/3000 loss 0.6060 (486s)
+34794.1s 1556 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 1750/3000 loss 0.6409 (532s)
+34814.0s 1557 [gpu0] [full__S1__unet_resnet34__s0] step 2750/3000 loss 0.5921 (535s)
+34854.1s 1558 [gpu0] [full__S1__unet_resnet34__s0] step 3000/3000 loss 0.5947 (585s)
+34854.1s 1559 [gpu0] ==> done full__S1__unet_resnet34__s0 in 596s
+34874.0s 1560 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 2000/3000 loss 0.6118 (608s)
+34934.1s 1561 [gpu0] [full__S1__unet_mit_b2__s0] step 250/3000 loss 1.2679 (70s)
+34954.0s 1562 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 2250/3000 loss 0.5875 (684s)
+35014.1s 1563 [gpu0] [full__S1__unet_mit_b2__s0] step 500/3000 loss 0.8867 (140s)
+35034.0s 1564 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 2500/3000 loss 0.5826 (760s)
+35074.1s 1565 [gpu0] [full__S1__unet_mit_b2__s0] step 750/3000 loss 0.7804 (209s)
+35114.1s 1566 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 2750/3000 loss 0.5565 (836s)
+35134.0s 1567 [gpu0] [full__S1__unet_mit_b2__s0] step 1000/3000 loss 0.7453 (279s)
+35174.1s 1568 [gpu1] [full__S1__unet_resnext50_32x4d__s0] step 3000/3000 loss 0.5626 (912s)
+35194.0s 1569 [gpu1] ==> done full__S1__unet_resnext50_32x4d__s0 in 927s
+35214.1s 1570 [gpu0] [full__S1__unet_mit_b2__s0] step 1250/3000 loss 0.7022 (349s)
+35254.1s 1571 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 250/3000 loss 1.4566 (56s)
+35294.1s 1572 [gpu0] [full__S1__unet_mit_b2__s0] step 1500/3000 loss 0.6682 (420s)
+35314.0s 1573 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 500/3000 loss 0.9306 (111s)
+35354.1s 1574 [gpu0] [full__S1__unet_mit_b2__s0] step 1750/3000 loss 0.6315 (490s)
+35354.1s 1575 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 750/3000 loss 0.7824 (166s)
+35414.1s 1576 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 1000/3000 loss 0.7167 (222s)
+35434.0s 1577 [gpu0] [full__S1__unet_mit_b2__s0] step 2000/3000 loss 0.6274 (560s)
+35474.1s 1578 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 1250/3000 loss 0.6765 (277s)
+35494.0s 1579 [gpu0] [full__S1__unet_mit_b2__s0] step 2250/3000 loss 0.6013 (631s)
+35534.1s 1580 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 1500/3000 loss 0.6479 (332s)
+35574.1s 1581 [gpu0] [full__S1__unet_mit_b2__s0] step 2500/3000 loss 0.5782 (701s)
+35574.1s 1582 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 1750/3000 loss 0.5913 (387s)
+35634.1s 1583 [gpu0] [full__S1__unet_mit_b2__s0] step 2750/3000 loss 0.5558 (771s)
+35634.1s 1584 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 2000/3000 loss 0.5593 (442s)
+35694.1s 1585 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 2250/3000 loss 0.5410 (497s)
+35714.0s 1586 [gpu0] [full__S1__unet_mit_b2__s0] step 3000/3000 loss 0.5568 (841s)
+35714.0s 1587 [gpu0] ==> done full__S1__unet_mit_b2__s0 in 858s
+35754.1s 1588 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 2500/3000 loss 0.5041 (553s)
+35794.1s 1589 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 2750/3000 loss 0.5114 (608s)
+35814.0s 1590 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 250/3000 loss 1.2178 (84s)
+35854.1s 1591 [gpu1] [full__S1prefpdw__unet_resnet34__s0] step 3000/3000 loss 0.5106 (663s)
+35874.0s 1592 [gpu1] ==> done full__S1prefpdw__unet_resnet34__s0 in 678s
+35894.1s 1593 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 500/3000 loss 0.8340 (166s)
+35954.1s 1594 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 250/3000 loss 1.2508 (76s)
+35974.0s 1595 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 750/3000 loss 0.7341 (250s)
+36034.1s 1596 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 500/3000 loss 0.8336 (151s)
+36054.1s 1597 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 1000/3000 loss 0.6830 (332s)
+36094.1s 1598 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 750/3000 loss 0.7174 (226s)
+36134.1s 1599 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 1250/3000 loss 0.6455 (415s)
+36174.1s 1600 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 1000/3000 loss 0.6663 (301s)
+36214.1s 1601 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 1500/3000 loss 0.5747 (497s)
+36254.1s 1602 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 1250/3000 loss 0.6009 (376s)
+36294.1s 1603 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 1750/3000 loss 0.5241 (580s)
+36334.1s 1604 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 1500/3000 loss 0.5586 (450s)
+36394.1s 1605 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 2000/3000 loss 0.5147 (662s)
+36394.1s 1606 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 1750/3000 loss 0.5162 (525s)
+36474.1s 1607 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 2250/3000 loss 0.4822 (744s)
+36474.1s 1608 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 2000/3000 loss 0.5026 (599s)
+36554.1s 1609 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 2500/3000 loss 0.4683 (827s)
+36554.1s 1610 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 2250/3000 loss 0.4842 (674s)
+36614.1s 1611 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 2500/3000 loss 0.4733 (748s)
+36634.1s 1612 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 2750/3000 loss 0.4580 (909s)
+36694.2s 1613 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 2750/3000 loss 0.4680 (823s)
+36714.1s 1614 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s0] step 3000/3000 loss 0.4642 (991s)
+36734.1s 1615 [gpu0] ==> done full__S1prefpdw__unet_resnext50_32x4d__s0 in 1011s
+36774.2s 1616 [gpu1] [full__S1prefpdw__unet_mit_b2__s0] step 3000/3000 loss 0.4794 (897s)
+36794.1s 1617 [gpu0] [full__S1__unet_resnet34__s1] step 250/3000 loss 1.2353 (50s)
+36794.1s 1618 [gpu1] ==> done full__S1prefpdw__unet_mit_b2__s0 in 917s
+36834.1s 1619 [gpu0] [full__S1__unet_resnet34__s1] step 500/3000 loss 0.8818 (100s)
+36874.1s 1620 [gpu0] [full__S1__unet_resnet34__s1] step 750/3000 loss 0.7964 (149s)
+36874.1s 1621 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 250/3000 loss 1.2492 (76s)
+36934.1s 1622 [gpu0] [full__S1__unet_resnet34__s1] step 1000/3000 loss 0.7665 (199s)
+36954.1s 1623 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 500/3000 loss 0.8632 (153s)
+36974.1s 1624 [gpu0] [full__S1__unet_resnet34__s1] step 1250/3000 loss 0.7039 (249s)
+37014.1s 1625 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 750/3000 loss 0.7775 (229s)
+37034.1s 1626 [gpu0] [full__S1__unet_resnet34__s1] step 1500/3000 loss 0.6694 (298s)
+37074.1s 1627 [gpu0] [full__S1__unet_resnet34__s1] step 1750/3000 loss 0.6565 (348s)
+37094.1s 1628 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 1000/3000 loss 0.7534 (305s)
+37134.1s 1629 [gpu0] [full__S1__unet_resnet34__s1] step 2000/3000 loss 0.6463 (397s)
+37174.1s 1630 [gpu0] [full__S1__unet_resnet34__s1] step 2250/3000 loss 0.6243 (447s)
+37174.1s 1631 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 1250/3000 loss 0.6879 (381s)
+37234.2s 1632 [gpu0] [full__S1__unet_resnet34__s1] step 2500/3000 loss 0.5839 (496s)
+37254.1s 1633 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 1500/3000 loss 0.6817 (457s)
+37274.1s 1634 [gpu0] [full__S1__unet_resnet34__s1] step 2750/3000 loss 0.5834 (546s)
+37334.2s 1635 [gpu0] [full__S1__unet_resnet34__s1] step 3000/3000 loss 0.5759 (595s)
+37334.2s 1636 [gpu0] ==> done full__S1__unet_resnet34__s1 in 605s
+37334.2s 1637 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 1750/3000 loss 0.6417 (533s)
+37394.2s 1638 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 2000/3000 loss 0.6304 (608s)
+37414.1s 1639 [gpu0] [full__S1__unet_mit_b2__s1] step 250/3000 loss 1.3203 (69s)
+37474.2s 1640 [gpu0] [full__S1__unet_mit_b2__s1] step 500/3000 loss 0.8999 (138s)
+37474.2s 1641 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 2250/3000 loss 0.6183 (684s)
+37554.2s 1642 [gpu0] [full__S1__unet_mit_b2__s1] step 750/3000 loss 0.7993 (207s)
+37554.2s 1643 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 2500/3000 loss 0.5929 (760s)
+37614.2s 1644 [gpu0] [full__S1__unet_mit_b2__s1] step 1000/3000 loss 0.7607 (276s)
+37634.1s 1645 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 2750/3000 loss 0.5945 (836s)
+37694.2s 1646 [gpu0] [full__S1__unet_mit_b2__s1] step 1250/3000 loss 0.7136 (345s)
+37694.2s 1647 [gpu1] [full__S1__unet_resnext50_32x4d__s1] step 3000/3000 loss 0.5800 (912s)
+37714.1s 1648 [gpu1] ==> done full__S1__unet_resnext50_32x4d__s1 in 927s
+37754.2s 1649 [gpu0] [full__S1__unet_mit_b2__s1] step 1500/3000 loss 0.6783 (415s)
+37774.1s 1650 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 250/3000 loss 1.2376 (56s)
+37814.2s 1651 [gpu0] [full__S1__unet_mit_b2__s1] step 1750/3000 loss 0.6527 (484s)
+37834.1s 1652 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 500/3000 loss 0.8428 (111s)
+37894.2s 1653 [gpu0] [full__S1__unet_mit_b2__s1] step 2000/3000 loss 0.6103 (554s)
+37894.2s 1654 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 750/3000 loss 0.7609 (166s)
+37934.2s 1655 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 1000/3000 loss 0.7169 (222s)
+37954.1s 1656 [gpu0] [full__S1__unet_mit_b2__s1] step 2250/3000 loss 0.6006 (624s)
+37994.2s 1657 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 1250/3000 loss 0.6713 (277s)
+38034.2s 1658 [gpu0] [full__S1__unet_mit_b2__s1] step 2500/3000 loss 0.5837 (694s)
+38054.1s 1659 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 1500/3000 loss 0.6110 (332s)
+38094.2s 1660 [gpu0] [full__S1__unet_mit_b2__s1] step 2750/3000 loss 0.5878 (763s)
+38114.1s 1661 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 1750/3000 loss 0.5448 (387s)
+38154.2s 1662 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 2000/3000 loss 0.5272 (442s)
+38174.1s 1663 [gpu0] [full__S1__unet_mit_b2__s1] step 3000/3000 loss 0.5711 (833s)
+38194.2s 1664 [gpu0] ==> done full__S1__unet_mit_b2__s1 in 848s
+38214.1s 1665 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 2250/3000 loss 0.5235 (498s)
+38274.2s 1666 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 250/3000 loss 1.2432 (83s)
+38274.2s 1667 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 2500/3000 loss 0.5002 (553s)
+38334.2s 1668 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 2750/3000 loss 0.5087 (608s)
+38354.1s 1669 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 500/3000 loss 0.8321 (166s)
+38374.2s 1670 [gpu1] [full__S1prefpdw__unet_resnet34__s1] step 3000/3000 loss 0.4991 (664s)
+38394.1s 1671 [gpu1] ==> done full__S1prefpdw__unet_resnet34__s1 in 678s
+38434.2s 1672 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 750/3000 loss 0.7452 (249s)
+38474.2s 1673 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 250/3000 loss 1.3101 (75s)
+38514.2s 1674 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 1000/3000 loss 0.7048 (331s)
+38554.2s 1675 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 500/3000 loss 0.8566 (150s)
+38594.2s 1676 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 1250/3000 loss 0.6228 (414s)
+38614.1s 1677 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 750/3000 loss 0.7394 (225s)
+38674.2s 1678 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 1500/3000 loss 0.5603 (496s)
+38694.1s 1679 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 1000/3000 loss 0.7025 (300s)
+38774.2s 1680 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 1750/3000 loss 0.5180 (579s)
+38774.2s 1681 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 1250/3000 loss 0.6370 (375s)
+38854.2s 1682 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 2000/3000 loss 0.5047 (661s)
+38854.2s 1683 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 1500/3000 loss 0.6146 (449s)
+38914.2s 1684 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 1750/3000 loss 0.5510 (524s)
+38934.2s 1685 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 2250/3000 loss 0.4964 (743s)
+38994.2s 1686 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 2000/3000 loss 0.5039 (599s)
+39014.2s 1687 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 2500/3000 loss 0.4740 (826s)
+39074.2s 1688 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 2250/3000 loss 0.4821 (672s)
+39094.2s 1689 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 2750/3000 loss 0.4785 (908s)
+39134.2s 1690 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 2500/3000 loss 0.4746 (747s)
+39174.2s 1691 [gpu0] [full__S1prefpdw__unet_resnext50_32x4d__s1] step 3000/3000 loss 0.4704 (991s)
+39194.2s 1692 [gpu0] ==> done full__S1prefpdw__unet_resnext50_32x4d__s1 in 1011s
+39214.2s 1693 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 2750/3000 loss 0.4773 (820s)
+39294.2s 1694 [gpu1] [full__S1prefpdw__unet_mit_b2__s1] step 3000/3000 loss 0.4720 (893s)
+39314.2s 1695 [gpu1] ==> done full__S1prefpdw__unet_mit_b2__s1 in 912s
+39314.2s 1696 phase full: 12/12 jobs finished | elapsed 10.92 h
+39325.8s 1697 
+39325.8s 1698 TRAIN+VALID ensembles (validation chips are in training; valid IoU not reported):
+39325.8s 1699 variant  n_models    thr   test      test_ci95  test_prec  test_rec    bol       bol_ci95  bol_prec  bol_rec
+39325.8s 1700 S1         6 0.4600 0.7059 (0.596, 0.788)     0.8470    0.8090 0.6020 (0.438, 0.686)    0.7396   0.7638
+39325.8s 1701 S1+ref+dw         6 0.4200 0.7163 (0.614, 0.793)     0.8568    0.8138 0.6938   (0.504, 0.8)    0.7610   0.8871
+39325.8s 1702 TEST paired, both trained on train+valid: S1+ref+dw minus S1 = +0.0103  95% CI [-0.0429, +0.0655]
+39325.8s 1703 
+39325.8s 1704 Report the train+valid numbers separately from the standard-protocol ones (more training data).
+39325.8s 1705 total 10.92 h
+39330.2s 1706 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+39330.2s 1707 cells[i][c] = re.sub('\\\\\|', '|', cell)
+39330.5s 1708 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+39330.5s 1709 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+39331.7s 1710 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+39331.9s 1711 [NbConvertApp] Writing 218498 bytes to __notebook__.ipynb
+39334.3s 1712 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+39335.2s 1713 [NbConvertApp] Writing 722764 bytes to __results__.html

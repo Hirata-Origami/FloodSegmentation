@@ -1,0 +1,5 @@
+variant,seed0_macro_IoU,seed1_macro_IoU,seed2_macro_IoU,seed_mean,seed_sd,seed_ensemble_macro_IoU,seed_ensemble_macro_precision,Somalia_precision,Pakistan_precision,paired_diff_vs_S1_seed_averaged,ci95_low,ci95_high
+S1,0.5655,0.5627,0.5635,0.564,0.001,0.574,0.706,0.308,0.38,,,
+S1+ref,0.6075,0.6048,0.5941,0.602,0.007,0.617,0.768,0.696,0.593,0.0374,0.0189,0.0577
+S1+dw,0.5797,0.5937,0.5818,0.585,0.008,0.6,0.79,0.816,0.72,0.0215,0.0006,0.0429
+S1+ref+dw,0.6026,0.6043,0.6102,0.606,0.004,0.62,0.805,0.81,0.74,0.042,0.0203,0.0638

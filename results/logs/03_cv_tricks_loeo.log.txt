@@ -1,0 +1,451 @@
+7.3s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.3s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.3s 3 0.00s - to python to disable frozen modules.
+7.3s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.9s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.9s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.9s 7 0.00s - to python to disable frozen modules.
+7.9s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.7s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 154.6/154.6 kB 3.5 MB/s eta 0:00:00
+11.9s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 154.6/154.6 kB 3.5 MB/s eta 0:00:00
+32.1s 11 device: cuda | torch 2.11.0+cu128 | smp 0.6.0
+32.3s 12 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/splits/flood_handlabeled /kaggle/working/s1f11/
+35.1s 13 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/data/flood_events/HandLabeled/S1Hand /kaggle/working/s1f11/
+50.0s 14 
+50.0s 15 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/data/flood_events/HandLabeled/LabelHand /kaggle/working/s1f11/
+60.9s 16 
+60.9s 17 {'train': 252, 'valid': 89, 'test': 90, 'bol': 15} | events: [np.str_('Bolivia'), np.str_('Ghana'), np.str_('India'), np.str_('Mekong'), np.str_('Nigeria'), np.str_('Pakistan'), np.str_('Paraguay'), np.str_('Somalia'), np.str_('Spain'), np.str_('Sri-Lanka'), np.str_('USA')]
+70.5s 18 X (446, 3, 512, 512) | mean [-10.39 -17.19   6.81] std [3.99 4.5  3.28] | water share 0.1060136033959036
+71.6s 19 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+71.6s 20 
+71.6s 21 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+158.8s 22 [base|Bolivia|s0] step 250/1500 loss 1.3303 (85s)
+212.9s 23 [base|Bolivia|s0] step 500/1500 loss 0.8947 (139s)
+266.7s 24 [base|Bolivia|s0] step 750/1500 loss 0.8099 (193s)
+320.7s 25 [base|Bolivia|s0] step 1000/1500 loss 0.7593 (247s)
+374.7s 26 [base|Bolivia|s0] step 1250/1500 loss 0.7286 (301s)
+428.8s 27 [base|Bolivia|s0] step 1500/1500 loss 0.7008 (355s)
+430.5s 28 ==> base | held-out Bolivia: IoU 0.646 precision 0.739 recall 0.837 | elapsed 0.12 h
+480.1s 29 [base|Ghana|s0] step 250/1500 loss 1.3366 (49s)
+529.2s 30 [base|Ghana|s0] step 500/1500 loss 0.9010 (98s)
+578.3s 31 [base|Ghana|s0] step 750/1500 loss 0.8036 (147s)
+627.4s 32 [base|Ghana|s0] step 1000/1500 loss 0.7493 (197s)
+676.5s 33 [base|Ghana|s0] step 1250/1500 loss 0.7219 (246s)
+725.6s 34 [base|Ghana|s0] step 1500/1500 loss 0.7008 (295s)
+727.0s 35 ==> base | held-out Ghana: IoU 0.527 precision 0.757 recall 0.635 | elapsed 0.20 h
+776.6s 36 [base|India|s0] step 250/1500 loss 1.3283 (49s)
+825.7s 37 [base|India|s0] step 500/1500 loss 0.8970 (98s)
+874.9s 38 [base|India|s0] step 750/1500 loss 0.7894 (147s)
+924.0s 39 [base|India|s0] step 1000/1500 loss 0.7303 (197s)
+973.1s 40 [base|India|s0] step 1250/1500 loss 0.7028 (246s)
+1022.2s 41 [base|India|s0] step 1500/1500 loss 0.6851 (295s)
+1023.8s 42 ==> base | held-out India: IoU 0.493 precision 0.651 recall 0.671 | elapsed 0.28 h
+1073.4s 43 [base|Mekong|s0] step 250/1500 loss 1.3360 (49s)
+1122.5s 44 [base|Mekong|s0] step 500/1500 loss 0.9123 (98s)
+1171.6s 45 [base|Mekong|s0] step 750/1500 loss 0.8101 (147s)
+1220.6s 46 [base|Mekong|s0] step 1000/1500 loss 0.7649 (196s)
+1269.8s 47 [base|Mekong|s0] step 1250/1500 loss 0.7311 (246s)
+1318.8s 48 [base|Mekong|s0] step 1500/1500 loss 0.7165 (295s)
+1320.0s 49 ==> base | held-out Mekong: IoU 0.845 precision 0.895 recall 0.938 | elapsed 0.36 h
+1369.5s 50 [base|Nigeria|s0] step 250/1500 loss 1.3377 (49s)
+1418.6s 51 [base|Nigeria|s0] step 500/1500 loss 0.9085 (98s)
+1467.6s 52 [base|Nigeria|s0] step 750/1500 loss 0.8168 (147s)
+1516.7s 53 [base|Nigeria|s0] step 1000/1500 loss 0.7658 (196s)
+1565.7s 54 [base|Nigeria|s0] step 1250/1500 loss 0.7300 (245s)
+1614.8s 55 [base|Nigeria|s0] step 1500/1500 loss 0.7008 (294s)
+1615.4s 56 ==> base | held-out Nigeria: IoU 0.795 precision 0.911 recall 0.861 | elapsed 0.45 h
+1664.8s 57 [base|Pakistan|s0] step 250/1500 loss 1.3078 (49s)
+1713.8s 58 [base|Pakistan|s0] step 500/1500 loss 0.8892 (98s)
+1762.8s 59 [base|Pakistan|s0] step 750/1500 loss 0.7853 (147s)
+1811.8s 60 [base|Pakistan|s0] step 1000/1500 loss 0.7394 (196s)
+1860.9s 61 [base|Pakistan|s0] step 1250/1500 loss 0.7102 (245s)
+1909.9s 62 [base|Pakistan|s0] step 1500/1500 loss 0.6985 (294s)
+1910.4s 63 ==> base | held-out Pakistan: IoU 0.289 precision 0.329 recall 0.701 | elapsed 0.53 h
+1959.9s 64 [base|Paraguay|s0] step 250/1500 loss 1.3337 (49s)
+2008.9s 65 [base|Paraguay|s0] step 500/1500 loss 0.9251 (98s)
+2057.9s 66 [base|Paraguay|s0] step 750/1500 loss 0.8197 (147s)
+2106.9s 67 [base|Paraguay|s0] step 1000/1500 loss 0.7586 (196s)
+2156.1s 68 [base|Paraguay|s0] step 1250/1500 loss 0.7352 (245s)
+2205.2s 69 [base|Paraguay|s0] step 1500/1500 loss 0.7203 (294s)
+2206.8s 70 ==> base | held-out Paraguay: IoU 0.569 precision 0.679 recall 0.779 | elapsed 0.61 h
+2256.3s 71 [base|Somalia|s0] step 250/1500 loss 1.3090 (49s)
+2305.4s 72 [base|Somalia|s0] step 500/1500 loss 0.8940 (98s)
+2354.5s 73 [base|Somalia|s0] step 750/1500 loss 0.7831 (147s)
+2403.5s 74 [base|Somalia|s0] step 1000/1500 loss 0.7411 (196s)
+2452.6s 75 [base|Somalia|s0] step 1250/1500 loss 0.7022 (245s)
+2501.7s 76 [base|Somalia|s0] step 1500/1500 loss 0.6886 (295s)
+2502.2s 77 ==> base | held-out Somalia: IoU 0.258 precision 0.298 recall 0.661 | elapsed 0.69 h
+2551.7s 78 [base|Spain|s0] step 250/1500 loss 1.3176 (49s)
+2600.7s 79 [base|Spain|s0] step 500/1500 loss 0.9064 (98s)
+2649.8s 80 [base|Spain|s0] step 750/1500 loss 0.8056 (147s)
+2698.8s 81 [base|Spain|s0] step 1000/1500 loss 0.7665 (196s)
+2747.7s 82 [base|Spain|s0] step 1250/1500 loss 0.7215 (245s)
+2796.7s 83 [base|Spain|s0] step 1500/1500 loss 0.7202 (294s)
+2797.3s 84 ==> base | held-out Spain: IoU 0.711 precision 0.863 recall 0.802 | elapsed 0.77 h
+2846.7s 85 [base|Sri-Lanka|s0] step 250/1500 loss 1.3242 (49s)
+2895.5s 86 [base|Sri-Lanka|s0] step 500/1500 loss 0.9010 (98s)
+2944.4s 87 [base|Sri-Lanka|s0] step 750/1500 loss 0.7990 (147s)
+2993.4s 88 [base|Sri-Lanka|s0] step 1000/1500 loss 0.7518 (196s)
+3042.4s 89 [base|Sri-Lanka|s0] step 1250/1500 loss 0.7092 (245s)
+3091.5s 90 [base|Sri-Lanka|s0] step 1500/1500 loss 0.7039 (294s)
+3092.2s 91 ==> base | held-out Sri-Lanka: IoU 0.655 precision 0.788 recall 0.795 | elapsed 0.86 h
+3141.6s 92 [base|USA|s0] step 250/1500 loss 1.3079 (49s)
+3190.6s 93 [base|USA|s0] step 500/1500 loss 0.9114 (98s)
+3239.5s 94 [base|USA|s0] step 750/1500 loss 0.8228 (147s)
+3288.5s 95 [base|USA|s0] step 1000/1500 loss 0.7825 (196s)
+3337.5s 96 [base|USA|s0] step 1250/1500 loss 0.7488 (245s)
+3386.5s 97 [base|USA|s0] step 1500/1500 loss 0.7396 (294s)
+3387.7s 98 ==> base | held-out USA: IoU 0.540 precision 0.760 recall 0.651 | elapsed 0.94 h
+3441.1s 99 [aug+|Bolivia|s0] step 250/1500 loss 1.3309 (53s)
+3494.0s 100 [aug+|Bolivia|s0] step 500/1500 loss 0.8986 (106s)
+3546.8s 101 [aug+|Bolivia|s0] step 750/1500 loss 0.8043 (159s)
+3599.6s 102 [aug+|Bolivia|s0] step 1000/1500 loss 0.7570 (212s)
+3652.5s 103 [aug+|Bolivia|s0] step 1250/1500 loss 0.7200 (264s)
+3705.3s 104 [aug+|Bolivia|s0] step 1500/1500 loss 0.7125 (317s)
+3705.5s 105 ==> aug+ | held-out Bolivia: IoU 0.573 precision 0.663 recall 0.808 | elapsed 1.03 h
+3758.9s 106 [aug+|Ghana|s0] step 250/1500 loss 1.3368 (53s)
+3811.9s 107 [aug+|Ghana|s0] step 500/1500 loss 0.9077 (106s)
+3864.8s 108 [aug+|Ghana|s0] step 750/1500 loss 0.8042 (159s)
+3917.7s 109 [aug+|Ghana|s0] step 1000/1500 loss 0.7535 (212s)
+3970.6s 110 [aug+|Ghana|s0] step 1250/1500 loss 0.7326 (265s)
+4023.4s 111 [aug+|Ghana|s0] step 1500/1500 loss 0.7029 (317s)
+4024.3s 112 ==> aug+ | held-out Ghana: IoU 0.531 precision 0.758 recall 0.639 | elapsed 1.12 h
+4077.8s 113 [aug+|India|s0] step 250/1500 loss 1.3416 (53s)
+4130.9s 114 [aug+|India|s0] step 500/1500 loss 0.9063 (106s)
+4183.9s 115 [aug+|India|s0] step 750/1500 loss 0.7993 (159s)
+4236.8s 116 [aug+|India|s0] step 1000/1500 loss 0.7534 (212s)
+4289.8s 117 [aug+|India|s0] step 1250/1500 loss 0.7162 (265s)
+4342.7s 118 [aug+|India|s0] step 1500/1500 loss 0.6895 (318s)
+4343.9s 119 ==> aug+ | held-out India: IoU 0.511 precision 0.698 recall 0.655 | elapsed 1.20 h
+4397.3s 120 [aug+|Mekong|s0] step 250/1500 loss 1.3430 (53s)
+4450.2s 121 [aug+|Mekong|s0] step 500/1500 loss 0.9235 (106s)
+4503.1s 122 [aug+|Mekong|s0] step 750/1500 loss 0.8207 (159s)
+4556.0s 123 [aug+|Mekong|s0] step 1000/1500 loss 0.7687 (212s)
+4609.0s 124 [aug+|Mekong|s0] step 1250/1500 loss 0.7433 (265s)
+4662.0s 125 [aug+|Mekong|s0] step 1500/1500 loss 0.7273 (318s)
+4662.5s 126 ==> aug+ | held-out Mekong: IoU 0.824 precision 0.872 recall 0.938 | elapsed 1.29 h
+4715.8s 127 [aug+|Nigeria|s0] step 250/1500 loss 1.3399 (53s)
+4768.5s 128 [aug+|Nigeria|s0] step 500/1500 loss 0.9143 (106s)
+4821.2s 129 [aug+|Nigeria|s0] step 750/1500 loss 0.8181 (158s)
+4873.8s 130 [aug+|Nigeria|s0] step 1000/1500 loss 0.7709 (211s)
+4926.5s 131 [aug+|Nigeria|s0] step 1250/1500 loss 0.7281 (264s)
+4979.2s 132 [aug+|Nigeria|s0] step 1500/1500 loss 0.7159 (316s)
+4979.5s 133 ==> aug+ | held-out Nigeria: IoU 0.790 precision 0.921 recall 0.847 | elapsed 1.38 h
+5032.9s 134 [aug+|Pakistan|s0] step 250/1500 loss 1.3253 (53s)
+5085.8s 135 [aug+|Pakistan|s0] step 500/1500 loss 0.8984 (106s)
+5138.6s 136 [aug+|Pakistan|s0] step 750/1500 loss 0.8087 (159s)
+5191.5s 137 [aug+|Pakistan|s0] step 1000/1500 loss 0.7314 (212s)
+5244.3s 138 [aug+|Pakistan|s0] step 1250/1500 loss 0.7165 (264s)
+5297.3s 139 [aug+|Pakistan|s0] step 1500/1500 loss 0.7020 (317s)
+5297.8s 140 ==> aug+ | held-out Pakistan: IoU 0.315 precision 0.386 recall 0.634 | elapsed 1.47 h
+5351.3s 141 [aug+|Paraguay|s0] step 250/1500 loss 1.3223 (53s)
+5404.1s 142 [aug+|Paraguay|s0] step 500/1500 loss 0.9164 (106s)
+5456.9s 143 [aug+|Paraguay|s0] step 750/1500 loss 0.8212 (159s)
+5509.7s 144 [aug+|Paraguay|s0] step 1000/1500 loss 0.7686 (212s)
+5562.5s 145 [aug+|Paraguay|s0] step 1250/1500 loss 0.7274 (264s)
+5615.5s 146 [aug+|Paraguay|s0] step 1500/1500 loss 0.7073 (317s)
+5616.7s 147 ==> aug+ | held-out Paraguay: IoU 0.568 precision 0.648 recall 0.821 | elapsed 1.56 h
+5670.1s 148 [aug+|Somalia|s0] step 250/1500 loss 1.3226 (53s)
+5723.1s 149 [aug+|Somalia|s0] step 500/1500 loss 0.8863 (106s)
+5776.1s 150 [aug+|Somalia|s0] step 750/1500 loss 0.8055 (159s)
+5829.2s 151 [aug+|Somalia|s0] step 1000/1500 loss 0.7368 (212s)
+5882.1s 152 [aug+|Somalia|s0] step 1250/1500 loss 0.7107 (265s)
+5935.0s 153 [aug+|Somalia|s0] step 1500/1500 loss 0.6931 (318s)
+5935.5s 154 ==> aug+ | held-out Somalia: IoU 0.289 precision 0.371 recall 0.567 | elapsed 1.65 h
+5988.9s 155 [aug+|Spain|s0] step 250/1500 loss 1.3287 (53s)
+6041.8s 156 [aug+|Spain|s0] step 500/1500 loss 0.9116 (106s)
+6094.7s 157 [aug+|Spain|s0] step 750/1500 loss 0.8172 (159s)
+6147.6s 158 [aug+|Spain|s0] step 1000/1500 loss 0.7581 (212s)
+6200.4s 159 [aug+|Spain|s0] step 1250/1500 loss 0.7247 (265s)
+6253.3s 160 [aug+|Spain|s0] step 1500/1500 loss 0.7072 (317s)
+6253.8s 161 ==> aug+ | held-out Spain: IoU 0.621 precision 0.885 recall 0.676 | elapsed 1.73 h
+6307.1s 162 [aug+|Sri-Lanka|s0] step 250/1500 loss 1.3330 (53s)
+6360.0s 163 [aug+|Sri-Lanka|s0] step 500/1500 loss 0.9034 (106s)
+6412.9s 164 [aug+|Sri-Lanka|s0] step 750/1500 loss 0.8107 (159s)
+6465.9s 165 [aug+|Sri-Lanka|s0] step 1000/1500 loss 0.7503 (212s)
+6518.8s 166 [aug+|Sri-Lanka|s0] step 1250/1500 loss 0.7193 (265s)
+6571.7s 167 [aug+|Sri-Lanka|s0] step 1500/1500 loss 0.7095 (318s)
+6572.5s 168 ==> aug+ | held-out Sri-Lanka: IoU 0.669 precision 0.795 recall 0.809 | elapsed 1.82 h
+6625.8s 169 [aug+|USA|s0] step 250/1500 loss 1.3057 (53s)
+6678.8s 170 [aug+|USA|s0] step 500/1500 loss 0.9172 (106s)
+6731.8s 171 [aug+|USA|s0] step 750/1500 loss 0.8314 (159s)
+6785.0s 172 [aug+|USA|s0] step 1000/1500 loss 0.7863 (212s)
+6838.0s 173 [aug+|USA|s0] step 1250/1500 loss 0.7524 (265s)
+6891.0s 174 [aug+|USA|s0] step 1500/1500 loss 0.7360 (318s)
+6892.2s 175 ==> aug+ | held-out USA: IoU 0.547 precision 0.784 recall 0.645 | elapsed 1.91 h
+6941.8s 176 [tversky|Bolivia|s0] step 250/1500 loss 1.2208 (49s)
+6991.0s 177 [tversky|Bolivia|s0] step 500/1500 loss 0.5957 (98s)
+7040.3s 178 [tversky|Bolivia|s0] step 750/1500 loss 0.4832 (148s)
+7089.5s 179 [tversky|Bolivia|s0] step 1000/1500 loss 0.4323 (197s)
+7138.6s 180 [tversky|Bolivia|s0] step 1250/1500 loss 0.4053 (246s)
+7187.8s 181 [tversky|Bolivia|s0] step 1500/1500 loss 0.3617 (295s)
+7188.0s 182 ==> tversky | held-out Bolivia: IoU 0.681 precision 0.818 recall 0.802 | elapsed 1.99 h
+7237.6s 183 [tversky|Ghana|s0] step 250/1500 loss 1.2192 (49s)
+7286.8s 184 [tversky|Ghana|s0] step 500/1500 loss 0.5867 (98s)
+7336.0s 185 [tversky|Ghana|s0] step 750/1500 loss 0.4619 (148s)
+7385.2s 186 [tversky|Ghana|s0] step 1000/1500 loss 0.4087 (197s)
+7434.3s 187 [tversky|Ghana|s0] step 1250/1500 loss 0.3789 (246s)
+7483.5s 188 [tversky|Ghana|s0] step 1500/1500 loss 0.3442 (295s)
+7484.4s 189 ==> tversky | held-out Ghana: IoU 0.430 precision 0.757 recall 0.498 | elapsed 2.08 h
+7534.1s 190 [tversky|India|s0] step 250/1500 loss 1.2136 (49s)
+7583.2s 191 [tversky|India|s0] step 500/1500 loss 0.5871 (98s)
+7632.3s 192 [tversky|India|s0] step 750/1500 loss 0.4439 (147s)
+7681.5s 193 [tversky|India|s0] step 1000/1500 loss 0.3939 (197s)
+7730.7s 194 [tversky|India|s0] step 1250/1500 loss 0.3495 (246s)
+7780.0s 195 [tversky|India|s0] step 1500/1500 loss 0.3206 (295s)
+7781.2s 196 ==> tversky | held-out India: IoU 0.511 precision 0.819 recall 0.576 | elapsed 2.16 h
+7830.9s 197 [tversky|Mekong|s0] step 250/1500 loss 1.2435 (49s)
+7880.0s 198 [tversky|Mekong|s0] step 500/1500 loss 0.6335 (98s)
+7929.2s 199 [tversky|Mekong|s0] step 750/1500 loss 0.5005 (148s)
+7978.4s 200 [tversky|Mekong|s0] step 1000/1500 loss 0.4723 (197s)
+8027.6s 201 [tversky|Mekong|s0] step 1250/1500 loss 0.4194 (246s)
+8076.8s 202 [tversky|Mekong|s0] step 1500/1500 loss 0.4070 (295s)
+8077.3s 203 ==> tversky | held-out Mekong: IoU 0.867 precision 0.941 recall 0.917 | elapsed 2.24 h
+8127.1s 204 [tversky|Nigeria|s0] step 250/1500 loss 1.2443 (49s)
+8176.2s 205 [tversky|Nigeria|s0] step 500/1500 loss 0.6395 (98s)
+8225.4s 206 [tversky|Nigeria|s0] step 750/1500 loss 0.4855 (148s)
+8274.7s 207 [tversky|Nigeria|s0] step 1000/1500 loss 0.4328 (197s)
+8323.8s 208 [tversky|Nigeria|s0] step 1250/1500 loss 0.4062 (246s)
+8373.1s 209 [tversky|Nigeria|s0] step 1500/1500 loss 0.3689 (295s)
+8373.4s 210 ==> tversky | held-out Nigeria: IoU 0.756 precision 0.936 recall 0.798 | elapsed 2.32 h
+8423.2s 211 [tversky|Pakistan|s0] step 250/1500 loss 1.1901 (49s)
+8472.4s 212 [tversky|Pakistan|s0] step 500/1500 loss 0.5883 (99s)
+8521.5s 213 [tversky|Pakistan|s0] step 750/1500 loss 0.4599 (148s)
+8570.7s 214 [tversky|Pakistan|s0] step 1000/1500 loss 0.4238 (197s)
+8619.9s 215 [tversky|Pakistan|s0] step 1250/1500 loss 0.3745 (246s)
+8669.0s 216 [tversky|Pakistan|s0] step 1500/1500 loss 0.3779 (295s)
+8669.5s 217 ==> tversky | held-out Pakistan: IoU 0.338 precision 0.465 recall 0.552 | elapsed 2.41 h
+8719.2s 218 [tversky|Paraguay|s0] step 250/1500 loss 1.2208 (49s)
+8768.3s 219 [tversky|Paraguay|s0] step 500/1500 loss 0.6073 (98s)
+8817.6s 220 [tversky|Paraguay|s0] step 750/1500 loss 0.4588 (148s)
+8866.7s 221 [tversky|Paraguay|s0] step 1000/1500 loss 0.4049 (197s)
+8915.9s 222 [tversky|Paraguay|s0] step 1250/1500 loss 0.3857 (246s)
+8965.1s 223 [tversky|Paraguay|s0] step 1500/1500 loss 0.3765 (295s)
+8966.3s 224 ==> tversky | held-out Paraguay: IoU 0.570 precision 0.780 recall 0.679 | elapsed 2.49 h
+9016.0s 225 [tversky|Somalia|s0] step 250/1500 loss 1.1905 (49s)
+9065.1s 226 [tversky|Somalia|s0] step 500/1500 loss 0.5839 (98s)
+9114.2s 227 [tversky|Somalia|s0] step 750/1500 loss 0.4536 (147s)
+9163.3s 228 [tversky|Somalia|s0] step 1000/1500 loss 0.4107 (197s)
+9212.5s 229 [tversky|Somalia|s0] step 1250/1500 loss 0.3728 (246s)
+9261.6s 230 [tversky|Somalia|s0] step 1500/1500 loss 0.3598 (295s)
+9262.0s 231 ==> tversky | held-out Somalia: IoU 0.273 precision 0.365 recall 0.518 | elapsed 2.57 h
+9311.6s 232 [tversky|Spain|s0] step 250/1500 loss 1.2094 (49s)
+9360.7s 233 [tversky|Spain|s0] step 500/1500 loss 0.6032 (98s)
+9410.0s 234 [tversky|Spain|s0] step 750/1500 loss 0.4571 (147s)
+9459.0s 235 [tversky|Spain|s0] step 1000/1500 loss 0.4376 (197s)
+9508.1s 236 [tversky|Spain|s0] step 1250/1500 loss 0.3665 (246s)
+9557.2s 237 [tversky|Spain|s0] step 1500/1500 loss 0.3824 (295s)
+9557.7s 238 ==> tversky | held-out Spain: IoU 0.725 precision 0.915 recall 0.777 | elapsed 2.65 h
+9607.3s 239 [tversky|Sri-Lanka|s0] step 250/1500 loss 1.2258 (49s)
+9656.5s 240 [tversky|Sri-Lanka|s0] step 500/1500 loss 0.5979 (98s)
+9705.6s 241 [tversky|Sri-Lanka|s0] step 750/1500 loss 0.4670 (147s)
+9754.7s 242 [tversky|Sri-Lanka|s0] step 1000/1500 loss 0.4150 (197s)
+9803.9s 243 [tversky|Sri-Lanka|s0] step 1250/1500 loss 0.3661 (246s)
+9853.0s 244 [tversky|Sri-Lanka|s0] step 1500/1500 loss 0.3704 (295s)
+9853.7s 245 ==> tversky | held-out Sri-Lanka: IoU 0.656 precision 0.880 recall 0.720 | elapsed 2.73 h
+9903.3s 246 [tversky|USA|s0] step 250/1500 loss 1.1889 (49s)
+9952.4s 247 [tversky|USA|s0] step 500/1500 loss 0.6129 (98s)
+10001.6s 248 [tversky|USA|s0] step 750/1500 loss 0.4666 (148s)
+10050.9s 249 [tversky|USA|s0] step 1000/1500 loss 0.4255 (197s)
+10100.1s 250 [tversky|USA|s0] step 1250/1500 loss 0.3721 (246s)
+10149.3s 251 [tversky|USA|s0] step 1500/1500 loss 0.3665 (295s)
+10150.4s 252 ==> tversky | held-out USA: IoU 0.494 precision 0.793 recall 0.567 | elapsed 2.82 h
+10244.2s 253 [ctx512|Bolivia|s0] step 250/1500 loss 1.3389 (93s)
+10308.5s 254 [ctx512|Bolivia|s0] step 500/1500 loss 0.9028 (158s)
+10372.9s 255 [ctx512|Bolivia|s0] step 750/1500 loss 0.7969 (222s)
+10437.5s 256 [ctx512|Bolivia|s0] step 1000/1500 loss 0.7389 (287s)
+10501.9s 257 [ctx512|Bolivia|s0] step 1250/1500 loss 0.6939 (351s)
+10566.4s 258 [ctx512|Bolivia|s0] step 1500/1500 loss 0.6712 (416s)
+10566.6s 259 ==> ctx512 | held-out Bolivia: IoU 0.649 precision 0.803 recall 0.772 | elapsed 2.93 h
+10631.8s 260 [ctx512|Ghana|s0] step 250/1500 loss 1.3291 (65s)
+10696.3s 261 [ctx512|Ghana|s0] step 500/1500 loss 0.8712 (129s)
+10760.8s 262 [ctx512|Ghana|s0] step 750/1500 loss 0.7541 (194s)
+10825.3s 263 [ctx512|Ghana|s0] step 1000/1500 loss 0.7072 (258s)
+10889.8s 264 [ctx512|Ghana|s0] step 1250/1500 loss 0.6621 (323s)
+10954.3s 265 [ctx512|Ghana|s0] step 1500/1500 loss 0.6403 (387s)
+10955.2s 266 ==> ctx512 | held-out Ghana: IoU 0.526 precision 0.774 recall 0.622 | elapsed 3.04 h
+11020.3s 267 [ctx512|India|s0] step 250/1500 loss 1.3386 (65s)
+11084.9s 268 [ctx512|India|s0] step 500/1500 loss 0.8988 (129s)
+11149.4s 269 [ctx512|India|s0] step 750/1500 loss 0.7726 (194s)
+11214.0s 270 [ctx512|India|s0] step 1000/1500 loss 0.7079 (258s)
+11278.5s 271 [ctx512|India|s0] step 1250/1500 loss 0.6677 (323s)
+11343.0s 272 [ctx512|India|s0] step 1500/1500 loss 0.6659 (387s)
+11344.2s 273 ==> ctx512 | held-out India: IoU 0.543 precision 0.734 recall 0.677 | elapsed 3.15 h
+11409.1s 274 [ctx512|Mekong|s0] step 250/1500 loss 1.3375 (65s)
+11473.6s 275 [ctx512|Mekong|s0] step 500/1500 loss 0.9122 (129s)
+11538.1s 276 [ctx512|Mekong|s0] step 750/1500 loss 0.8043 (193s)
+11602.5s 277 [ctx512|Mekong|s0] step 1000/1500 loss 0.7541 (258s)
+11666.8s 278 [ctx512|Mekong|s0] step 1250/1500 loss 0.6901 (322s)
+11731.1s 279 [ctx512|Mekong|s0] step 1500/1500 loss 0.6887 (387s)
+11731.7s 280 ==> ctx512 | held-out Mekong: IoU 0.742 precision 0.877 recall 0.828 | elapsed 3.26 h
+11796.7s 281 [ctx512|Nigeria|s0] step 250/1500 loss 1.3201 (64s)
+11861.0s 282 [ctx512|Nigeria|s0] step 500/1500 loss 0.8767 (129s)
+11925.4s 283 [ctx512|Nigeria|s0] step 750/1500 loss 0.7701 (193s)
+11989.8s 284 [ctx512|Nigeria|s0] step 1000/1500 loss 0.7229 (258s)
+12054.1s 285 [ctx512|Nigeria|s0] step 1250/1500 loss 0.6737 (322s)
+12118.5s 286 [ctx512|Nigeria|s0] step 1500/1500 loss 0.6460 (386s)
+12118.8s 287 ==> ctx512 | held-out Nigeria: IoU 0.733 precision 0.921 recall 0.782 | elapsed 3.36 h
+12183.8s 288 [ctx512|Pakistan|s0] step 250/1500 loss 1.3022 (65s)
+12248.2s 289 [ctx512|Pakistan|s0] step 500/1500 loss 0.8809 (129s)
+12312.6s 290 [ctx512|Pakistan|s0] step 750/1500 loss 0.7727 (193s)
+12377.1s 291 [ctx512|Pakistan|s0] step 1000/1500 loss 0.7119 (258s)
+12441.5s 292 [ctx512|Pakistan|s0] step 1250/1500 loss 0.6499 (322s)
+12506.0s 293 [ctx512|Pakistan|s0] step 1500/1500 loss 0.6328 (387s)
+12506.4s 294 ==> ctx512 | held-out Pakistan: IoU 0.316 precision 0.379 recall 0.654 | elapsed 3.47 h
+12571.3s 295 [ctx512|Paraguay|s0] step 250/1500 loss 1.3377 (64s)
+12635.7s 296 [ctx512|Paraguay|s0] step 500/1500 loss 0.8942 (129s)
+12700.0s 297 [ctx512|Paraguay|s0] step 750/1500 loss 0.7749 (193s)
+12764.4s 298 [ctx512|Paraguay|s0] step 1000/1500 loss 0.7311 (258s)
+12828.7s 299 [ctx512|Paraguay|s0] step 1250/1500 loss 0.6908 (322s)
+12893.1s 300 [ctx512|Paraguay|s0] step 1500/1500 loss 0.6734 (386s)
+12894.2s 301 ==> ctx512 | held-out Paraguay: IoU 0.575 precision 0.701 recall 0.762 | elapsed 3.58 h
+12959.0s 302 [ctx512|Somalia|s0] step 250/1500 loss 1.3020 (64s)
+13023.3s 303 [ctx512|Somalia|s0] step 500/1500 loss 0.8634 (129s)
+13087.6s 304 [ctx512|Somalia|s0] step 750/1500 loss 0.7694 (193s)
+13152.1s 305 [ctx512|Somalia|s0] step 1000/1500 loss 0.7071 (257s)
+13216.5s 306 [ctx512|Somalia|s0] step 1250/1500 loss 0.6609 (322s)
+13280.9s 307 [ctx512|Somalia|s0] step 1500/1500 loss 0.6393 (386s)
+13281.3s 308 ==> ctx512 | held-out Somalia: IoU 0.274 precision 0.335 recall 0.601 | elapsed 3.69 h
+13346.3s 309 [ctx512|Spain|s0] step 250/1500 loss 1.3204 (65s)
+13410.8s 310 [ctx512|Spain|s0] step 500/1500 loss 0.8935 (129s)
+13475.2s 311 [ctx512|Spain|s0] step 750/1500 loss 0.7837 (193s)
+13539.6s 312 [ctx512|Spain|s0] step 1000/1500 loss 0.7276 (258s)
+13604.1s 313 [ctx512|Spain|s0] step 1250/1500 loss 0.6836 (322s)
+13668.6s 314 [ctx512|Spain|s0] step 1500/1500 loss 0.6736 (387s)
+13669.1s 315 ==> ctx512 | held-out Spain: IoU 0.688 precision 0.869 recall 0.767 | elapsed 3.79 h
+13734.1s 316 [ctx512|Sri-Lanka|s0] step 250/1500 loss 1.3242 (65s)
+13798.5s 317 [ctx512|Sri-Lanka|s0] step 500/1500 loss 0.8767 (129s)
+13862.9s 318 [ctx512|Sri-Lanka|s0] step 750/1500 loss 0.7777 (193s)
+13927.4s 319 [ctx512|Sri-Lanka|s0] step 1000/1500 loss 0.7158 (258s)
+13992.0s 320 [ctx512|Sri-Lanka|s0] step 1250/1500 loss 0.6864 (322s)
+14056.5s 321 [ctx512|Sri-Lanka|s0] step 1500/1500 loss 0.6609 (387s)
+14057.2s 322 ==> ctx512 | held-out Sri-Lanka: IoU 0.637 precision 0.723 recall 0.843 | elapsed 3.90 h
+14122.1s 323 [ctx512|USA|s0] step 250/1500 loss 1.3216 (64s)
+14186.6s 324 [ctx512|USA|s0] step 500/1500 loss 0.8909 (129s)
+14251.1s 325 [ctx512|USA|s0] step 750/1500 loss 0.8063 (193s)
+14315.5s 326 [ctx512|USA|s0] step 1000/1500 loss 0.7517 (258s)
+14379.9s 327 [ctx512|USA|s0] step 1250/1500 loss 0.7095 (322s)
+14444.3s 328 [ctx512|USA|s0] step 1500/1500 loss 0.6960 (387s)
+14445.5s 329 ==> ctx512 | held-out USA: IoU 0.549 precision 0.735 recall 0.684 | elapsed 4.01 h
+14517.3s 330 [ctx512+aux|Bolivia|s0] step 250/1500 loss 1.2374 (71s)
+14588.6s 331 [ctx512+aux|Bolivia|s0] step 500/1500 loss 0.9158 (143s)
+14659.7s 332 [ctx512+aux|Bolivia|s0] step 750/1500 loss 0.8648 (214s)
+14730.8s 333 [ctx512+aux|Bolivia|s0] step 1000/1500 loss 0.7921 (285s)
+14802.0s 334 [ctx512+aux|Bolivia|s0] step 1250/1500 loss 0.7245 (356s)
+14873.1s 335 [ctx512+aux|Bolivia|s0] step 1500/1500 loss 0.6861 (427s)
+14873.3s 336 ==> ctx512+aux | held-out Bolivia: IoU 0.631 precision 0.753 recall 0.795 | elapsed 4.13 h
+14938.4s 337 [ctx512+aux|Ghana|s0] step 250/1500 loss 1.2358 (65s)
+15003.0s 338 [ctx512+aux|Ghana|s0] step 500/1500 loss 0.9089 (129s)
+15067.6s 339 [ctx512+aux|Ghana|s0] step 750/1500 loss 0.8163 (194s)
+15132.3s 340 [ctx512+aux|Ghana|s0] step 1000/1500 loss 0.7544 (259s)
+15197.0s 341 [ctx512+aux|Ghana|s0] step 1250/1500 loss 0.6993 (323s)
+15261.7s 342 [ctx512+aux|Ghana|s0] step 1500/1500 loss 0.6612 (388s)
+15262.6s 343 ==> ctx512+aux | held-out Ghana: IoU 0.550 precision 0.766 recall 0.661 | elapsed 4.24 h
+15327.8s 344 [ctx512+aux|India|s0] step 250/1500 loss 1.2576 (65s)
+15392.6s 345 [ctx512+aux|India|s0] step 500/1500 loss 0.9228 (130s)
+15457.5s 346 [ctx512+aux|India|s0] step 750/1500 loss 0.8121 (194s)
+15522.3s 347 [ctx512+aux|India|s0] step 1000/1500 loss 0.7363 (259s)
+15587.1s 348 [ctx512+aux|India|s0] step 1250/1500 loss 0.6688 (324s)
+15651.8s 349 [ctx512+aux|India|s0] step 1500/1500 loss 0.6676 (389s)
+15653.0s 350 ==> ctx512+aux | held-out India: IoU 0.536 precision 0.725 recall 0.673 | elapsed 4.35 h
+15718.2s 351 [ctx512+aux|Mekong|s0] step 250/1500 loss 1.2479 (65s)
+15782.8s 352 [ctx512+aux|Mekong|s0] step 500/1500 loss 0.9580 (129s)
+15847.5s 353 [ctx512+aux|Mekong|s0] step 750/1500 loss 0.8664 (194s)
+15912.2s 354 [ctx512+aux|Mekong|s0] step 1000/1500 loss 0.7799 (259s)
+15976.8s 355 [ctx512+aux|Mekong|s0] step 1250/1500 loss 0.7052 (323s)
+16041.5s 356 [ctx512+aux|Mekong|s0] step 1500/1500 loss 0.6915 (388s)
+16042.0s 357 ==> ctx512+aux | held-out Mekong: IoU 0.835 precision 0.883 recall 0.939 | elapsed 4.45 h
+16107.2s 358 [ctx512+aux|Nigeria|s0] step 250/1500 loss 1.2277 (65s)
+16171.8s 359 [ctx512+aux|Nigeria|s0] step 500/1500 loss 0.9059 (129s)
+16236.4s 360 [ctx512+aux|Nigeria|s0] step 750/1500 loss 0.8379 (194s)
+16301.2s 361 [ctx512+aux|Nigeria|s0] step 1000/1500 loss 0.7794 (259s)
+16365.9s 362 [ctx512+aux|Nigeria|s0] step 1250/1500 loss 0.7121 (323s)
+16430.6s 363 [ctx512+aux|Nigeria|s0] step 1500/1500 loss 0.6689 (388s)
+16430.9s 364 ==> ctx512+aux | held-out Nigeria: IoU 0.796 precision 0.919 recall 0.856 | elapsed 4.56 h
+16496.3s 365 [ctx512+aux|Pakistan|s0] step 250/1500 loss 1.2028 (65s)
+16560.9s 366 [ctx512+aux|Pakistan|s0] step 500/1500 loss 0.9052 (130s)
+16625.7s 367 [ctx512+aux|Pakistan|s0] step 750/1500 loss 0.8187 (194s)
+16690.4s 368 [ctx512+aux|Pakistan|s0] step 1000/1500 loss 0.7495 (259s)
+16755.0s 369 [ctx512+aux|Pakistan|s0] step 1250/1500 loss 0.6740 (324s)
+16819.7s 370 [ctx512+aux|Pakistan|s0] step 1500/1500 loss 0.6449 (388s)
+16820.1s 371 ==> ctx512+aux | held-out Pakistan: IoU 0.337 precision 0.415 recall 0.643 | elapsed 4.67 h
+16885.2s 372 [ctx512+aux|Paraguay|s0] step 250/1500 loss 1.2611 (65s)
+16949.8s 373 [ctx512+aux|Paraguay|s0] step 500/1500 loss 0.9140 (129s)
+17014.4s 374 [ctx512+aux|Paraguay|s0] step 750/1500 loss 0.8334 (194s)
+17079.1s 375 [ctx512+aux|Paraguay|s0] step 1000/1500 loss 0.7609 (259s)
+17143.8s 376 [ctx512+aux|Paraguay|s0] step 1250/1500 loss 0.7271 (323s)
+17208.5s 377 [ctx512+aux|Paraguay|s0] step 1500/1500 loss 0.7074 (388s)
+17209.7s 378 ==> ctx512+aux | held-out Paraguay: IoU 0.540 precision 0.626 recall 0.798 | elapsed 4.78 h
+17274.8s 379 [ctx512+aux|Somalia|s0] step 250/1500 loss 1.2043 (65s)
+17339.6s 380 [ctx512+aux|Somalia|s0] step 500/1500 loss 0.9006 (129s)
+17404.3s 381 [ctx512+aux|Somalia|s0] step 750/1500 loss 0.8241 (194s)
+17469.0s 382 [ctx512+aux|Somalia|s0] step 1000/1500 loss 0.7565 (259s)
+17533.9s 383 [ctx512+aux|Somalia|s0] step 1250/1500 loss 0.6883 (324s)
+17598.6s 384 [ctx512+aux|Somalia|s0] step 1500/1500 loss 0.6541 (389s)
+17599.1s 385 ==> ctx512+aux | held-out Somalia: IoU 0.271 precision 0.331 recall 0.598 | elapsed 4.89 h
+17664.3s 386 [ctx512+aux|Spain|s0] step 250/1500 loss 1.2314 (65s)
+17729.0s 387 [ctx512+aux|Spain|s0] step 500/1500 loss 0.9372 (129s)
+17793.8s 388 [ctx512+aux|Spain|s0] step 750/1500 loss 0.8496 (194s)
+17858.6s 389 [ctx512+aux|Spain|s0] step 1000/1500 loss 0.7942 (259s)
+17923.4s 390 [ctx512+aux|Spain|s0] step 1250/1500 loss 0.7134 (324s)
+17988.3s 391 [ctx512+aux|Spain|s0] step 1500/1500 loss 0.6975 (389s)
+17988.8s 392 ==> ctx512+aux | held-out Spain: IoU 0.678 precision 0.843 recall 0.776 | elapsed 4.99 h
+18054.1s 393 [ctx512+aux|Sri-Lanka|s0] step 250/1500 loss 1.2416 (65s)
+18118.8s 394 [ctx512+aux|Sri-Lanka|s0] step 500/1500 loss 0.9065 (130s)
+18183.5s 395 [ctx512+aux|Sri-Lanka|s0] step 750/1500 loss 0.8285 (194s)
+18248.2s 396 [ctx512+aux|Sri-Lanka|s0] step 1000/1500 loss 0.7402 (259s)
+18312.9s 397 [ctx512+aux|Sri-Lanka|s0] step 1250/1500 loss 0.7006 (324s)
+18377.6s 398 [ctx512+aux|Sri-Lanka|s0] step 1500/1500 loss 0.6642 (388s)
+18378.3s 399 ==> ctx512+aux | held-out Sri-Lanka: IoU 0.622 precision 0.728 recall 0.810 | elapsed 5.10 h
+18443.6s 400 [ctx512+aux|USA|s0] step 250/1500 loss 1.2446 (65s)
+18508.2s 401 [ctx512+aux|USA|s0] step 500/1500 loss 0.9263 (130s)
+18573.0s 402 [ctx512+aux|USA|s0] step 750/1500 loss 0.8672 (194s)
+18637.8s 403 [ctx512+aux|USA|s0] step 1000/1500 loss 0.7910 (259s)
+18702.5s 404 [ctx512+aux|USA|s0] step 1250/1500 loss 0.7185 (324s)
+18767.3s 405 [ctx512+aux|USA|s0] step 1500/1500 loss 0.7055 (389s)
+18768.3s 406 ==> ctx512+aux | held-out USA: IoU 0.524 precision 0.728 recall 0.651 | elapsed 5.21 h
+18773.8s 407 LOEO at threshold 0.5, events: [np.str_('Bolivia'), np.str_('Ghana'), np.str_('India'), np.str_('Mekong'), np.str_('Nigeria'), np.str_('Pakistan'), np.str_('Paraguay'), np.str_('Somalia'), np.str_('Spain'), np.str_('Sri-Lanka'), np.str_('USA')]
+18773.8s 408 recipe              base     aug+  tversky   ctx512 ctx512+aux
+18773.8s 409 macro_IoU          0.575    0.567    0.573    0.566      0.574
+18773.8s 410 macro_precision    0.697    0.707     0.77    0.714      0.701
+18773.8s 411 Somalia_prec       0.298    0.371    0.365    0.335      0.331
+18773.8s 412 Pakistan_prec      0.329    0.386    0.465    0.379      0.415
+18773.8s 413 worst_event      Somalia  Somalia  Somalia  Somalia    Somalia
+18773.8s 414 worst_IoU          0.258    0.289    0.273    0.274      0.271
+18773.8s 415 IoU_Bolivia        0.646    0.573    0.681    0.649      0.631
+18773.8s 416 IoU_Ghana          0.527    0.531     0.43    0.526       0.55
+18773.8s 417 IoU_India          0.493    0.511    0.511    0.543      0.536
+18773.8s 418 IoU_Mekong         0.845    0.824    0.867    0.742      0.835
+18773.8s 419 IoU_Nigeria        0.795     0.79    0.756    0.733      0.796
+18773.8s 420 IoU_Pakistan       0.289    0.315    0.338    0.316      0.337
+18773.8s 421 IoU_Paraguay       0.569    0.568     0.57    0.575       0.54
+18773.8s 422 IoU_Somalia        0.258    0.289    0.273    0.274      0.271
+18773.8s 423 IoU_Spain          0.711    0.621    0.725    0.688      0.678
+18773.8s 424 IoU_Sri-Lanka      0.655    0.669    0.656    0.637      0.622
+18773.8s 425 IoU_USA             0.54    0.547    0.494    0.549      0.524
+18774.5s 426 paired macro-IoU aug+ minus base: -0.0076  95% CI [-0.0185, +0.0030]  (one seed: chips resampled within events, seed noise not included)
+18775.2s 427 paired macro-IoU tversky minus base: -0.0025  95% CI [-0.0194, +0.0148]  (one seed: chips resampled within events, seed noise not included)
+18776.0s 428 paired macro-IoU ctx512 minus base: -0.0080  95% CI [-0.0208, +0.0060]  (one seed: chips resampled within events, seed noise not included)
+18776.8s 429 paired macro-IoU ctx512+aux minus base: +0.0000  95% CI [-0.0136, +0.0136]  (one seed: chips resampled within events, seed noise not included)
+18840.1s 430 
+18840.1s 431 post-processing (min component size):
+18840.1s 432 recipe              aug+    base  ctx512  ctx512+aux  tversky
+18840.1s 433 min_component_px
+18840.1s 434 0                 0.5672  0.5754  0.5664      0.5743   0.5727
+18840.1s 435 10                0.5673  0.5755  0.5665      0.5744   0.5725
+18840.1s 436 25                0.5673  0.5759  0.5666      0.5745   0.5719
+18840.1s 437 50                0.5670  0.5759  0.5663      0.5743   0.5709
+18840.1s 438 100               0.5658  0.5753  0.5652      0.5736   0.5688
+18840.1s 439 200               0.5635  0.5735  0.5626      0.5716   0.5654
+18841.2s 440 
+18841.2s 441 ctx512+aux with chip-level water gate: macro IoU 0.5724 (ungated 0.5743), macro precision 0.712, chips gated off: 127/446
+18841.2s 442 gate accuracy vs 'chip has >=0.5% water': 0.812
+18841.2s 443 saved to /kaggle/working/out | total 5.23 h
+18846.8s 444 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+18846.8s 445 cells[i][c] = re.sub('\\\\\|', '|', cell)
+18847.0s 446 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+18847.0s 447 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+18847.8s 448 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+18847.9s 449 [NbConvertApp] Writing 92689 bytes to __notebook__.ipynb
+18850.4s 450 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+18851.1s 451 [NbConvertApp] Writing 456170 bytes to __results__.html

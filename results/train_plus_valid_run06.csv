@@ -1,0 +1,3 @@
+variant,n_models,threshold_from_train_only_ensemble,test_IoU,test_ci95_low,test_ci95_high,test_precision,test_recall,bolivia_IoU,paired_diff_S1refdw_minus_S1,ci95_low,ci95_high
+S1,6,0.46,0.7059,0.596,0.788,0.847,0.809,0.602,,,
+S1+ref+dw,6,0.42,0.7163,0.614,0.793,0.8568,0.8138,0.6938,0.0103,-0.0429,0.0655

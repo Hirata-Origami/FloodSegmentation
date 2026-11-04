@@ -1,0 +1,962 @@
+7.7s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.7s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.7s 3 0.00s - to python to disable frozen modules.
+7.7s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.3s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.3s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.3s 7 0.00s - to python to disable frozen modules.
+8.3s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+12.0s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 154.6/154.6 kB 5.9 MB/s eta 0:00:00
+12.2s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 154.6/154.6 kB 5.9 MB/s eta 0:00:00
+32.9s 11 device: cuda | torch 2.11.0+cu128 | smp 0.6.0
+33.1s 12 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/splits/flood_handlabeled /kaggle/working/s1f11/
+36.1s 13 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/data/flood_events/HandLabeled/S1Hand /kaggle/working/s1f11/
+52.1s 14 
+52.1s 15 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/data/flood_events/HandLabeled/LabelHand /kaggle/working/s1f11/
+63.1s 16 
+63.1s 17 $ gsutil ls gs://sen1floods11/v1.1/data/flood_events/WeaklyLabeled/
+64.5s 18 gs://sen1floods11/v1.1/data/flood_events/WeaklyLabeled/S1OtsuLabelWeak/
+64.5s 19 gs://sen1floods11/v1.1/data/flood_events/WeaklyLabeled/S1Weak/
+64.5s 20 gs://sen1floods11/v1.1/data/flood_events/WeaklyLabeled/S2IndexLabelWeak/
+64.5s 21 gs://sen1floods11/v1.1/data/flood_events/WeaklyLabeled/S2Weak/
+64.5s 22 
+64.5s 23 weak dirs: ['S1OtsuLabelWeak', 'S1Weak', 'S2IndexLabelWeak', 'S2Weak'] -> label dir: ['S2IndexLabelWeak']
+64.5s 24 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/data/flood_events/WeaklyLabeled/S1Weak /kaggle/working/s1f11/
+202.6s 25 
+202.6s 26 $ gsutil -m -q cp -r gs://sen1floods11/v1.1/data/flood_events/WeaklyLabeled/S2IndexLabelWeak /kaggle/working/s1f11/
+293.8s 27 
+293.8s 28 {'train': 252, 'valid': 89, 'test': 90, 'bol': 15}
+293.8s 29 weak chips: 4384 found, 224 removed (held-out ids / Bolivia), 4160 usable (label dir: S2IndexLabelWeak)
+301.9s 30 mean [-10.785368  -17.38235     6.5969567] std [4.8369584 4.623658  3.3227074]
+302.4s 31 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+302.4s 32 
+302.4s 33 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+403.2s 34 [resnet34|s0|weak|A] ep 1/10 loss 1.2731 (99s)
+468.7s 35 [resnet34|s0|weak|A] ep 2/10 loss 0.8698 (164s)
+534.8s 36 [resnet34|s0|weak|A] ep 3/10 loss 0.8285 (231s)
+601.1s 37 [resnet34|s0|weak|A] ep 4/10 loss 0.8165 (297s)
+667.6s 38 [resnet34|s0|weak|A] ep 5/10 loss 0.7988 (363s)
+733.6s 39 [resnet34|s0|weak|A] ep 6/10 loss 0.7828 (429s)
+799.4s 40 [resnet34|s0|weak|A] ep 7/10 loss 0.7710 (495s)
+864.9s 41 [resnet34|s0|weak|A] ep 8/10 loss 0.7632 (561s)
+930.1s 42 [resnet34|s0|weak|A] ep 9/10 loss 0.7578 (626s)
+995.3s 43 [resnet34|s0|weak|A] ep 10/10 loss 0.7540 (691s)
+1003.2s 44 [resnet34|s0|weak|B] ep 1/80 loss 0.6830 (8s)
+1010.7s 45 [resnet34|s0|weak|B] ep 2/80 loss 0.6788 (15s)
+1018.2s 46 [resnet34|s0|weak|B] ep 3/80 loss 0.6721 (23s)
+1025.8s 47 [resnet34|s0|weak|B] ep 4/80 loss 0.6673 (30s)
+1036.3s 48 [resnet34|s0|weak|B] ep 5/80 loss 0.6662 (38s) valid IoU 0.6145
+1043.8s 49 [resnet34|s0|weak|B] ep 6/80 loss 0.6640 (48s)
+1051.3s 50 [resnet34|s0|weak|B] ep 7/80 loss 0.6596 (56s)
+1058.8s 51 [resnet34|s0|weak|B] ep 8/80 loss 0.6562 (63s)
+1066.3s 52 [resnet34|s0|weak|B] ep 9/80 loss 0.6551 (71s)
+1075.7s 53 [resnet34|s0|weak|B] ep 10/80 loss 0.6840 (78s) valid IoU 0.6332
+1083.1s 54 [resnet34|s0|weak|B] ep 11/80 loss 0.6790 (88s)
+1090.6s 55 [resnet34|s0|weak|B] ep 12/80 loss 0.6542 (95s)
+1098.1s 56 [resnet34|s0|weak|B] ep 13/80 loss 0.6586 (103s)
+1105.6s 57 [resnet34|s0|weak|B] ep 14/80 loss 0.6617 (110s)
+1115.1s 58 [resnet34|s0|weak|B] ep 15/80 loss 0.6430 (118s) valid IoU 0.6003
+1122.6s 59 [resnet34|s0|weak|B] ep 16/80 loss 0.6281 (127s)
+1130.1s 60 [resnet34|s0|weak|B] ep 17/80 loss 0.6342 (135s)
+1137.6s 61 [resnet34|s0|weak|B] ep 18/80 loss 0.6248 (142s)
+1145.1s 62 [resnet34|s0|weak|B] ep 19/80 loss 0.6419 (150s)
+1154.5s 63 [resnet34|s0|weak|B] ep 20/80 loss 0.6335 (157s) valid IoU 0.6145
+1162.0s 64 [resnet34|s0|weak|B] ep 21/80 loss 0.6105 (167s)
+1169.5s 65 [resnet34|s0|weak|B] ep 22/80 loss 0.6371 (174s)
+1177.1s 66 [resnet34|s0|weak|B] ep 23/80 loss 0.6436 (182s)
+1184.6s 67 [resnet34|s0|weak|B] ep 24/80 loss 0.6183 (189s)
+1194.2s 68 [resnet34|s0|weak|B] ep 25/80 loss 0.6603 (197s) valid IoU 0.5555
+1201.7s 69 [resnet34|s0|weak|B] ep 26/80 loss 0.6626 (206s)
+1209.2s 70 [resnet34|s0|weak|B] ep 27/80 loss 0.6454 (214s)
+1216.7s 71 [resnet34|s0|weak|B] ep 28/80 loss 0.6538 (221s)
+1224.2s 72 [resnet34|s0|weak|B] ep 29/80 loss 0.6486 (229s)
+1233.5s 73 [resnet34|s0|weak|B] ep 30/80 loss 0.6245 (236s) valid IoU 0.5940
+1241.0s 74 [resnet34|s0|weak|B] ep 31/80 loss 0.6374 (245s)
+1248.5s 75 [resnet34|s0|weak|B] ep 32/80 loss 0.6384 (253s)
+1256.0s 76 [resnet34|s0|weak|B] ep 33/80 loss 0.6363 (260s)
+1263.5s 77 [resnet34|s0|weak|B] ep 34/80 loss 0.6058 (268s)
+1273.0s 78 [resnet34|s0|weak|B] ep 35/80 loss 0.6075 (275s) valid IoU 0.6360
+1280.5s 79 [resnet34|s0|weak|B] ep 36/80 loss 0.6105 (285s)
+1287.9s 80 [resnet34|s0|weak|B] ep 37/80 loss 0.5968 (292s)
+1295.4s 81 [resnet34|s0|weak|B] ep 38/80 loss 0.6209 (300s)
+1302.9s 82 [resnet34|s0|weak|B] ep 39/80 loss 0.6059 (307s)
+1312.4s 83 [resnet34|s0|weak|B] ep 40/80 loss 0.5905 (315s) valid IoU 0.6497
+1319.9s 84 [resnet34|s0|weak|B] ep 41/80 loss 0.6459 (324s)
+1327.4s 85 [resnet34|s0|weak|B] ep 42/80 loss 0.6268 (332s)
+1334.9s 86 [resnet34|s0|weak|B] ep 43/80 loss 0.6221 (339s)
+1342.4s 87 [resnet34|s0|weak|B] ep 44/80 loss 0.5986 (347s)
+1351.9s 88 [resnet34|s0|weak|B] ep 45/80 loss 0.6024 (354s) valid IoU 0.6700
+1359.4s 89 [resnet34|s0|weak|B] ep 46/80 loss 0.5851 (364s)
+1366.9s 90 [resnet34|s0|weak|B] ep 47/80 loss 0.6209 (371s)
+1374.4s 91 [resnet34|s0|weak|B] ep 48/80 loss 0.6002 (379s)
+1381.9s 92 [resnet34|s0|weak|B] ep 49/80 loss 0.5872 (386s)
+1391.4s 93 [resnet34|s0|weak|B] ep 50/80 loss 0.5873 (394s) valid IoU 0.6128
+1399.0s 94 [resnet34|s0|weak|B] ep 51/80 loss 0.5838 (403s)
+1406.5s 95 [resnet34|s0|weak|B] ep 52/80 loss 0.5641 (411s)
+1414.1s 96 [resnet34|s0|weak|B] ep 53/80 loss 0.5705 (419s)
+1421.6s 97 [resnet34|s0|weak|B] ep 54/80 loss 0.5729 (426s)
+1431.1s 98 [resnet34|s0|weak|B] ep 55/80 loss 0.5690 (434s) valid IoU 0.6373
+1438.6s 99 [resnet34|s0|weak|B] ep 56/80 loss 0.5648 (443s)
+1446.1s 100 [resnet34|s0|weak|B] ep 57/80 loss 0.5724 (451s)
+1453.6s 101 [resnet34|s0|weak|B] ep 58/80 loss 0.5857 (458s)
+1461.1s 102 [resnet34|s0|weak|B] ep 59/80 loss 0.5574 (466s)
+1470.5s 103 [resnet34|s0|weak|B] ep 60/80 loss 0.5629 (473s) valid IoU 0.6340
+1478.0s 104 [resnet34|s0|weak|B] ep 61/80 loss 0.5662 (483s)
+1485.5s 105 [resnet34|s0|weak|B] ep 62/80 loss 0.5466 (490s)
+1493.0s 106 [resnet34|s0|weak|B] ep 63/80 loss 0.5769 (497s)
+1500.5s 107 [resnet34|s0|weak|B] ep 64/80 loss 0.5713 (505s)
+1509.9s 108 [resnet34|s0|weak|B] ep 65/80 loss 0.5616 (513s) valid IoU 0.6463
+1517.4s 109 [resnet34|s0|weak|B] ep 66/80 loss 0.5787 (522s)
+1524.9s 110 [resnet34|s0|weak|B] ep 67/80 loss 0.5689 (529s)
+1532.5s 111 [resnet34|s0|weak|B] ep 68/80 loss 0.5739 (537s)
+1540.0s 112 [resnet34|s0|weak|B] ep 69/80 loss 0.5570 (544s)
+1549.4s 113 [resnet34|s0|weak|B] ep 70/80 loss 0.5785 (552s) valid IoU 0.6312
+1556.9s 114 [resnet34|s0|weak|B] ep 71/80 loss 0.5517 (561s)
+1564.3s 115 [resnet34|s0|weak|B] ep 72/80 loss 0.5479 (569s)
+1571.9s 116 [resnet34|s0|weak|B] ep 73/80 loss 0.5764 (576s)
+1579.4s 117 [resnet34|s0|weak|B] ep 74/80 loss 0.5545 (584s)
+1588.7s 118 [resnet34|s0|weak|B] ep 75/80 loss 0.5618 (591s) valid IoU 0.6394
+1596.2s 119 [resnet34|s0|weak|B] ep 76/80 loss 0.5666 (601s)
+1603.7s 120 [resnet34|s0|weak|B] ep 77/80 loss 0.5670 (608s)
+1611.2s 121 [resnet34|s0|weak|B] ep 78/80 loss 0.5709 (616s)
+1618.7s 122 [resnet34|s0|weak|B] ep 79/80 loss 0.5568 (623s)
+1628.2s 123 [resnet34|s0|weak|B] ep 80/80 loss 0.5728 (631s) valid IoU 0.6427
+1639.0s 124 ==> resnet34|s0|weak: valid 0.6700 | test 0.6524 | bolivia 0.3493
+1702.2s 125 [resnet34|s1|weak|A] ep 1/10 loss 1.1227 (63s)
+1764.8s 126 [resnet34|s1|weak|A] ep 2/10 loss 0.8570 (125s)
+1827.3s 127 [resnet34|s1|weak|A] ep 3/10 loss 0.8233 (188s)
+1890.1s 128 [resnet34|s1|weak|A] ep 4/10 loss 0.8080 (251s)
+1952.6s 129 [resnet34|s1|weak|A] ep 5/10 loss 0.7895 (313s)
+2015.2s 130 [resnet34|s1|weak|A] ep 6/10 loss 0.7873 (376s)
+2077.7s 131 [resnet34|s1|weak|A] ep 7/10 loss 0.7743 (438s)
+2140.2s 132 [resnet34|s1|weak|A] ep 8/10 loss 0.7605 (501s)
+2202.4s 133 [resnet34|s1|weak|A] ep 9/10 loss 0.7565 (563s)
+2264.8s 134 [resnet34|s1|weak|A] ep 10/10 loss 0.7491 (626s)
+2272.6s 135 [resnet34|s1|weak|B] ep 1/80 loss 0.6825 (8s)
+2280.1s 136 [resnet34|s1|weak|B] ep 2/80 loss 0.6642 (15s)
+2287.6s 137 [resnet34|s1|weak|B] ep 3/80 loss 0.6702 (23s)
+2295.1s 138 [resnet34|s1|weak|B] ep 4/80 loss 0.6544 (30s)
+2304.5s 139 [resnet34|s1|weak|B] ep 5/80 loss 0.6417 (38s) valid IoU 0.6369
+2312.0s 140 [resnet34|s1|weak|B] ep 6/80 loss 0.6552 (47s)
+2319.4s 141 [resnet34|s1|weak|B] ep 7/80 loss 0.6745 (54s)
+2327.0s 142 [resnet34|s1|weak|B] ep 8/80 loss 0.6389 (62s)
+2334.5s 143 [resnet34|s1|weak|B] ep 9/80 loss 0.6512 (70s)
+2343.5s 144 [resnet34|s1|weak|B] ep 10/80 loss 0.6535 (77s) valid IoU 0.6364
+2351.0s 145 [resnet34|s1|weak|B] ep 11/80 loss 0.6604 (86s)
+2358.6s 146 [resnet34|s1|weak|B] ep 12/80 loss 0.6394 (94s)
+2366.1s 147 [resnet34|s1|weak|B] ep 13/80 loss 0.6361 (101s)
+2373.6s 148 [resnet34|s1|weak|B] ep 14/80 loss 0.6572 (109s)
+2383.0s 149 [resnet34|s1|weak|B] ep 15/80 loss 0.6157 (116s) valid IoU 0.6283
+2390.5s 150 [resnet34|s1|weak|B] ep 16/80 loss 0.6373 (126s)
+2398.0s 151 [resnet34|s1|weak|B] ep 17/80 loss 0.6493 (133s)
+2405.5s 152 [resnet34|s1|weak|B] ep 18/80 loss 0.6454 (141s)
+2413.1s 153 [resnet34|s1|weak|B] ep 19/80 loss 0.6179 (148s)
+2422.8s 154 [resnet34|s1|weak|B] ep 20/80 loss 0.6211 (156s) valid IoU 0.6409
+2430.3s 155 [resnet34|s1|weak|B] ep 21/80 loss 0.6215 (165s)
+2437.8s 156 [resnet34|s1|weak|B] ep 22/80 loss 0.6029 (173s)
+2445.3s 157 [resnet34|s1|weak|B] ep 23/80 loss 0.6126 (180s)
+2452.8s 158 [resnet34|s1|weak|B] ep 24/80 loss 0.6279 (188s)
+2462.3s 159 [resnet34|s1|weak|B] ep 25/80 loss 0.6520 (195s) valid IoU 0.6036
+2469.7s 160 [resnet34|s1|weak|B] ep 26/80 loss 0.6200 (205s)
+2477.1s 161 [resnet34|s1|weak|B] ep 27/80 loss 0.6140 (212s)
+2484.6s 162 [resnet34|s1|weak|B] ep 28/80 loss 0.6540 (220s)
+2492.1s 163 [resnet34|s1|weak|B] ep 29/80 loss 0.6462 (227s)
+2501.4s 164 [resnet34|s1|weak|B] ep 30/80 loss 0.6311 (235s) valid IoU 0.6145
+2508.9s 165 [resnet34|s1|weak|B] ep 31/80 loss 0.6282 (244s)
+2516.4s 166 [resnet34|s1|weak|B] ep 32/80 loss 0.6336 (251s)
+2523.9s 167 [resnet34|s1|weak|B] ep 33/80 loss 0.6208 (259s)
+2531.4s 168 [resnet34|s1|weak|B] ep 34/80 loss 0.6317 (266s)
+2540.8s 169 [resnet34|s1|weak|B] ep 35/80 loss 0.5960 (274s) valid IoU 0.5919
+2548.3s 170 [resnet34|s1|weak|B] ep 36/80 loss 0.6055 (283s)
+2555.8s 171 [resnet34|s1|weak|B] ep 37/80 loss 0.6168 (291s)
+2563.3s 172 [resnet34|s1|weak|B] ep 38/80 loss 0.6075 (298s)
+2570.8s 173 [resnet34|s1|weak|B] ep 39/80 loss 0.6011 (306s)
+2580.2s 174 [resnet34|s1|weak|B] ep 40/80 loss 0.6015 (313s) valid IoU 0.6562
+2587.7s 175 [resnet34|s1|weak|B] ep 41/80 loss 0.6053 (323s)
+2595.1s 176 [resnet34|s1|weak|B] ep 42/80 loss 0.6079 (330s)
+2602.6s 177 [resnet34|s1|weak|B] ep 43/80 loss 0.5959 (338s)
+2610.0s 178 [resnet34|s1|weak|B] ep 44/80 loss 0.6153 (345s)
+2619.5s 179 [resnet34|s1|weak|B] ep 45/80 loss 0.5902 (353s) valid IoU 0.5692
+2626.9s 180 [resnet34|s1|weak|B] ep 46/80 loss 0.5808 (362s)
+2634.4s 181 [resnet34|s1|weak|B] ep 47/80 loss 0.6082 (369s)
+2641.8s 182 [resnet34|s1|weak|B] ep 48/80 loss 0.6159 (377s)
+2649.3s 183 [resnet34|s1|weak|B] ep 49/80 loss 0.5853 (384s)
+2658.6s 184 [resnet34|s1|weak|B] ep 50/80 loss 0.6008 (392s) valid IoU 0.6163
+2666.1s 185 [resnet34|s1|weak|B] ep 51/80 loss 0.5905 (401s)
+2673.6s 186 [resnet34|s1|weak|B] ep 52/80 loss 0.5917 (409s)
+2681.2s 187 [resnet34|s1|weak|B] ep 53/80 loss 0.5799 (416s)
+2688.6s 188 [resnet34|s1|weak|B] ep 54/80 loss 0.5646 (424s)
+2698.0s 189 [resnet34|s1|weak|B] ep 55/80 loss 0.5850 (431s) valid IoU 0.6533
+2705.4s 190 [resnet34|s1|weak|B] ep 56/80 loss 0.5878 (440s)
+2712.9s 191 [resnet34|s1|weak|B] ep 57/80 loss 0.5935 (448s)
+2720.4s 192 [resnet34|s1|weak|B] ep 58/80 loss 0.5909 (455s)
+2727.9s 193 [resnet34|s1|weak|B] ep 59/80 loss 0.5732 (463s)
+2737.2s 194 [resnet34|s1|weak|B] ep 60/80 loss 0.5787 (470s) valid IoU 0.6512
+2744.6s 195 [resnet34|s1|weak|B] ep 61/80 loss 0.5672 (480s)
+2752.1s 196 [resnet34|s1|weak|B] ep 62/80 loss 0.5781 (487s)
+2759.6s 197 [resnet34|s1|weak|B] ep 63/80 loss 0.5654 (495s)
+2767.1s 198 [resnet34|s1|weak|B] ep 64/80 loss 0.5812 (502s)
+2776.4s 199 [resnet34|s1|weak|B] ep 65/80 loss 0.5688 (510s) valid IoU 0.6366
+2783.9s 200 [resnet34|s1|weak|B] ep 66/80 loss 0.5739 (519s)
+2791.4s 201 [resnet34|s1|weak|B] ep 67/80 loss 0.5692 (526s)
+2798.9s 202 [resnet34|s1|weak|B] ep 68/80 loss 0.5535 (534s)
+2806.4s 203 [resnet34|s1|weak|B] ep 69/80 loss 0.5731 (541s)
+2815.7s 204 [resnet34|s1|weak|B] ep 70/80 loss 0.5671 (549s) valid IoU 0.6090
+2823.2s 205 [resnet34|s1|weak|B] ep 71/80 loss 0.5839 (558s)
+2830.7s 206 [resnet34|s1|weak|B] ep 72/80 loss 0.5705 (566s)
+2838.2s 207 [resnet34|s1|weak|B] ep 73/80 loss 0.5753 (573s)
+2845.7s 208 [resnet34|s1|weak|B] ep 74/80 loss 0.5652 (581s)
+2855.0s 209 [resnet34|s1|weak|B] ep 75/80 loss 0.5644 (588s) valid IoU 0.6364
+2862.5s 210 [resnet34|s1|weak|B] ep 76/80 loss 0.5495 (598s)
+2870.0s 211 [resnet34|s1|weak|B] ep 77/80 loss 0.5502 (605s)
+2877.5s 212 [resnet34|s1|weak|B] ep 78/80 loss 0.5638 (613s)
+2885.1s 213 [resnet34|s1|weak|B] ep 79/80 loss 0.5714 (620s)
+2894.4s 214 [resnet34|s1|weak|B] ep 80/80 loss 0.5771 (628s) valid IoU 0.6258
+2903.5s 215 ==> resnet34|s1|weak: valid 0.6562 | test 0.6613 | bolivia 0.3955
+2966.9s 216 [resnet34|s2|weak|A] ep 1/10 loss 1.1039 (63s)
+3029.7s 217 [resnet34|s2|weak|A] ep 2/10 loss 0.8517 (126s)
+3092.6s 218 [resnet34|s2|weak|A] ep 3/10 loss 0.8250 (189s)
+3155.3s 219 [resnet34|s2|weak|A] ep 4/10 loss 0.8068 (251s)
+3217.5s 220 [resnet34|s2|weak|A] ep 5/10 loss 0.7876 (314s)
+3280.3s 221 [resnet34|s2|weak|A] ep 6/10 loss 0.7908 (376s)
+3342.9s 222 [resnet34|s2|weak|A] ep 7/10 loss 0.7701 (439s)
+3405.9s 223 [resnet34|s2|weak|A] ep 8/10 loss 0.7604 (502s)
+3468.3s 224 [resnet34|s2|weak|A] ep 9/10 loss 0.7573 (564s)
+3530.3s 225 [resnet34|s2|weak|A] ep 10/10 loss 0.7500 (627s)
+3538.2s 226 [resnet34|s2|weak|B] ep 1/80 loss 0.6763 (8s)
+3545.6s 227 [resnet34|s2|weak|B] ep 2/80 loss 0.6664 (15s)
+3553.2s 228 [resnet34|s2|weak|B] ep 3/80 loss 0.6567 (23s)
+3560.8s 229 [resnet34|s2|weak|B] ep 4/80 loss 0.6611 (30s)
+3570.2s 230 [resnet34|s2|weak|B] ep 5/80 loss 0.6373 (38s) valid IoU 0.6481
+3577.7s 231 [resnet34|s2|weak|B] ep 6/80 loss 0.6497 (47s)
+3585.2s 232 [resnet34|s2|weak|B] ep 7/80 loss 0.6563 (55s)
+3592.8s 233 [resnet34|s2|weak|B] ep 8/80 loss 0.6402 (62s)
+3600.3s 234 [resnet34|s2|weak|B] ep 9/80 loss 0.6720 (70s)
+3610.0s 235 [resnet34|s2|weak|B] ep 10/80 loss 0.6581 (77s) valid IoU 0.6623
+3617.5s 236 [resnet34|s2|weak|B] ep 11/80 loss 0.6377 (87s)
+3625.0s 237 [resnet34|s2|weak|B] ep 12/80 loss 0.6939 (95s)
+3632.5s 238 [resnet34|s2|weak|B] ep 13/80 loss 0.6639 (102s)
+3639.9s 239 [resnet34|s2|weak|B] ep 14/80 loss 0.6697 (109s)
+3649.5s 240 [resnet34|s2|weak|B] ep 15/80 loss 0.6791 (117s) valid IoU 0.6628
+3656.9s 241 [resnet34|s2|weak|B] ep 16/80 loss 0.6492 (126s)
+3664.4s 242 [resnet34|s2|weak|B] ep 17/80 loss 0.6425 (134s)
+3671.9s 243 [resnet34|s2|weak|B] ep 18/80 loss 0.6693 (141s)
+3679.4s 244 [resnet34|s2|weak|B] ep 19/80 loss 0.6459 (149s)
+3688.8s 245 [resnet34|s2|weak|B] ep 20/80 loss 0.6341 (156s) valid IoU 0.6590
+3696.3s 246 [resnet34|s2|weak|B] ep 21/80 loss 0.6279 (166s)
+3703.8s 247 [resnet34|s2|weak|B] ep 22/80 loss 0.6608 (173s)
+3711.3s 248 [resnet34|s2|weak|B] ep 23/80 loss 0.6433 (181s)
+3718.9s 249 [resnet34|s2|weak|B] ep 24/80 loss 0.6279 (188s)
+3728.4s 250 [resnet34|s2|weak|B] ep 25/80 loss 0.6723 (196s) valid IoU 0.6313
+3735.9s 251 [resnet34|s2|weak|B] ep 26/80 loss 0.6425 (205s)
+3743.4s 252 [resnet34|s2|weak|B] ep 27/80 loss 0.6367 (213s)
+3750.9s 253 [resnet34|s2|weak|B] ep 28/80 loss 0.6309 (220s)
+3758.4s 254 [resnet34|s2|weak|B] ep 29/80 loss 0.6188 (228s)
+3767.8s 255 [resnet34|s2|weak|B] ep 30/80 loss 0.6143 (235s) valid IoU 0.6393
+3775.3s 256 [resnet34|s2|weak|B] ep 31/80 loss 0.6326 (245s)
+3782.8s 257 [resnet34|s2|weak|B] ep 32/80 loss 0.6378 (252s)
+3790.2s 258 [resnet34|s2|weak|B] ep 33/80 loss 0.6358 (260s)
+3797.7s 259 [resnet34|s2|weak|B] ep 34/80 loss 0.6180 (267s)
+3807.2s 260 [resnet34|s2|weak|B] ep 35/80 loss 0.6143 (275s) valid IoU 0.6196
+3814.7s 261 [resnet34|s2|weak|B] ep 36/80 loss 0.6093 (284s)
+3822.2s 262 [resnet34|s2|weak|B] ep 37/80 loss 0.5900 (292s)
+3829.7s 263 [resnet34|s2|weak|B] ep 38/80 loss 0.6103 (299s)
+3837.2s 264 [resnet34|s2|weak|B] ep 39/80 loss 0.6163 (307s)
+3846.7s 265 [resnet34|s2|weak|B] ep 40/80 loss 0.6326 (314s) valid IoU 0.6309
+3854.2s 266 [resnet34|s2|weak|B] ep 41/80 loss 0.6337 (324s)
+3861.7s 267 [resnet34|s2|weak|B] ep 42/80 loss 0.6221 (331s)
+3869.2s 268 [resnet34|s2|weak|B] ep 43/80 loss 0.6219 (339s)
+3876.7s 269 [resnet34|s2|weak|B] ep 44/80 loss 0.5981 (346s)
+3886.0s 270 [resnet34|s2|weak|B] ep 45/80 loss 0.5996 (354s) valid IoU 0.6495
+3893.5s 271 [resnet34|s2|weak|B] ep 46/80 loss 0.5938 (363s)
+3901.0s 272 [resnet34|s2|weak|B] ep 47/80 loss 0.5979 (371s)
+3908.5s 273 [resnet34|s2|weak|B] ep 48/80 loss 0.6040 (378s)
+3916.0s 274 [resnet34|s2|weak|B] ep 49/80 loss 0.5923 (386s)
+3925.4s 275 [resnet34|s2|weak|B] ep 50/80 loss 0.5727 (393s) valid IoU 0.6534
+3932.8s 276 [resnet34|s2|weak|B] ep 51/80 loss 0.6069 (402s)
+3940.3s 277 [resnet34|s2|weak|B] ep 52/80 loss 0.5977 (410s)
+3947.8s 278 [resnet34|s2|weak|B] ep 53/80 loss 0.5873 (417s)
+3955.3s 279 [resnet34|s2|weak|B] ep 54/80 loss 0.5998 (425s)
+3964.8s 280 [resnet34|s2|weak|B] ep 55/80 loss 0.6319 (432s) valid IoU 0.6399
+3972.3s 281 [resnet34|s2|weak|B] ep 56/80 loss 0.6066 (442s)
+3979.7s 282 [resnet34|s2|weak|B] ep 57/80 loss 0.5938 (449s)
+3987.2s 283 [resnet34|s2|weak|B] ep 58/80 loss 0.6099 (457s)
+3994.7s 284 [resnet34|s2|weak|B] ep 59/80 loss 0.5864 (464s)
+4004.1s 285 [resnet34|s2|weak|B] ep 60/80 loss 0.5876 (472s) valid IoU 0.6260
+4011.6s 286 [resnet34|s2|weak|B] ep 61/80 loss 0.5895 (481s)
+4019.1s 287 [resnet34|s2|weak|B] ep 62/80 loss 0.5879 (489s)
+4026.5s 288 [resnet34|s2|weak|B] ep 63/80 loss 0.5705 (496s)
+4034.1s 289 [resnet34|s2|weak|B] ep 64/80 loss 0.5708 (504s)
+4043.4s 290 [resnet34|s2|weak|B] ep 65/80 loss 0.5741 (511s) valid IoU 0.6257
+4050.9s 291 [resnet34|s2|weak|B] ep 66/80 loss 0.5722 (520s)
+4058.4s 292 [resnet34|s2|weak|B] ep 67/80 loss 0.5737 (528s)
+4065.8s 293 [resnet34|s2|weak|B] ep 68/80 loss 0.5886 (535s)
+4073.3s 294 [resnet34|s2|weak|B] ep 69/80 loss 0.5649 (543s)
+4082.7s 295 [resnet34|s2|weak|B] ep 70/80 loss 0.5628 (550s) valid IoU 0.6262
+4090.1s 296 [resnet34|s2|weak|B] ep 71/80 loss 0.5813 (560s)
+4097.6s 297 [resnet34|s2|weak|B] ep 72/80 loss 0.5683 (567s)
+4105.1s 298 [resnet34|s2|weak|B] ep 73/80 loss 0.5713 (575s)
+4112.6s 299 [resnet34|s2|weak|B] ep 74/80 loss 0.5768 (582s)
+4122.0s 300 [resnet34|s2|weak|B] ep 75/80 loss 0.5801 (590s) valid IoU 0.6317
+4129.5s 301 [resnet34|s2|weak|B] ep 76/80 loss 0.5568 (599s)
+4137.0s 302 [resnet34|s2|weak|B] ep 77/80 loss 0.5637 (606s)
+4144.5s 303 [resnet34|s2|weak|B] ep 78/80 loss 0.5764 (614s)
+4152.0s 304 [resnet34|s2|weak|B] ep 79/80 loss 0.5649 (622s)
+4161.4s 305 [resnet34|s2|weak|B] ep 80/80 loss 0.5614 (629s) valid IoU 0.6360
+4171.0s 306 ==> resnet34|s2|weak: valid 0.6628 | test 0.6624 | bolivia 0.4940
+4295.4s 307 [resnext50_32x4d|s0|weak|A] ep 1/10 loss 1.1022 (123s)
+4396.5s 308 [resnext50_32x4d|s0|weak|A] ep 2/10 loss 0.8529 (224s)
+4497.3s 309 [resnext50_32x4d|s0|weak|A] ep 3/10 loss 0.8237 (324s)
+4597.4s 310 [resnext50_32x4d|s0|weak|A] ep 4/10 loss 0.7989 (424s)
+4698.0s 311 [resnext50_32x4d|s0|weak|A] ep 5/10 loss 0.7971 (525s)
+4798.3s 312 [resnext50_32x4d|s0|weak|A] ep 6/10 loss 0.7889 (625s)
+4898.3s 313 [resnext50_32x4d|s0|weak|A] ep 7/10 loss 0.7771 (725s)
+4998.5s 314 [resnext50_32x4d|s0|weak|A] ep 8/10 loss 0.7651 (826s)
+5098.4s 315 [resnext50_32x4d|s0|weak|A] ep 9/10 loss 0.7602 (925s)
+5198.8s 316 [resnext50_32x4d|s0|weak|A] ep 10/10 loss 0.7527 (1026s)
+5211.5s 317 [resnext50_32x4d|s0|weak|B] ep 1/80 loss 0.6760 (12s)
+5223.8s 318 [resnext50_32x4d|s0|weak|B] ep 2/80 loss 0.6672 (25s)
+5236.0s 319 [resnext50_32x4d|s0|weak|B] ep 3/80 loss 0.6637 (37s)
+5248.3s 320 [resnext50_32x4d|s0|weak|B] ep 4/80 loss 0.6394 (49s)
+5264.6s 321 [resnext50_32x4d|s0|weak|B] ep 5/80 loss 0.6334 (62s) valid IoU 0.6592
+5276.9s 322 [resnext50_32x4d|s0|weak|B] ep 6/80 loss 0.6672 (78s)
+5289.1s 323 [resnext50_32x4d|s0|weak|B] ep 7/80 loss 0.6626 (90s)
+5301.3s 324 [resnext50_32x4d|s0|weak|B] ep 8/80 loss 0.6737 (102s)
+5313.6s 325 [resnext50_32x4d|s0|weak|B] ep 9/80 loss 0.6659 (115s)
+5328.2s 326 [resnext50_32x4d|s0|weak|B] ep 10/80 loss 0.6524 (127s) valid IoU 0.6507
+5340.4s 327 [resnext50_32x4d|s0|weak|B] ep 11/80 loss 0.6668 (141s)
+5352.7s 328 [resnext50_32x4d|s0|weak|B] ep 12/80 loss 0.6506 (154s)
+5364.9s 329 [resnext50_32x4d|s0|weak|B] ep 13/80 loss 0.6440 (166s)
+5377.2s 330 [resnext50_32x4d|s0|weak|B] ep 14/80 loss 0.6289 (178s)
+5391.9s 331 [resnext50_32x4d|s0|weak|B] ep 15/80 loss 0.6286 (190s) valid IoU 0.6438
+5404.0s 332 [resnext50_32x4d|s0|weak|B] ep 16/80 loss 0.6666 (205s)
+5416.3s 333 [resnext50_32x4d|s0|weak|B] ep 17/80 loss 0.6722 (217s)
+5428.5s 334 [resnext50_32x4d|s0|weak|B] ep 18/80 loss 0.6442 (230s)
+5440.8s 335 [resnext50_32x4d|s0|weak|B] ep 19/80 loss 0.6411 (242s)
+5455.6s 336 [resnext50_32x4d|s0|weak|B] ep 20/80 loss 0.6327 (254s) valid IoU 0.6555
+5467.8s 337 [resnext50_32x4d|s0|weak|B] ep 21/80 loss 0.6176 (269s)
+5480.0s 338 [resnext50_32x4d|s0|weak|B] ep 22/80 loss 0.6501 (281s)
+5492.2s 339 [resnext50_32x4d|s0|weak|B] ep 23/80 loss 0.6844 (293s)
+5504.4s 340 [resnext50_32x4d|s0|weak|B] ep 24/80 loss 0.6677 (305s)
+5519.0s 341 [resnext50_32x4d|s0|weak|B] ep 25/80 loss 0.6594 (317s) valid IoU 0.6243
+5531.1s 342 [resnext50_32x4d|s0|weak|B] ep 26/80 loss 0.6474 (332s)
+5543.3s 343 [resnext50_32x4d|s0|weak|B] ep 27/80 loss 0.6324 (344s)
+5555.4s 344 [resnext50_32x4d|s0|weak|B] ep 28/80 loss 0.6453 (356s)
+5567.5s 345 [resnext50_32x4d|s0|weak|B] ep 29/80 loss 0.6405 (368s)
+5582.1s 346 [resnext50_32x4d|s0|weak|B] ep 30/80 loss 0.6226 (381s) valid IoU 0.6481
+5594.2s 347 [resnext50_32x4d|s0|weak|B] ep 31/80 loss 0.6107 (395s)
+5606.4s 348 [resnext50_32x4d|s0|weak|B] ep 32/80 loss 0.6140 (407s)
+5618.5s 349 [resnext50_32x4d|s0|weak|B] ep 33/80 loss 0.6294 (420s)
+5630.7s 350 [resnext50_32x4d|s0|weak|B] ep 34/80 loss 0.6206 (432s)
+5645.3s 351 [resnext50_32x4d|s0|weak|B] ep 35/80 loss 0.6121 (444s) valid IoU 0.6513
+5657.5s 352 [resnext50_32x4d|s0|weak|B] ep 36/80 loss 0.6041 (458s)
+5669.7s 353 [resnext50_32x4d|s0|weak|B] ep 37/80 loss 0.6131 (471s)
+5681.9s 354 [resnext50_32x4d|s0|weak|B] ep 38/80 loss 0.6088 (483s)
+5694.1s 355 [resnext50_32x4d|s0|weak|B] ep 39/80 loss 0.6098 (495s)
+5708.7s 356 [resnext50_32x4d|s0|weak|B] ep 40/80 loss 0.5957 (507s) valid IoU 0.6428
+5720.8s 357 [resnext50_32x4d|s0|weak|B] ep 41/80 loss 0.5873 (522s)
+5732.9s 358 [resnext50_32x4d|s0|weak|B] ep 42/80 loss 0.6037 (534s)
+5745.0s 359 [resnext50_32x4d|s0|weak|B] ep 43/80 loss 0.6530 (546s)
+5757.2s 360 [resnext50_32x4d|s0|weak|B] ep 44/80 loss 0.6233 (558s)
+5771.9s 361 [resnext50_32x4d|s0|weak|B] ep 45/80 loss 0.6087 (570s) valid IoU 0.6478
+5784.0s 362 [resnext50_32x4d|s0|weak|B] ep 46/80 loss 0.6209 (585s)
+5796.2s 363 [resnext50_32x4d|s0|weak|B] ep 47/80 loss 0.6023 (597s)
+5808.4s 364 [resnext50_32x4d|s0|weak|B] ep 48/80 loss 0.6139 (609s)
+5820.6s 365 [resnext50_32x4d|s0|weak|B] ep 49/80 loss 0.6022 (622s)
+5835.4s 366 [resnext50_32x4d|s0|weak|B] ep 50/80 loss 0.5945 (634s) valid IoU 0.6282
+5847.6s 367 [resnext50_32x4d|s0|weak|B] ep 51/80 loss 0.5918 (649s)
+5859.6s 368 [resnext50_32x4d|s0|weak|B] ep 52/80 loss 0.6030 (661s)
+5871.8s 369 [resnext50_32x4d|s0|weak|B] ep 53/80 loss 0.6158 (673s)
+5883.9s 370 [resnext50_32x4d|s0|weak|B] ep 54/80 loss 0.5926 (685s)
+5898.6s 371 [resnext50_32x4d|s0|weak|B] ep 55/80 loss 0.5999 (697s) valid IoU 0.6519
+5910.7s 372 [resnext50_32x4d|s0|weak|B] ep 56/80 loss 0.6044 (712s)
+5922.9s 373 [resnext50_32x4d|s0|weak|B] ep 57/80 loss 0.5645 (724s)
+5935.0s 374 [resnext50_32x4d|s0|weak|B] ep 58/80 loss 0.5859 (736s)
+5947.1s 375 [resnext50_32x4d|s0|weak|B] ep 59/80 loss 0.5782 (748s)
+5961.8s 376 [resnext50_32x4d|s0|weak|B] ep 60/80 loss 0.6060 (760s) valid IoU 0.6425
+5973.9s 377 [resnext50_32x4d|s0|weak|B] ep 61/80 loss 0.5777 (775s)
+5986.0s 378 [resnext50_32x4d|s0|weak|B] ep 62/80 loss 0.5782 (787s)
+5998.1s 379 [resnext50_32x4d|s0|weak|B] ep 63/80 loss 0.5942 (799s)
+6010.3s 380 [resnext50_32x4d|s0|weak|B] ep 64/80 loss 0.5988 (811s)
+6024.9s 381 [resnext50_32x4d|s0|weak|B] ep 65/80 loss 0.5799 (823s) valid IoU 0.6450
+6037.1s 382 [resnext50_32x4d|s0|weak|B] ep 66/80 loss 0.5761 (838s)
+6049.1s 383 [resnext50_32x4d|s0|weak|B] ep 67/80 loss 0.5753 (850s)
+6061.3s 384 [resnext50_32x4d|s0|weak|B] ep 68/80 loss 0.5727 (862s)
+6073.5s 385 [resnext50_32x4d|s0|weak|B] ep 69/80 loss 0.5799 (875s)
+6088.2s 386 [resnext50_32x4d|s0|weak|B] ep 70/80 loss 0.5759 (887s) valid IoU 0.6522
+6100.4s 387 [resnext50_32x4d|s0|weak|B] ep 71/80 loss 0.5801 (901s)
+6112.6s 388 [resnext50_32x4d|s0|weak|B] ep 72/80 loss 0.5532 (914s)
+6124.8s 389 [resnext50_32x4d|s0|weak|B] ep 73/80 loss 0.5706 (926s)
+6136.9s 390 [resnext50_32x4d|s0|weak|B] ep 74/80 loss 0.5742 (938s)
+6151.5s 391 [resnext50_32x4d|s0|weak|B] ep 75/80 loss 0.5593 (950s) valid IoU 0.6503
+6163.6s 392 [resnext50_32x4d|s0|weak|B] ep 76/80 loss 0.5799 (965s)
+6175.7s 393 [resnext50_32x4d|s0|weak|B] ep 77/80 loss 0.5694 (977s)
+6187.8s 394 [resnext50_32x4d|s0|weak|B] ep 78/80 loss 0.5708 (989s)
+6199.9s 395 [resnext50_32x4d|s0|weak|B] ep 79/80 loss 0.5633 (1001s)
+6214.5s 396 [resnext50_32x4d|s0|weak|B] ep 80/80 loss 0.5589 (1013s) valid IoU 0.6501
+6229.6s 397 ==> resnext50_32x4d|s0|weak: valid 0.6592 | test 0.6670 | bolivia 0.4330
+6331.6s 398 [resnext50_32x4d|s1|weak|A] ep 1/10 loss 1.1337 (101s)
+6432.0s 399 [resnext50_32x4d|s1|weak|A] ep 2/10 loss 0.8484 (202s)
+6532.6s 400 [resnext50_32x4d|s1|weak|A] ep 3/10 loss 0.8137 (302s)
+6633.2s 401 [resnext50_32x4d|s1|weak|A] ep 4/10 loss 0.7978 (403s)
+6733.6s 402 [resnext50_32x4d|s1|weak|A] ep 5/10 loss 0.7876 (503s)
+6834.0s 403 [resnext50_32x4d|s1|weak|A] ep 6/10 loss 0.7723 (604s)
+6934.6s 404 [resnext50_32x4d|s1|weak|A] ep 7/10 loss 0.7671 (704s)
+7035.4s 405 [resnext50_32x4d|s1|weak|A] ep 8/10 loss 0.7547 (805s)
+7135.5s 406 [resnext50_32x4d|s1|weak|A] ep 9/10 loss 0.7461 (905s)
+7235.6s 407 [resnext50_32x4d|s1|weak|A] ep 10/10 loss 0.7467 (1006s)
+7248.2s 408 [resnext50_32x4d|s1|weak|B] ep 1/80 loss 0.6859 (12s)
+7260.5s 409 [resnext50_32x4d|s1|weak|B] ep 2/80 loss 0.6619 (25s)
+7272.8s 410 [resnext50_32x4d|s1|weak|B] ep 3/80 loss 0.6601 (37s)
+7285.0s 411 [resnext50_32x4d|s1|weak|B] ep 4/80 loss 0.6519 (49s)
+7299.7s 412 [resnext50_32x4d|s1|weak|B] ep 5/80 loss 0.6508 (61s) valid IoU 0.6553
+7311.9s 413 [resnext50_32x4d|s1|weak|B] ep 6/80 loss 0.6397 (76s)
+7324.0s 414 [resnext50_32x4d|s1|weak|B] ep 7/80 loss 0.6491 (88s)
+7336.2s 415 [resnext50_32x4d|s1|weak|B] ep 8/80 loss 0.6469 (100s)
+7348.4s 416 [resnext50_32x4d|s1|weak|B] ep 9/80 loss 0.6559 (113s)
+7362.9s 417 [resnext50_32x4d|s1|weak|B] ep 10/80 loss 0.6423 (125s) valid IoU 0.6181
+7375.1s 418 [resnext50_32x4d|s1|weak|B] ep 11/80 loss 0.6448 (139s)
+7387.3s 419 [resnext50_32x4d|s1|weak|B] ep 12/80 loss 0.6294 (152s)
+7399.5s 420 [resnext50_32x4d|s1|weak|B] ep 13/80 loss 0.6028 (164s)
+7411.8s 421 [resnext50_32x4d|s1|weak|B] ep 14/80 loss 0.6443 (176s)
+7426.5s 422 [resnext50_32x4d|s1|weak|B] ep 15/80 loss 0.6257 (188s) valid IoU 0.6407
+7438.7s 423 [resnext50_32x4d|s1|weak|B] ep 16/80 loss 0.6189 (203s)
+7450.8s 424 [resnext50_32x4d|s1|weak|B] ep 17/80 loss 0.6223 (215s)
+7463.0s 425 [resnext50_32x4d|s1|weak|B] ep 18/80 loss 0.6153 (227s)
+7475.1s 426 [resnext50_32x4d|s1|weak|B] ep 19/80 loss 0.6306 (239s)
+7489.8s 427 [resnext50_32x4d|s1|weak|B] ep 20/80 loss 0.5977 (251s) valid IoU 0.6401
+7502.0s 428 [resnext50_32x4d|s1|weak|B] ep 21/80 loss 0.6204 (266s)
+7514.2s 429 [resnext50_32x4d|s1|weak|B] ep 22/80 loss 0.6361 (278s)
+7526.4s 430 [resnext50_32x4d|s1|weak|B] ep 23/80 loss 0.6315 (291s)
+7538.6s 431 [resnext50_32x4d|s1|weak|B] ep 24/80 loss 0.6240 (303s)
+7553.2s 432 [resnext50_32x4d|s1|weak|B] ep 25/80 loss 0.6028 (315s) valid IoU 0.6015
+7565.4s 433 [resnext50_32x4d|s1|weak|B] ep 26/80 loss 0.6063 (330s)
+7577.6s 434 [resnext50_32x4d|s1|weak|B] ep 27/80 loss 0.6155 (342s)
+7589.8s 435 [resnext50_32x4d|s1|weak|B] ep 28/80 loss 0.5926 (354s)
+7602.1s 436 [resnext50_32x4d|s1|weak|B] ep 29/80 loss 0.6081 (366s)
+7616.9s 437 [resnext50_32x4d|s1|weak|B] ep 30/80 loss 0.5880 (379s) valid IoU 0.6261
+7629.0s 438 [resnext50_32x4d|s1|weak|B] ep 31/80 loss 0.6045 (393s)
+7641.2s 439 [resnext50_32x4d|s1|weak|B] ep 32/80 loss 0.5921 (405s)
+7653.5s 440 [resnext50_32x4d|s1|weak|B] ep 33/80 loss 0.6241 (418s)
+7665.8s 441 [resnext50_32x4d|s1|weak|B] ep 34/80 loss 0.6176 (430s)
+7680.6s 442 [resnext50_32x4d|s1|weak|B] ep 35/80 loss 0.5820 (442s) valid IoU 0.6449
+7692.7s 443 [resnext50_32x4d|s1|weak|B] ep 36/80 loss 0.6150 (457s)
+7704.9s 444 [resnext50_32x4d|s1|weak|B] ep 37/80 loss 0.6095 (469s)
+7717.0s 445 [resnext50_32x4d|s1|weak|B] ep 38/80 loss 0.6098 (481s)
+7729.2s 446 [resnext50_32x4d|s1|weak|B] ep 39/80 loss 0.5989 (493s)
+7743.9s 447 [resnext50_32x4d|s1|weak|B] ep 40/80 loss 0.5856 (506s) valid IoU 0.6444
+7756.0s 448 [resnext50_32x4d|s1|weak|B] ep 41/80 loss 0.5913 (520s)
+7768.2s 449 [resnext50_32x4d|s1|weak|B] ep 42/80 loss 0.5893 (532s)
+7780.3s 450 [resnext50_32x4d|s1|weak|B] ep 43/80 loss 0.5792 (545s)
+7792.5s 451 [resnext50_32x4d|s1|weak|B] ep 44/80 loss 0.5818 (557s)
+7807.3s 452 [resnext50_32x4d|s1|weak|B] ep 45/80 loss 0.5768 (569s) valid IoU 0.6578
+7819.5s 453 [resnext50_32x4d|s1|weak|B] ep 46/80 loss 0.5883 (584s)
+7831.7s 454 [resnext50_32x4d|s1|weak|B] ep 47/80 loss 0.5582 (596s)
+7843.9s 455 [resnext50_32x4d|s1|weak|B] ep 48/80 loss 0.5811 (608s)
+7856.1s 456 [resnext50_32x4d|s1|weak|B] ep 49/80 loss 0.5877 (620s)
+7870.7s 457 [resnext50_32x4d|s1|weak|B] ep 50/80 loss 0.5637 (633s) valid IoU 0.6520
+7882.8s 458 [resnext50_32x4d|s1|weak|B] ep 51/80 loss 0.5754 (647s)
+7895.0s 459 [resnext50_32x4d|s1|weak|B] ep 52/80 loss 0.5747 (659s)
+7907.2s 460 [resnext50_32x4d|s1|weak|B] ep 53/80 loss 0.5770 (671s)
+7919.5s 461 [resnext50_32x4d|s1|weak|B] ep 54/80 loss 0.5723 (684s)
+7934.1s 462 [resnext50_32x4d|s1|weak|B] ep 55/80 loss 0.5737 (696s) valid IoU 0.6233
+7946.3s 463 [resnext50_32x4d|s1|weak|B] ep 56/80 loss 0.5715 (711s)
+7958.5s 464 [resnext50_32x4d|s1|weak|B] ep 57/80 loss 0.5733 (723s)
+7970.7s 465 [resnext50_32x4d|s1|weak|B] ep 58/80 loss 0.5684 (735s)
+7982.9s 466 [resnext50_32x4d|s1|weak|B] ep 59/80 loss 0.5622 (747s)
+7997.6s 467 [resnext50_32x4d|s1|weak|B] ep 60/80 loss 0.5524 (759s) valid IoU 0.6446
+8009.8s 468 [resnext50_32x4d|s1|weak|B] ep 61/80 loss 0.5620 (774s)
+8022.0s 469 [resnext50_32x4d|s1|weak|B] ep 62/80 loss 0.5548 (786s)
+8034.3s 470 [resnext50_32x4d|s1|weak|B] ep 63/80 loss 0.5534 (798s)
+8046.4s 471 [resnext50_32x4d|s1|weak|B] ep 64/80 loss 0.5561 (811s)
+8061.0s 472 [resnext50_32x4d|s1|weak|B] ep 65/80 loss 0.5493 (823s) valid IoU 0.6528
+8073.2s 473 [resnext50_32x4d|s1|weak|B] ep 66/80 loss 0.5571 (837s)
+8085.4s 474 [resnext50_32x4d|s1|weak|B] ep 67/80 loss 0.5629 (850s)
+8097.7s 475 [resnext50_32x4d|s1|weak|B] ep 68/80 loss 0.5379 (862s)
+8109.9s 476 [resnext50_32x4d|s1|weak|B] ep 69/80 loss 0.5334 (874s)
+8124.6s 477 [resnext50_32x4d|s1|weak|B] ep 70/80 loss 0.5505 (886s) valid IoU 0.6402
+8136.8s 478 [resnext50_32x4d|s1|weak|B] ep 71/80 loss 0.5284 (901s)
+8149.0s 479 [resnext50_32x4d|s1|weak|B] ep 72/80 loss 0.5353 (913s)
+8161.3s 480 [resnext50_32x4d|s1|weak|B] ep 73/80 loss 0.5437 (925s)
+8173.5s 481 [resnext50_32x4d|s1|weak|B] ep 74/80 loss 0.5457 (938s)
+8188.2s 482 [resnext50_32x4d|s1|weak|B] ep 75/80 loss 0.5514 (950s) valid IoU 0.6402
+8200.4s 483 [resnext50_32x4d|s1|weak|B] ep 76/80 loss 0.5388 (965s)
+8212.6s 484 [resnext50_32x4d|s1|weak|B] ep 77/80 loss 0.5630 (977s)
+8224.8s 485 [resnext50_32x4d|s1|weak|B] ep 78/80 loss 0.5507 (989s)
+8237.0s 486 [resnext50_32x4d|s1|weak|B] ep 79/80 loss 0.5611 (1001s)
+8251.7s 487 [resnext50_32x4d|s1|weak|B] ep 80/80 loss 0.5473 (1013s) valid IoU 0.6414
+8265.5s 488 ==> resnext50_32x4d|s1|weak: valid 0.6578 | test 0.6599 | bolivia 0.4185
+8367.4s 489 [resnext50_32x4d|s2|weak|A] ep 1/10 loss 1.0486 (101s)
+8468.3s 490 [resnext50_32x4d|s2|weak|A] ep 2/10 loss 0.8385 (202s)
+8569.4s 491 [resnext50_32x4d|s2|weak|A] ep 3/10 loss 0.8135 (303s)
+8669.7s 492 [resnext50_32x4d|s2|weak|A] ep 4/10 loss 0.7969 (404s)
+8770.1s 493 [resnext50_32x4d|s2|weak|A] ep 5/10 loss 0.7878 (504s)
+8870.8s 494 [resnext50_32x4d|s2|weak|A] ep 6/10 loss 0.7780 (605s)
+8971.3s 495 [resnext50_32x4d|s2|weak|A] ep 7/10 loss 0.7756 (705s)
+9072.3s 496 [resnext50_32x4d|s2|weak|A] ep 8/10 loss 0.7624 (806s)
+9172.7s 497 [resnext50_32x4d|s2|weak|A] ep 9/10 loss 0.7563 (907s)
+9272.9s 498 [resnext50_32x4d|s2|weak|A] ep 10/10 loss 0.7471 (1007s)
+9285.5s 499 [resnext50_32x4d|s2|weak|B] ep 1/80 loss 0.6716 (12s)
+9297.8s 500 [resnext50_32x4d|s2|weak|B] ep 2/80 loss 0.6543 (25s)
+9310.1s 501 [resnext50_32x4d|s2|weak|B] ep 3/80 loss 0.6460 (37s)
+9322.3s 502 [resnext50_32x4d|s2|weak|B] ep 4/80 loss 0.6338 (49s)
+9337.2s 503 [resnext50_32x4d|s2|weak|B] ep 5/80 loss 0.6400 (62s) valid IoU 0.6585
+9349.4s 504 [resnext50_32x4d|s2|weak|B] ep 6/80 loss 0.6445 (76s)
+9361.7s 505 [resnext50_32x4d|s2|weak|B] ep 7/80 loss 0.6432 (89s)
+9374.0s 506 [resnext50_32x4d|s2|weak|B] ep 8/80 loss 0.6589 (101s)
+9386.4s 507 [resnext50_32x4d|s2|weak|B] ep 9/80 loss 0.6410 (113s)
+9401.3s 508 [resnext50_32x4d|s2|weak|B] ep 10/80 loss 0.6234 (125s) valid IoU 0.6653
+9413.5s 509 [resnext50_32x4d|s2|weak|B] ep 11/80 loss 0.6153 (140s)
+9425.7s 510 [resnext50_32x4d|s2|weak|B] ep 12/80 loss 0.6684 (153s)
+9437.8s 511 [resnext50_32x4d|s2|weak|B] ep 13/80 loss 0.6328 (165s)
+9450.0s 512 [resnext50_32x4d|s2|weak|B] ep 14/80 loss 0.6539 (177s)
+9464.7s 513 [resnext50_32x4d|s2|weak|B] ep 15/80 loss 0.6611 (189s) valid IoU 0.6567
+9476.9s 514 [resnext50_32x4d|s2|weak|B] ep 16/80 loss 0.6407 (204s)
+9489.0s 515 [resnext50_32x4d|s2|weak|B] ep 17/80 loss 0.6418 (216s)
+9501.2s 516 [resnext50_32x4d|s2|weak|B] ep 18/80 loss 0.6377 (228s)
+9513.3s 517 [resnext50_32x4d|s2|weak|B] ep 19/80 loss 0.6310 (240s)
+9527.9s 518 [resnext50_32x4d|s2|weak|B] ep 20/80 loss 0.6719 (252s) valid IoU 0.6310
+9540.0s 519 [resnext50_32x4d|s2|weak|B] ep 21/80 loss 0.6580 (267s)
+9552.2s 520 [resnext50_32x4d|s2|weak|B] ep 22/80 loss 0.6669 (279s)
+9564.3s 521 [resnext50_32x4d|s2|weak|B] ep 23/80 loss 0.6533 (291s)
+9576.5s 522 [resnext50_32x4d|s2|weak|B] ep 24/80 loss 0.6307 (303s)
+9591.4s 523 [resnext50_32x4d|s2|weak|B] ep 25/80 loss 0.6341 (316s) valid IoU 0.6341
+9603.5s 524 [resnext50_32x4d|s2|weak|B] ep 26/80 loss 0.6206 (330s)
+9615.8s 525 [resnext50_32x4d|s2|weak|B] ep 27/80 loss 0.6469 (343s)
+9628.0s 526 [resnext50_32x4d|s2|weak|B] ep 28/80 loss 0.6093 (355s)
+9640.2s 527 [resnext50_32x4d|s2|weak|B] ep 29/80 loss 0.6142 (367s)
+9654.9s 528 [resnext50_32x4d|s2|weak|B] ep 30/80 loss 0.6200 (379s) valid IoU 0.6405
+9667.0s 529 [resnext50_32x4d|s2|weak|B] ep 31/80 loss 0.6033 (394s)
+9679.3s 530 [resnext50_32x4d|s2|weak|B] ep 32/80 loss 0.6227 (406s)
+9691.6s 531 [resnext50_32x4d|s2|weak|B] ep 33/80 loss 0.6321 (418s)
+9703.8s 532 [resnext50_32x4d|s2|weak|B] ep 34/80 loss 0.6226 (431s)
+9718.6s 533 [resnext50_32x4d|s2|weak|B] ep 35/80 loss 0.6040 (443s) valid IoU 0.6450
+9730.8s 534 [resnext50_32x4d|s2|weak|B] ep 36/80 loss 0.5975 (458s)
+9743.0s 535 [resnext50_32x4d|s2|weak|B] ep 37/80 loss 0.6173 (470s)
+9755.1s 536 [resnext50_32x4d|s2|weak|B] ep 38/80 loss 0.6096 (482s)
+9767.2s 537 [resnext50_32x4d|s2|weak|B] ep 39/80 loss 0.5999 (494s)
+9781.6s 538 [resnext50_32x4d|s2|weak|B] ep 40/80 loss 0.6059 (506s) valid IoU 0.6030
+9793.8s 539 [resnext50_32x4d|s2|weak|B] ep 41/80 loss 0.6271 (521s)
+9806.0s 540 [resnext50_32x4d|s2|weak|B] ep 42/80 loss 0.6200 (533s)
+9818.2s 541 [resnext50_32x4d|s2|weak|B] ep 43/80 loss 0.5934 (545s)
+9830.5s 542 [resnext50_32x4d|s2|weak|B] ep 44/80 loss 0.5980 (557s)
+9845.3s 543 [resnext50_32x4d|s2|weak|B] ep 45/80 loss 0.5893 (570s) valid IoU 0.6480
+9857.5s 544 [resnext50_32x4d|s2|weak|B] ep 46/80 loss 0.5935 (584s)
+9869.6s 545 [resnext50_32x4d|s2|weak|B] ep 47/80 loss 0.5930 (597s)
+9881.9s 546 [resnext50_32x4d|s2|weak|B] ep 48/80 loss 0.5919 (609s)
+9894.0s 547 [resnext50_32x4d|s2|weak|B] ep 49/80 loss 0.5898 (621s)
+9908.6s 548 [resnext50_32x4d|s2|weak|B] ep 50/80 loss 0.6051 (633s) valid IoU 0.6329
+9920.7s 549 [resnext50_32x4d|s2|weak|B] ep 51/80 loss 0.5872 (648s)
+9932.8s 550 [resnext50_32x4d|s2|weak|B] ep 52/80 loss 0.5701 (660s)
+9944.9s 551 [resnext50_32x4d|s2|weak|B] ep 53/80 loss 0.5679 (672s)
+9957.2s 552 [resnext50_32x4d|s2|weak|B] ep 54/80 loss 0.5886 (684s)
+9971.9s 553 [resnext50_32x4d|s2|weak|B] ep 55/80 loss 0.5731 (696s) valid IoU 0.6399
+9984.1s 554 [resnext50_32x4d|s2|weak|B] ep 56/80 loss 0.5585 (711s)
+9996.2s 555 [resnext50_32x4d|s2|weak|B] ep 57/80 loss 0.5579 (723s)
+10008.4s 556 [resnext50_32x4d|s2|weak|B] ep 58/80 loss 0.5664 (735s)
+10020.7s 557 [resnext50_32x4d|s2|weak|B] ep 59/80 loss 0.5611 (748s)
+10035.4s 558 [resnext50_32x4d|s2|weak|B] ep 60/80 loss 0.5624 (760s) valid IoU 0.6288
+10047.6s 559 [resnext50_32x4d|s2|weak|B] ep 61/80 loss 0.5620 (774s)
+10059.8s 560 [resnext50_32x4d|s2|weak|B] ep 62/80 loss 0.5637 (787s)
+10072.1s 561 [resnext50_32x4d|s2|weak|B] ep 63/80 loss 0.5482 (799s)
+10084.3s 562 [resnext50_32x4d|s2|weak|B] ep 64/80 loss 0.5598 (811s)
+10098.8s 563 [resnext50_32x4d|s2|weak|B] ep 65/80 loss 0.5495 (823s) valid IoU 0.6307
+10111.0s 564 [resnext50_32x4d|s2|weak|B] ep 66/80 loss 0.5525 (838s)
+10123.1s 565 [resnext50_32x4d|s2|weak|B] ep 67/80 loss 0.5594 (850s)
+10135.2s 566 [resnext50_32x4d|s2|weak|B] ep 68/80 loss 0.5452 (862s)
+10147.4s 567 [resnext50_32x4d|s2|weak|B] ep 69/80 loss 0.5612 (874s)
+10161.9s 568 [resnext50_32x4d|s2|weak|B] ep 70/80 loss 0.5489 (886s) valid IoU 0.6317
+10174.1s 569 [resnext50_32x4d|s2|weak|B] ep 71/80 loss 0.5309 (901s)
+10186.3s 570 [resnext50_32x4d|s2|weak|B] ep 72/80 loss 0.5513 (913s)
+10198.4s 571 [resnext50_32x4d|s2|weak|B] ep 73/80 loss 0.5516 (925s)
+10210.6s 572 [resnext50_32x4d|s2|weak|B] ep 74/80 loss 0.5555 (937s)
+10225.2s 573 [resnext50_32x4d|s2|weak|B] ep 75/80 loss 0.5633 (950s) valid IoU 0.6274
+10237.4s 574 [resnext50_32x4d|s2|weak|B] ep 76/80 loss 0.5509 (964s)
+10249.5s 575 [resnext50_32x4d|s2|weak|B] ep 77/80 loss 0.5314 (976s)
+10261.7s 576 [resnext50_32x4d|s2|weak|B] ep 78/80 loss 0.5577 (989s)
+10273.8s 577 [resnext50_32x4d|s2|weak|B] ep 79/80 loss 0.5503 (1001s)
+10288.5s 578 [resnext50_32x4d|s2|weak|B] ep 80/80 loss 0.5484 (1013s) valid IoU 0.6314
+10302.4s 579 ==> resnext50_32x4d|s2|weak: valid 0.6653 | test 0.6835 | bolivia 0.4209
+10415.5s 580 [mit_b2|s0|weak|A] ep 1/10 loss 1.1612 (111s)
+10506.5s 581 [mit_b2|s0|weak|A] ep 2/10 loss 0.8566 (201s)
+10597.3s 582 [mit_b2|s0|weak|A] ep 3/10 loss 0.8271 (292s)
+10688.1s 583 [mit_b2|s0|weak|A] ep 4/10 loss 0.8042 (383s)
+10778.7s 584 [mit_b2|s0|weak|A] ep 5/10 loss 0.7957 (474s)
+10869.1s 585 [mit_b2|s0|weak|A] ep 6/10 loss 0.7803 (564s)
+10959.8s 586 [mit_b2|s0|weak|A] ep 7/10 loss 0.7638 (655s)
+11050.7s 587 [mit_b2|s0|weak|A] ep 8/10 loss 0.7592 (746s)
+11140.8s 588 [mit_b2|s0|weak|A] ep 9/10 loss 0.7504 (836s)
+11230.8s 589 [mit_b2|s0|weak|A] ep 10/10 loss 0.7502 (926s)
+11242.2s 590 [mit_b2|s0|weak|B] ep 1/80 loss 0.6858 (11s)
+11253.1s 591 [mit_b2|s0|weak|B] ep 2/80 loss 0.6699 (22s)
+11264.1s 592 [mit_b2|s0|weak|B] ep 3/80 loss 0.6400 (33s)
+11275.0s 593 [mit_b2|s0|weak|B] ep 4/80 loss 0.6527 (44s)
+11293.9s 594 [mit_b2|s0|weak|B] ep 5/80 loss 0.6552 (55s) valid IoU 0.6434
+11304.9s 595 [mit_b2|s0|weak|B] ep 6/80 loss 0.6614 (74s)
+11315.8s 596 [mit_b2|s0|weak|B] ep 7/80 loss 0.6586 (85s)
+11326.9s 597 [mit_b2|s0|weak|B] ep 8/80 loss 0.6511 (96s)
+11337.9s 598 [mit_b2|s0|weak|B] ep 9/80 loss 0.6377 (107s)
+11351.4s 599 [mit_b2|s0|weak|B] ep 10/80 loss 0.6538 (118s) valid IoU 0.6634
+11362.4s 600 [mit_b2|s0|weak|B] ep 11/80 loss 0.6644 (131s)
+11373.3s 601 [mit_b2|s0|weak|B] ep 12/80 loss 0.6768 (142s)
+11384.1s 602 [mit_b2|s0|weak|B] ep 13/80 loss 0.6413 (153s)
+11395.0s 603 [mit_b2|s0|weak|B] ep 14/80 loss 0.6631 (164s)
+11408.1s 604 [mit_b2|s0|weak|B] ep 15/80 loss 0.6758 (175s) valid IoU 0.6610
+11418.9s 605 [mit_b2|s0|weak|B] ep 16/80 loss 0.6368 (188s)
+11429.8s 606 [mit_b2|s0|weak|B] ep 17/80 loss 0.7121 (199s)
+11440.7s 607 [mit_b2|s0|weak|B] ep 18/80 loss 0.6422 (210s)
+11451.6s 608 [mit_b2|s0|weak|B] ep 19/80 loss 0.6483 (221s)
+11465.2s 609 [mit_b2|s0|weak|B] ep 20/80 loss 0.6385 (232s) valid IoU 0.6072
+11476.1s 610 [mit_b2|s0|weak|B] ep 21/80 loss 0.6620 (245s)
+11487.0s 611 [mit_b2|s0|weak|B] ep 22/80 loss 0.6205 (256s)
+11498.0s 612 [mit_b2|s0|weak|B] ep 23/80 loss 0.6210 (267s)
+11509.0s 613 [mit_b2|s0|weak|B] ep 24/80 loss 0.6712 (278s)
+11522.3s 614 [mit_b2|s0|weak|B] ep 25/80 loss 0.6330 (289s) valid IoU 0.6645
+11533.2s 615 [mit_b2|s0|weak|B] ep 26/80 loss 0.6205 (302s)
+11544.2s 616 [mit_b2|s0|weak|B] ep 27/80 loss 0.6437 (313s)
+11555.1s 617 [mit_b2|s0|weak|B] ep 28/80 loss 0.6321 (324s)
+11566.0s 618 [mit_b2|s0|weak|B] ep 29/80 loss 0.6028 (335s)
+11579.2s 619 [mit_b2|s0|weak|B] ep 30/80 loss 0.6210 (346s) valid IoU 0.6631
+11590.2s 620 [mit_b2|s0|weak|B] ep 31/80 loss 0.6432 (359s)
+11601.1s 621 [mit_b2|s0|weak|B] ep 32/80 loss 0.5975 (370s)
+11612.1s 622 [mit_b2|s0|weak|B] ep 33/80 loss 0.6159 (381s)
+11622.9s 623 [mit_b2|s0|weak|B] ep 34/80 loss 0.6480 (392s)
+11636.3s 624 [mit_b2|s0|weak|B] ep 35/80 loss 0.6653 (403s) valid IoU 0.6551
+11647.2s 625 [mit_b2|s0|weak|B] ep 36/80 loss 0.6431 (416s)
+11658.1s 626 [mit_b2|s0|weak|B] ep 37/80 loss 0.6194 (427s)
+11669.0s 627 [mit_b2|s0|weak|B] ep 38/80 loss 0.6112 (438s)
+11680.0s 628 [mit_b2|s0|weak|B] ep 39/80 loss 0.6017 (449s)
+11693.4s 629 [mit_b2|s0|weak|B] ep 40/80 loss 0.5921 (460s) valid IoU 0.6692
+11704.3s 630 [mit_b2|s0|weak|B] ep 41/80 loss 0.6000 (473s)
+11715.3s 631 [mit_b2|s0|weak|B] ep 42/80 loss 0.5949 (484s)
+11726.2s 632 [mit_b2|s0|weak|B] ep 43/80 loss 0.5803 (495s)
+11737.1s 633 [mit_b2|s0|weak|B] ep 44/80 loss 0.5588 (506s)
+11750.5s 634 [mit_b2|s0|weak|B] ep 45/80 loss 0.5765 (517s) valid IoU 0.6425
+11761.3s 635 [mit_b2|s0|weak|B] ep 46/80 loss 0.5652 (530s)
+11772.3s 636 [mit_b2|s0|weak|B] ep 47/80 loss 0.5639 (541s)
+11783.2s 637 [mit_b2|s0|weak|B] ep 48/80 loss 0.5842 (552s)
+11794.1s 638 [mit_b2|s0|weak|B] ep 49/80 loss 0.5739 (563s)
+11807.5s 639 [mit_b2|s0|weak|B] ep 50/80 loss 0.5979 (574s) valid IoU 0.6570
+11818.4s 640 [mit_b2|s0|weak|B] ep 51/80 loss 0.5783 (587s)
+11829.3s 641 [mit_b2|s0|weak|B] ep 52/80 loss 0.5768 (598s)
+11840.2s 642 [mit_b2|s0|weak|B] ep 53/80 loss 0.5810 (609s)
+11851.1s 643 [mit_b2|s0|weak|B] ep 54/80 loss 0.5848 (620s)
+11864.4s 644 [mit_b2|s0|weak|B] ep 55/80 loss 0.5749 (631s) valid IoU 0.6633
+11875.3s 645 [mit_b2|s0|weak|B] ep 56/80 loss 0.5793 (644s)
+11886.3s 646 [mit_b2|s0|weak|B] ep 57/80 loss 0.5783 (655s)
+11897.1s 647 [mit_b2|s0|weak|B] ep 58/80 loss 0.5679 (666s)
+11908.0s 648 [mit_b2|s0|weak|B] ep 59/80 loss 0.5644 (677s)
+11921.5s 649 [mit_b2|s0|weak|B] ep 60/80 loss 0.5751 (688s) valid IoU 0.6674
+11932.3s 650 [mit_b2|s0|weak|B] ep 61/80 loss 0.5735 (701s)
+11943.2s 651 [mit_b2|s0|weak|B] ep 62/80 loss 0.5822 (712s)
+11954.1s 652 [mit_b2|s0|weak|B] ep 63/80 loss 0.5424 (723s)
+11965.0s 653 [mit_b2|s0|weak|B] ep 64/80 loss 0.5527 (734s)
+11978.3s 654 [mit_b2|s0|weak|B] ep 65/80 loss 0.5740 (745s) valid IoU 0.6596
+11989.2s 655 [mit_b2|s0|weak|B] ep 66/80 loss 0.5760 (758s)
+12000.1s 656 [mit_b2|s0|weak|B] ep 67/80 loss 0.5575 (769s)
+12011.0s 657 [mit_b2|s0|weak|B] ep 68/80 loss 0.5665 (780s)
+12022.0s 658 [mit_b2|s0|weak|B] ep 69/80 loss 0.5545 (791s)
+12035.2s 659 [mit_b2|s0|weak|B] ep 70/80 loss 0.5490 (802s) valid IoU 0.6628
+12046.0s 660 [mit_b2|s0|weak|B] ep 71/80 loss 0.5459 (815s)
+12056.9s 661 [mit_b2|s0|weak|B] ep 72/80 loss 0.5699 (826s)
+12067.7s 662 [mit_b2|s0|weak|B] ep 73/80 loss 0.5411 (837s)
+12078.6s 663 [mit_b2|s0|weak|B] ep 74/80 loss 0.5445 (848s)
+12091.9s 664 [mit_b2|s0|weak|B] ep 75/80 loss 0.5492 (858s) valid IoU 0.6541
+12102.7s 665 [mit_b2|s0|weak|B] ep 76/80 loss 0.5558 (872s)
+12113.5s 666 [mit_b2|s0|weak|B] ep 77/80 loss 0.5603 (883s)
+12124.4s 667 [mit_b2|s0|weak|B] ep 78/80 loss 0.5489 (893s)
+12135.2s 668 [mit_b2|s0|weak|B] ep 79/80 loss 0.5547 (904s)
+12148.5s 669 [mit_b2|s0|weak|B] ep 80/80 loss 0.5554 (915s) valid IoU 0.6534
+12167.5s 670 ==> mit_b2|s0|weak: valid 0.6692 | test 0.6717 | bolivia 0.7073
+12259.7s 671 [mit_b2|s1|weak|A] ep 1/10 loss 1.1874 (91s)
+12350.6s 672 [mit_b2|s1|weak|A] ep 2/10 loss 0.8637 (182s)
+12441.0s 673 [mit_b2|s1|weak|A] ep 3/10 loss 0.8362 (273s)
+12531.3s 674 [mit_b2|s1|weak|A] ep 4/10 loss 0.8179 (363s)
+12621.2s 675 [mit_b2|s1|weak|A] ep 5/10 loss 0.8021 (453s)
+12711.6s 676 [mit_b2|s1|weak|A] ep 6/10 loss 0.7806 (543s)
+12801.6s 677 [mit_b2|s1|weak|A] ep 7/10 loss 0.7719 (633s)
+12891.5s 678 [mit_b2|s1|weak|A] ep 8/10 loss 0.7677 (723s)
+12981.5s 679 [mit_b2|s1|weak|A] ep 9/10 loss 0.7565 (813s)
+13071.6s 680 [mit_b2|s1|weak|A] ep 10/10 loss 0.7571 (903s)
+13082.9s 681 [mit_b2|s1|weak|B] ep 1/80 loss 0.6880 (11s)
+13093.8s 682 [mit_b2|s1|weak|B] ep 2/80 loss 0.6707 (22s)
+13104.8s 683 [mit_b2|s1|weak|B] ep 3/80 loss 0.6518 (33s)
+13115.7s 684 [mit_b2|s1|weak|B] ep 4/80 loss 0.6677 (44s)
+13128.8s 685 [mit_b2|s1|weak|B] ep 5/80 loss 0.6552 (55s) valid IoU 0.6345
+13139.7s 686 [mit_b2|s1|weak|B] ep 6/80 loss 0.6517 (68s)
+13150.5s 687 [mit_b2|s1|weak|B] ep 7/80 loss 0.6587 (79s)
+13161.4s 688 [mit_b2|s1|weak|B] ep 8/80 loss 0.6304 (90s)
+13172.2s 689 [mit_b2|s1|weak|B] ep 9/80 loss 0.6795 (100s)
+13185.5s 690 [mit_b2|s1|weak|B] ep 10/80 loss 0.6906 (111s) valid IoU 0.6312
+13196.3s 691 [mit_b2|s1|weak|B] ep 11/80 loss 0.6607 (125s)
+13207.2s 692 [mit_b2|s1|weak|B] ep 12/80 loss 0.6571 (135s)
+13218.0s 693 [mit_b2|s1|weak|B] ep 13/80 loss 0.6631 (146s)
+13228.9s 694 [mit_b2|s1|weak|B] ep 14/80 loss 0.6426 (157s)
+13242.4s 695 [mit_b2|s1|weak|B] ep 15/80 loss 0.6508 (168s) valid IoU 0.6557
+13253.2s 696 [mit_b2|s1|weak|B] ep 16/80 loss 0.6358 (181s)
+13264.0s 697 [mit_b2|s1|weak|B] ep 17/80 loss 0.6274 (192s)
+13274.9s 698 [mit_b2|s1|weak|B] ep 18/80 loss 0.6768 (203s)
+13285.7s 699 [mit_b2|s1|weak|B] ep 19/80 loss 0.6464 (214s)
+13298.7s 700 [mit_b2|s1|weak|B] ep 20/80 loss 0.6517 (225s) valid IoU 0.6157
+13309.6s 701 [mit_b2|s1|weak|B] ep 21/80 loss 0.6327 (238s)
+13320.4s 702 [mit_b2|s1|weak|B] ep 22/80 loss 0.6220 (249s)
+13331.3s 703 [mit_b2|s1|weak|B] ep 23/80 loss 0.7384 (260s)
+13342.2s 704 [mit_b2|s1|weak|B] ep 24/80 loss 0.6635 (270s)
+13355.4s 705 [mit_b2|s1|weak|B] ep 25/80 loss 0.6394 (281s) valid IoU 0.6319
+13366.3s 706 [mit_b2|s1|weak|B] ep 26/80 loss 0.6188 (295s)
+13377.2s 707 [mit_b2|s1|weak|B] ep 27/80 loss 0.6066 (305s)
+13388.1s 708 [mit_b2|s1|weak|B] ep 28/80 loss 0.6347 (316s)
+13399.1s 709 [mit_b2|s1|weak|B] ep 29/80 loss 0.6008 (327s)
+13412.4s 710 [mit_b2|s1|weak|B] ep 30/80 loss 0.5938 (338s) valid IoU 0.6278
+13423.2s 711 [mit_b2|s1|weak|B] ep 31/80 loss 0.6135 (351s)
+13434.1s 712 [mit_b2|s1|weak|B] ep 32/80 loss 0.6084 (362s)
+13445.0s 713 [mit_b2|s1|weak|B] ep 33/80 loss 0.6475 (373s)
+13455.9s 714 [mit_b2|s1|weak|B] ep 34/80 loss 0.6927 (384s)
+13469.3s 715 [mit_b2|s1|weak|B] ep 35/80 loss 0.6474 (395s) valid IoU 0.6623
+13480.2s 716 [mit_b2|s1|weak|B] ep 36/80 loss 0.6309 (408s)
+13491.0s 717 [mit_b2|s1|weak|B] ep 37/80 loss 0.6280 (419s)
+13501.9s 718 [mit_b2|s1|weak|B] ep 38/80 loss 0.6107 (430s)
+13512.8s 719 [mit_b2|s1|weak|B] ep 39/80 loss 0.6133 (441s)
+13526.0s 720 [mit_b2|s1|weak|B] ep 40/80 loss 0.5996 (452s) valid IoU 0.6470
+13536.8s 721 [mit_b2|s1|weak|B] ep 41/80 loss 0.5926 (465s)
+13547.7s 722 [mit_b2|s1|weak|B] ep 42/80 loss 0.5903 (476s)
+13558.5s 723 [mit_b2|s1|weak|B] ep 43/80 loss 0.5975 (487s)
+13569.4s 724 [mit_b2|s1|weak|B] ep 44/80 loss 0.6062 (498s)
+13582.5s 725 [mit_b2|s1|weak|B] ep 45/80 loss 0.5909 (509s) valid IoU 0.6561
+13593.4s 726 [mit_b2|s1|weak|B] ep 46/80 loss 0.5895 (522s)
+13604.3s 727 [mit_b2|s1|weak|B] ep 47/80 loss 0.6103 (533s)
+13615.2s 728 [mit_b2|s1|weak|B] ep 48/80 loss 0.5980 (543s)
+13626.1s 729 [mit_b2|s1|weak|B] ep 49/80 loss 0.5851 (554s)
+13639.3s 730 [mit_b2|s1|weak|B] ep 50/80 loss 0.5835 (565s) valid IoU 0.6341
+13650.3s 731 [mit_b2|s1|weak|B] ep 51/80 loss 0.5828 (579s)
+13661.1s 732 [mit_b2|s1|weak|B] ep 52/80 loss 0.5836 (589s)
+13672.0s 733 [mit_b2|s1|weak|B] ep 53/80 loss 0.5636 (600s)
+13682.9s 734 [mit_b2|s1|weak|B] ep 54/80 loss 0.5696 (611s)
+13695.9s 735 [mit_b2|s1|weak|B] ep 55/80 loss 0.5756 (622s) valid IoU 0.6279
+13706.8s 736 [mit_b2|s1|weak|B] ep 56/80 loss 0.5693 (635s)
+13717.6s 737 [mit_b2|s1|weak|B] ep 57/80 loss 0.5861 (646s)
+13728.4s 738 [mit_b2|s1|weak|B] ep 58/80 loss 0.5947 (657s)
+13739.3s 739 [mit_b2|s1|weak|B] ep 59/80 loss 0.5791 (668s)
+13752.6s 740 [mit_b2|s1|weak|B] ep 60/80 loss 0.5583 (678s) valid IoU 0.6464
+13763.4s 741 [mit_b2|s1|weak|B] ep 61/80 loss 0.5629 (692s)
+13774.3s 742 [mit_b2|s1|weak|B] ep 62/80 loss 0.5694 (703s)
+13785.2s 743 [mit_b2|s1|weak|B] ep 63/80 loss 0.5498 (713s)
+13796.1s 744 [mit_b2|s1|weak|B] ep 64/80 loss 0.5596 (724s)
+13809.4s 745 [mit_b2|s1|weak|B] ep 65/80 loss 0.5719 (735s) valid IoU 0.6433
+13820.3s 746 [mit_b2|s1|weak|B] ep 66/80 loss 0.5671 (749s)
+13831.1s 747 [mit_b2|s1|weak|B] ep 67/80 loss 0.5516 (759s)
+13842.0s 748 [mit_b2|s1|weak|B] ep 68/80 loss 0.5801 (770s)
+13852.8s 749 [mit_b2|s1|weak|B] ep 69/80 loss 0.5726 (781s)
+13866.0s 750 [mit_b2|s1|weak|B] ep 70/80 loss 0.5524 (792s) valid IoU 0.6387
+13876.9s 751 [mit_b2|s1|weak|B] ep 71/80 loss 0.5638 (805s)
+13887.7s 752 [mit_b2|s1|weak|B] ep 72/80 loss 0.5575 (816s)
+13898.5s 753 [mit_b2|s1|weak|B] ep 73/80 loss 0.5504 (827s)
+13909.4s 754 [mit_b2|s1|weak|B] ep 74/80 loss 0.5527 (838s)
+13922.6s 755 [mit_b2|s1|weak|B] ep 75/80 loss 0.5583 (848s) valid IoU 0.6440
+13933.4s 756 [mit_b2|s1|weak|B] ep 76/80 loss 0.5677 (862s)
+13944.2s 757 [mit_b2|s1|weak|B] ep 77/80 loss 0.5750 (872s)
+13955.1s 758 [mit_b2|s1|weak|B] ep 78/80 loss 0.5654 (883s)
+13966.0s 759 [mit_b2|s1|weak|B] ep 79/80 loss 0.5419 (894s)
+13979.2s 760 [mit_b2|s1|weak|B] ep 80/80 loss 0.5594 (905s) valid IoU 0.6405
+13994.2s 761 ==> mit_b2|s1|weak: valid 0.6623 | test 0.6482 | bolivia 0.4697
+14086.6s 762 [mit_b2|s2|weak|A] ep 1/10 loss 1.0612 (92s)
+14177.1s 763 [mit_b2|s2|weak|A] ep 2/10 loss 0.8456 (182s)
+14267.4s 764 [mit_b2|s2|weak|A] ep 3/10 loss 0.8166 (272s)
+14357.4s 765 [mit_b2|s2|weak|A] ep 4/10 loss 0.8120 (362s)
+14447.2s 766 [mit_b2|s2|weak|A] ep 5/10 loss 0.7909 (452s)
+14537.1s 767 [mit_b2|s2|weak|A] ep 6/10 loss 0.7845 (542s)
+14626.9s 768 [mit_b2|s2|weak|A] ep 7/10 loss 0.7741 (632s)
+14716.4s 769 [mit_b2|s2|weak|A] ep 8/10 loss 0.7642 (721s)
+14805.8s 770 [mit_b2|s2|weak|A] ep 9/10 loss 0.7601 (811s)
+14895.5s 771 [mit_b2|s2|weak|A] ep 10/10 loss 0.7519 (901s)
+14906.7s 772 [mit_b2|s2|weak|B] ep 1/80 loss 0.6665 (11s)
+14917.7s 773 [mit_b2|s2|weak|B] ep 2/80 loss 0.6562 (22s)
+14928.6s 774 [mit_b2|s2|weak|B] ep 3/80 loss 0.6562 (33s)
+14939.4s 775 [mit_b2|s2|weak|B] ep 4/80 loss 0.6683 (44s)
+14952.7s 776 [mit_b2|s2|weak|B] ep 5/80 loss 0.6433 (55s) valid IoU 0.6486
+14963.6s 777 [mit_b2|s2|weak|B] ep 6/80 loss 0.6552 (68s)
+14974.4s 778 [mit_b2|s2|weak|B] ep 7/80 loss 0.6419 (79s)
+14985.3s 779 [mit_b2|s2|weak|B] ep 8/80 loss 0.6547 (90s)
+14996.3s 780 [mit_b2|s2|weak|B] ep 9/80 loss 0.6463 (101s)
+15009.5s 781 [mit_b2|s2|weak|B] ep 10/80 loss 0.6354 (112s) valid IoU 0.6207
+15020.4s 782 [mit_b2|s2|weak|B] ep 11/80 loss 0.6250 (125s)
+15031.4s 783 [mit_b2|s2|weak|B] ep 12/80 loss 0.6721 (136s)
+15042.3s 784 [mit_b2|s2|weak|B] ep 13/80 loss 0.6622 (147s)
+15053.2s 785 [mit_b2|s2|weak|B] ep 14/80 loss 0.7053 (158s)
+15066.5s 786 [mit_b2|s2|weak|B] ep 15/80 loss 0.6366 (168s) valid IoU 0.6493
+15077.3s 787 [mit_b2|s2|weak|B] ep 16/80 loss 0.6341 (182s)
+15088.1s 788 [mit_b2|s2|weak|B] ep 17/80 loss 0.6572 (192s)
+15099.0s 789 [mit_b2|s2|weak|B] ep 18/80 loss 0.6368 (203s)
+15109.8s 790 [mit_b2|s2|weak|B] ep 19/80 loss 0.6164 (214s)
+15123.1s 791 [mit_b2|s2|weak|B] ep 20/80 loss 0.6391 (225s) valid IoU 0.5786
+15133.9s 792 [mit_b2|s2|weak|B] ep 21/80 loss 0.6284 (238s)
+15144.6s 793 [mit_b2|s2|weak|B] ep 22/80 loss 0.6053 (249s)
+15155.5s 794 [mit_b2|s2|weak|B] ep 23/80 loss 0.6089 (260s)
+15166.3s 795 [mit_b2|s2|weak|B] ep 24/80 loss 0.6069 (271s)
+15179.5s 796 [mit_b2|s2|weak|B] ep 25/80 loss 0.5977 (282s) valid IoU 0.6441
+15190.4s 797 [mit_b2|s2|weak|B] ep 26/80 loss 0.6015 (295s)
+15201.3s 798 [mit_b2|s2|weak|B] ep 27/80 loss 0.5996 (306s)
+15212.1s 799 [mit_b2|s2|weak|B] ep 28/80 loss 0.6048 (317s)
+15223.0s 800 [mit_b2|s2|weak|B] ep 29/80 loss 0.6296 (327s)
+15236.1s 801 [mit_b2|s2|weak|B] ep 30/80 loss 0.6043 (338s) valid IoU 0.6179
+15246.8s 802 [mit_b2|s2|weak|B] ep 31/80 loss 0.6482 (351s)
+15257.7s 803 [mit_b2|s2|weak|B] ep 32/80 loss 0.6108 (362s)
+15268.5s 804 [mit_b2|s2|weak|B] ep 33/80 loss 0.6075 (373s)
+15279.3s 805 [mit_b2|s2|weak|B] ep 34/80 loss 0.5936 (384s)
+15292.4s 806 [mit_b2|s2|weak|B] ep 35/80 loss 0.5988 (394s) valid IoU 0.6327
+15303.2s 807 [mit_b2|s2|weak|B] ep 36/80 loss 0.5928 (408s)
+15314.0s 808 [mit_b2|s2|weak|B] ep 37/80 loss 0.6049 (418s)
+15324.8s 809 [mit_b2|s2|weak|B] ep 38/80 loss 0.5939 (429s)
+15335.6s 810 [mit_b2|s2|weak|B] ep 39/80 loss 0.5710 (440s)
+15349.1s 811 [mit_b2|s2|weak|B] ep 40/80 loss 0.5852 (451s) valid IoU 0.6121
+15359.9s 812 [mit_b2|s2|weak|B] ep 41/80 loss 0.5882 (464s)
+15370.8s 813 [mit_b2|s2|weak|B] ep 42/80 loss 0.5731 (475s)
+15381.5s 814 [mit_b2|s2|weak|B] ep 43/80 loss 0.5986 (486s)
+15392.4s 815 [mit_b2|s2|weak|B] ep 44/80 loss 0.5861 (497s)
+15405.6s 816 [mit_b2|s2|weak|B] ep 45/80 loss 0.6050 (508s) valid IoU 0.6365
+15416.4s 817 [mit_b2|s2|weak|B] ep 46/80 loss 0.6082 (521s)
+15427.2s 818 [mit_b2|s2|weak|B] ep 47/80 loss 0.5897 (532s)
+15438.0s 819 [mit_b2|s2|weak|B] ep 48/80 loss 0.5872 (542s)
+15448.8s 820 [mit_b2|s2|weak|B] ep 49/80 loss 0.5905 (553s)
+15461.9s 821 [mit_b2|s2|weak|B] ep 50/80 loss 0.5883 (564s) valid IoU 0.6373
+15472.7s 822 [mit_b2|s2|weak|B] ep 51/80 loss 0.5981 (577s)
+15483.5s 823 [mit_b2|s2|weak|B] ep 52/80 loss 0.5791 (588s)
+15494.3s 824 [mit_b2|s2|weak|B] ep 53/80 loss 0.5919 (599s)
+15505.2s 825 [mit_b2|s2|weak|B] ep 54/80 loss 0.5840 (610s)
+15518.4s 826 [mit_b2|s2|weak|B] ep 55/80 loss 0.5986 (620s) valid IoU 0.6602
+15529.2s 827 [mit_b2|s2|weak|B] ep 56/80 loss 0.5714 (634s)
+15540.1s 828 [mit_b2|s2|weak|B] ep 57/80 loss 0.5811 (644s)
+15550.9s 829 [mit_b2|s2|weak|B] ep 58/80 loss 0.5834 (655s)
+15561.7s 830 [mit_b2|s2|weak|B] ep 59/80 loss 0.5695 (666s)
+15575.0s 831 [mit_b2|s2|weak|B] ep 60/80 loss 0.5677 (677s) valid IoU 0.6322
+15585.8s 832 [mit_b2|s2|weak|B] ep 61/80 loss 0.5629 (690s)
+15596.6s 833 [mit_b2|s2|weak|B] ep 62/80 loss 0.5508 (701s)
+15607.6s 834 [mit_b2|s2|weak|B] ep 63/80 loss 0.5649 (712s)
+15618.4s 835 [mit_b2|s2|weak|B] ep 64/80 loss 0.5624 (723s)
+15631.6s 836 [mit_b2|s2|weak|B] ep 65/80 loss 0.5608 (734s) valid IoU 0.6527
+15642.5s 837 [mit_b2|s2|weak|B] ep 66/80 loss 0.5556 (747s)
+15653.3s 838 [mit_b2|s2|weak|B] ep 67/80 loss 0.5641 (758s)
+15664.2s 839 [mit_b2|s2|weak|B] ep 68/80 loss 0.5599 (769s)
+15675.1s 840 [mit_b2|s2|weak|B] ep 69/80 loss 0.5472 (779s)
+15688.4s 841 [mit_b2|s2|weak|B] ep 70/80 loss 0.5632 (790s) valid IoU 0.6450
+15699.2s 842 [mit_b2|s2|weak|B] ep 71/80 loss 0.5436 (804s)
+15710.1s 843 [mit_b2|s2|weak|B] ep 72/80 loss 0.5507 (814s)
+15720.8s 844 [mit_b2|s2|weak|B] ep 73/80 loss 0.5675 (825s)
+15731.6s 845 [mit_b2|s2|weak|B] ep 74/80 loss 0.5538 (836s)
+15744.9s 846 [mit_b2|s2|weak|B] ep 75/80 loss 0.5642 (847s) valid IoU 0.6497
+15755.6s 847 [mit_b2|s2|weak|B] ep 76/80 loss 0.5578 (860s)
+15766.5s 848 [mit_b2|s2|weak|B] ep 77/80 loss 0.5678 (871s)
+15777.4s 849 [mit_b2|s2|weak|B] ep 78/80 loss 0.5422 (882s)
+15788.2s 850 [mit_b2|s2|weak|B] ep 79/80 loss 0.5540 (893s)
+15801.4s 851 [mit_b2|s2|weak|B] ep 80/80 loss 0.5594 (903s) valid IoU 0.6484
+15816.2s 852 ==> mit_b2|s2|weak: valid 0.6602 | test 0.6675 | bolivia 0.5477
+15824.4s 853 [resnet34|s0|noweak|B] ep 1/80 loss 1.9821 (8s)
+15832.0s 854 [resnet34|s0|noweak|B] ep 2/80 loss 1.7530 (15s)
+15839.6s 855 [resnet34|s0|noweak|B] ep 3/80 loss 1.5657 (23s)
+15847.2s 856 [resnet34|s0|noweak|B] ep 4/80 loss 1.4557 (30s)
+15856.2s 857 [resnet34|s0|noweak|B] ep 5/80 loss 1.3274 (38s) valid IoU 0.4226
+15863.7s 858 [resnet34|s0|noweak|B] ep 6/80 loss 1.2402 (47s)
+15871.2s 859 [resnet34|s0|noweak|B] ep 7/80 loss 1.1509 (55s)
+15878.8s 860 [resnet34|s0|noweak|B] ep 8/80 loss 1.0948 (62s)
+15886.3s 861 [resnet34|s0|noweak|B] ep 9/80 loss 1.0659 (70s)
+15895.1s 862 [resnet34|s0|noweak|B] ep 10/80 loss 1.0133 (77s) valid IoU 0.5818
+15902.7s 863 [resnet34|s0|noweak|B] ep 11/80 loss 0.9864 (86s)
+15910.2s 864 [resnet34|s0|noweak|B] ep 12/80 loss 0.9656 (94s)
+15917.7s 865 [resnet34|s0|noweak|B] ep 13/80 loss 0.9320 (101s)
+15925.2s 866 [resnet34|s0|noweak|B] ep 14/80 loss 0.9203 (109s)
+15934.0s 867 [resnet34|s0|noweak|B] ep 15/80 loss 0.8916 (116s) valid IoU 0.5697
+15941.6s 868 [resnet34|s0|noweak|B] ep 16/80 loss 0.8745 (125s)
+15949.0s 869 [resnet34|s0|noweak|B] ep 17/80 loss 0.8546 (132s)
+15956.6s 870 [resnet34|s0|noweak|B] ep 18/80 loss 0.8419 (140s)
+15964.1s 871 [resnet34|s0|noweak|B] ep 19/80 loss 0.8251 (147s)
+15972.9s 872 [resnet34|s0|noweak|B] ep 20/80 loss 0.8123 (155s) valid IoU 0.6026
+15980.4s 873 [resnet34|s0|noweak|B] ep 21/80 loss 0.7992 (164s)
+15988.0s 874 [resnet34|s0|noweak|B] ep 22/80 loss 0.8048 (171s)
+15995.5s 875 [resnet34|s0|noweak|B] ep 23/80 loss 0.7786 (179s)
+16003.1s 876 [resnet34|s0|noweak|B] ep 24/80 loss 0.7795 (186s)
+16011.8s 877 [resnet34|s0|noweak|B] ep 25/80 loss 0.7945 (194s) valid IoU 0.6513
+16019.3s 878 [resnet34|s0|noweak|B] ep 26/80 loss 0.7714 (203s)
+16026.9s 879 [resnet34|s0|noweak|B] ep 27/80 loss 0.7430 (210s)
+16034.4s 880 [resnet34|s0|noweak|B] ep 28/80 loss 0.7521 (218s)
+16041.9s 881 [resnet34|s0|noweak|B] ep 29/80 loss 0.7243 (225s)
+16050.6s 882 [resnet34|s0|noweak|B] ep 30/80 loss 0.7560 (233s) valid IoU 0.6511
+16058.2s 883 [resnet34|s0|noweak|B] ep 31/80 loss 0.7359 (242s)
+16065.7s 884 [resnet34|s0|noweak|B] ep 32/80 loss 0.7306 (249s)
+16073.2s 885 [resnet34|s0|noweak|B] ep 33/80 loss 0.7247 (257s)
+16080.7s 886 [resnet34|s0|noweak|B] ep 34/80 loss 0.7231 (264s)
+16089.4s 887 [resnet34|s0|noweak|B] ep 35/80 loss 0.7147 (272s) valid IoU 0.6296
+16097.0s 888 [resnet34|s0|noweak|B] ep 36/80 loss 0.7233 (280s)
+16104.5s 889 [resnet34|s0|noweak|B] ep 37/80 loss 0.7125 (288s)
+16112.0s 890 [resnet34|s0|noweak|B] ep 38/80 loss 0.7089 (295s)
+16119.6s 891 [resnet34|s0|noweak|B] ep 39/80 loss 0.6963 (303s)
+16128.5s 892 [resnet34|s0|noweak|B] ep 40/80 loss 0.6664 (310s) valid IoU 0.6285
+16136.0s 893 [resnet34|s0|noweak|B] ep 41/80 loss 0.6511 (319s)
+16143.6s 894 [resnet34|s0|noweak|B] ep 42/80 loss 0.6560 (327s)
+16151.1s 895 [resnet34|s0|noweak|B] ep 43/80 loss 0.6423 (334s)
+16158.7s 896 [resnet34|s0|noweak|B] ep 44/80 loss 0.6422 (342s)
+16167.8s 897 [resnet34|s0|noweak|B] ep 45/80 loss 0.6349 (350s) valid IoU 0.6605
+16175.4s 898 [resnet34|s0|noweak|B] ep 46/80 loss 0.6263 (359s)
+16182.9s 899 [resnet34|s0|noweak|B] ep 47/80 loss 0.6346 (366s)
+16190.5s 900 [resnet34|s0|noweak|B] ep 48/80 loss 0.6581 (374s)
+16198.0s 901 [resnet34|s0|noweak|B] ep 49/80 loss 0.6299 (381s)
+16207.1s 902 [resnet34|s0|noweak|B] ep 50/80 loss 0.6225 (389s) valid IoU 0.6629
+16214.6s 903 [resnet34|s0|noweak|B] ep 51/80 loss 0.6019 (398s)
+16222.1s 904 [resnet34|s0|noweak|B] ep 52/80 loss 0.5966 (405s)
+16229.6s 905 [resnet34|s0|noweak|B] ep 53/80 loss 0.6052 (413s)
+16237.1s 906 [resnet34|s0|noweak|B] ep 54/80 loss 0.5860 (420s)
+16246.3s 907 [resnet34|s0|noweak|B] ep 55/80 loss 0.6069 (428s) valid IoU 0.6318
+16253.8s 908 [resnet34|s0|noweak|B] ep 56/80 loss 0.5780 (437s)
+16261.3s 909 [resnet34|s0|noweak|B] ep 57/80 loss 0.5751 (445s)
+16268.8s 910 [resnet34|s0|noweak|B] ep 58/80 loss 0.5792 (452s)
+16276.4s 911 [resnet34|s0|noweak|B] ep 59/80 loss 0.5821 (460s)
+16285.6s 912 [resnet34|s0|noweak|B] ep 60/80 loss 0.6025 (467s) valid IoU 0.6589
+16293.1s 913 [resnet34|s0|noweak|B] ep 61/80 loss 0.5855 (476s)
+16300.6s 914 [resnet34|s0|noweak|B] ep 62/80 loss 0.5677 (484s)
+16308.1s 915 [resnet34|s0|noweak|B] ep 63/80 loss 0.5644 (491s)
+16315.6s 916 [resnet34|s0|noweak|B] ep 64/80 loss 0.5718 (499s)
+16324.8s 917 [resnet34|s0|noweak|B] ep 65/80 loss 0.5653 (506s) valid IoU 0.6645
+16332.3s 918 [resnet34|s0|noweak|B] ep 66/80 loss 0.5569 (516s)
+16339.8s 919 [resnet34|s0|noweak|B] ep 67/80 loss 0.5530 (523s)
+16347.3s 920 [resnet34|s0|noweak|B] ep 68/80 loss 0.5457 (531s)
+16354.9s 921 [resnet34|s0|noweak|B] ep 69/80 loss 0.5605 (538s)
+16364.0s 922 [resnet34|s0|noweak|B] ep 70/80 loss 0.5543 (546s) valid IoU 0.6611
+16371.5s 923 [resnet34|s0|noweak|B] ep 71/80 loss 0.5524 (555s)
+16379.0s 924 [resnet34|s0|noweak|B] ep 72/80 loss 0.5473 (562s)
+16386.5s 925 [resnet34|s0|noweak|B] ep 73/80 loss 0.5639 (570s)
+16394.0s 926 [resnet34|s0|noweak|B] ep 74/80 loss 0.5530 (577s)
+16403.1s 927 [resnet34|s0|noweak|B] ep 75/80 loss 0.5464 (585s) valid IoU 0.6593
+16410.7s 928 [resnet34|s0|noweak|B] ep 76/80 loss 0.5435 (594s)
+16418.3s 929 [resnet34|s0|noweak|B] ep 77/80 loss 0.5486 (602s)
+16425.7s 930 [resnet34|s0|noweak|B] ep 78/80 loss 0.5456 (609s)
+16433.3s 931 [resnet34|s0|noweak|B] ep 79/80 loss 0.5588 (617s)
+16442.4s 932 [resnet34|s0|noweak|B] ep 80/80 loss 0.5391 (624s) valid IoU 0.6600
+16451.0s 933 ==> resnet34|s0|noweak: valid 0.6645 | test 0.6924 | bolivia 0.4314
+16477.3s 934 model  n_models    thr  valid   test                                test_ci95    bol                                  bol_ci95
+16477.3s 935 resnet34 x3 seeds         3 0.4800 0.6764 0.6657 (0.5478103044216268, 0.7553909744815428) 0.4122    (0.2942457319281845, 0.54253418735393)
+16477.3s 936 resnext50_32x4d x3 seeds         3 0.4200 0.6719 0.6892  (0.5813750525920798, 0.771729863479749) 0.4568 (0.31399492839742144, 0.5573041179835448)
+16477.3s 937 mit_b2 x3 seeds         3 0.4600 0.6858 0.6669 (0.5482480471894863, 0.7556016681112603) 0.6565  (0.4543956779797231, 0.7801146959029902)
+16477.3s 938 ALL ensemble (9 models)         9 0.4000 0.6865 0.6706 (0.5569522983668108, 0.7563286247116393) 0.5455  (0.38085327352298215, 0.640285405584028)
+16477.3s 939 resnet34 s0 NO weak pretrain         1 0.4400 0.6671 0.6933  (0.589381400445116, 0.7736705741376945) 0.4571  (0.3093662505253095, 0.5653261072791841)
+16477.3s 940 resnet34 s0 WITH weak pretrain         1 0.4400 0.6683 0.6536 (0.5310983875069984, 0.7463062399168147) 0.3760  (0.2641020263787446, 0.5144069303992066)
+16477.3s 941 
+16477.3s 942 single models:
+16477.3s 943 enc  seed  weak  best_valid  test_iou  bol_iou
+16477.3s 944 resnet34     0  True      0.6700    0.6524   0.3493
+16477.3s 945 resnet34     1  True      0.6562    0.6613   0.3955
+16477.3s 946 resnet34     2  True      0.6628    0.6624   0.4940
+16477.3s 947 resnext50_32x4d     0  True      0.6592    0.6670   0.4330
+16477.3s 948 resnext50_32x4d     1  True      0.6578    0.6599   0.4185
+16477.3s 949 resnext50_32x4d     2  True      0.6653    0.6835   0.4209
+16477.3s 950 mit_b2     0  True      0.6692    0.6717   0.7073
+16477.3s 951 mit_b2     1  True      0.6623    0.6482   0.4697
+16477.3s 952 mit_b2     2  True      0.6602    0.6675   0.5477
+16477.3s 953 resnet34     0 False      0.6645    0.6924   0.4314
+16485.5s 954 saved to /kaggle/working/out
+16491.4s 955 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+16491.4s 956 cells[i][c] = re.sub('\\\\\|', '|', cell)
+16491.6s 957 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+16491.6s 958 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+16492.3s 959 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+16492.5s 960 [NbConvertApp] Writing 191004 bytes to __notebook__.ipynb
+16495.0s 961 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+16495.6s 962 [NbConvertApp] Writing 516003 bytes to __results__.html
